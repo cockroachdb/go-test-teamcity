@@ -31,7 +31,7 @@ var (
 
 	additionalTestName = ""
 
-	run   = regexp.MustCompile("^=== RUN\\s+([a-zA-Z_]\\S*)")
+	run   = regexp.MustCompile("^(.*)=== RUN\\s+([a-zA-Z_]\\S*)")
 	end   = regexp.MustCompile("^(\\s*)--- (PASS|SKIP|FAIL):\\s+([a-zA-Z_]\\S*) \\((-?[\\.\\ds]+)\\)")
 	suite = regexp.MustCompile("^(ok|PASS|FAIL|exit status|Found)")
 	race  = regexp.MustCompile("^WARNING: DATA RACE")
@@ -102,6 +102,13 @@ func processReader(r *bufio.Reader, w io.Writer) {
 		endOut := end.FindStringSubmatch(line)
 		suiteOut := suite.FindStringSubmatch(line)
 
+		// Some test output doesn't include newlines after it, so the following
+		// "=== RUN" line doesn't start at the beginning. In these cases, record
+		// the previous test's output.
+		if runOut != nil && test != nil && runOut[1] != "" {
+			test.Output += runOut[1] + "\n"
+		}
+
 		if test != nil && test.Status != "" && (runOut != nil || endOut != nil || suiteOut != nil) {
 			outputTest(w, test)
 			delete(tests, test.Name)
@@ -110,7 +117,7 @@ func processReader(r *bufio.Reader, w io.Writer) {
 
 		if runOut != nil {
 			test = &Test{
-				Name:  runOut[1],
+				Name:  runOut[2],
 				Start: getNow(),
 			}
 			tests[test.Name] = test

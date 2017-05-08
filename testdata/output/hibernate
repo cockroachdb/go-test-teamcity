@@ -1,0 +1,230 @@
+docker run --volume="/Users/tamird/src/go/src/github.com/cockroachdb/examples-orms"://examples-orms docker.io/cockroachdb/postgres-test:20170308-1644 make -C /examples-orms deps test
+make: Entering directory '/examples-orms'
+go get -d -t ./...
+make deps -C ./java/hibernate
+make[1]: Entering directory '/examples-orms/java/hibernate'
+./gradlew assemble --stacktrace
+Downloading https://services.gradle.org/distributions/gradle-3.3-bin.zip
+..................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+Unzipping /root/.gradle/wrapper/dists/gradle-3.3-bin/64bhckfm0iuu9gap9hg3r7ev2/gradle-3.3-bin.zip to /root/.gradle/wrapper/dists/gradle-3.3-bin/64bhckfm0iuu9gap9hg3r7ev2
+Set executable permissions for: /root/.gradle/wrapper/dists/gradle-3.3-bin/64bhckfm0iuu9gap9hg3r7ev2/gradle-3.3/bin/gradle
+Starting a Gradle Daemon (subsequent builds will be faster)
+:compileJava
+Download https://repo1.maven.org/maven2/org/hibernate/hibernate-core/5.2.4.Final/hibernate-core-5.2.4.Final.pom
+Download https://repo1.maven.org/maven2/org/postgresql/postgresql/9.4.1208/postgresql-9.4.1208.pom
+Download https://repo1.maven.org/maven2/org/postgresql/pgjdbc-core-parent/1.0.5/pgjdbc-core-parent-1.0.5.pom
+Download https://repo1.maven.org/maven2/org/postgresql/pgjdbc-versions/1.0.5/pgjdbc-versions-1.0.5.pom
+Download https://repo1.maven.org/maven2/org/glassfish/jersey/core/jersey-server/2.25/jersey-server-2.25.pom
+Download https://repo1.maven.org/maven2/org/glassfish/jersey/project/2.25/project-2.25.pom
+Download https://repo1.maven.org/maven2/net/java/jvnet-parent/4/jvnet-parent-4.pom
+Download https://repo1.maven.org/maven2/org/glassfish/hk2/hk2-bom/2.5.0-b30/hk2-bom-2.5.0-b30.pom
+Download https://repo1.maven.org/maven2/net/java/jvnet-parent/5/jvnet-parent-5.pom
+Download https://repo1.maven.org/maven2/org/glassfish/jersey/containers/jersey-container-netty-http/2.25/jersey-container-netty-http-2.25.pom
+Download https://repo1.maven.org/maven2/org/glassfish/jersey/containers/project/2.25/project-2.25.pom
+Download https://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-databind/2.8.5/jackson-databind-2.8.5.pom
+Download https://repo1.maven.org/maven2/com/fasterxml/jackson/jackson-parent/2.8/jackson-parent-2.8.pom
+Download https://repo1.maven.org/maven2/com/fasterxml/oss-parent/27/oss-parent-27.pom
+Download https://repo1.maven.org/maven2/com/beust/jcommander/1.7/jcommander-1.7.pom
+Download https://repo1.maven.org/maven2/org/sonatype/oss/oss-parent/3/oss-parent-3.pom
+Download https://repo1.maven.org/maven2/org/jboss/logging/jboss-logging/3.3.0.Final/jboss-logging-3.3.0.Final.pom
+Download https://repo1.maven.org/maven2/org/jboss/jboss-parent/15/jboss-parent-15.pom
+Download https://repo1.maven.org/maven2/org/hibernate/javax/persistence/hibernate-jpa-2.1-api/1.0.0.Final/hibernate-jpa-2.1-api-1.0.0.Final.pom
+Download https://repo1.maven.org/maven2/org/javassist/javassist/3.20.0-GA/javassist-3.20.0-GA.pom
+Download https://repo1.maven.org/maven2/antlr/antlr/2.7.7/antlr-2.7.7.pom
+Download https://repo1.maven.org/maven2/org/apache/geronimo/specs/geronimo-jta_1.1_spec/1.1.1/geronimo-jta_1.1_spec-1.1.1.pom
+Download https://repo1.maven.org/maven2/org/apache/geronimo/specs/specs/1.4/specs-1.4.pom
+Download https://repo1.maven.org/maven2/org/apache/geronimo/genesis/config/project-config/1.2/project-config-1.2.pom
+Download https://repo1.maven.org/maven2/org/apache/geronimo/genesis/config/config/1.2/config-1.2.pom
+Download https://repo1.maven.org/maven2/org/apache/geronimo/genesis/genesis/1.2/genesis-1.2.pom
+Download https://repo1.maven.org/maven2/org/apache/apache/3/apache-3.pom
+Download https://repo1.maven.org/maven2/org/jboss/jandex/2.0.0.Final/jandex-2.0.0.Final.pom
+Download https://repo1.maven.org/maven2/org/jboss/jboss-parent/12/jboss-parent-12.pom
+Download https://repo1.maven.org/maven2/com/fasterxml/classmate/1.3.0/classmate-1.3.0.pom
+Download https://repo1.maven.org/maven2/com/fasterxml/oss-parent/24/oss-parent-24.pom
+Download https://repo1.maven.org/maven2/dom4j/dom4j/1.6.1/dom4j-1.6.1.pom
+Download https://repo1.maven.org/maven2/org/hibernate/common/hibernate-commons-annotations/5.0.1.Final/hibernate-commons-annotations-5.0.1.Final.pom
+Download https://repo1.maven.org/maven2/javax/enterprise/cdi-api/1.1/cdi-api-1.1.pom
+Download https://repo1.maven.org/maven2/org/jboss/weld/weld-parent/21/weld-parent-21.pom
+Download https://repo1.maven.org/maven2/org/glassfish/jersey/core/jersey-common/2.25/jersey-common-2.25.pom
+Download https://repo1.maven.org/maven2/org/glassfish/jersey/core/jersey-client/2.25/jersey-client-2.25.pom
+Download https://repo1.maven.org/maven2/javax/ws/rs/javax.ws.rs-api/2.0.1/javax.ws.rs-api-2.0.1.pom
+Download https://repo1.maven.org/maven2/org/glassfish/jersey/media/jersey-media-jaxb/2.25/jersey-media-jaxb-2.25.pom
+Download https://repo1.maven.org/maven2/org/glassfish/jersey/media/project/2.25/project-2.25.pom
+Download https://repo1.maven.org/maven2/javax/annotation/javax.annotation-api/1.2/javax.annotation-api-1.2.pom
+Download https://repo1.maven.org/maven2/net/java/jvnet-parent/3/jvnet-parent-3.pom
+Download https://repo1.maven.org/maven2/org/glassfish/hk2/hk2-api/2.5.0-b30/hk2-api-2.5.0-b30.pom
+Download https://repo1.maven.org/maven2/org/glassfish/hk2/hk2-parent/2.5.0-b30/hk2-parent-2.5.0-b30.pom
+Download https://repo1.maven.org/maven2/org/glassfish/hk2/external/javax.inject/2.5.0-b30/javax.inject-2.5.0-b30.pom
+Download https://repo1.maven.org/maven2/org/glassfish/hk2/external/2.5.0-b30/external-2.5.0-b30.pom
+Download https://repo1.maven.org/maven2/org/glassfish/hk2/hk2-locator/2.5.0-b30/hk2-locator-2.5.0-b30.pom
+Download https://repo1.maven.org/maven2/javax/validation/validation-api/1.1.0.Final/validation-api-1.1.0.Final.pom
+Download https://repo1.maven.org/maven2/org/glassfish/jersey/connectors/jersey-netty-connector/2.25/jersey-netty-connector-2.25.pom
+Download https://repo1.maven.org/maven2/org/glassfish/jersey/connectors/project/2.25/project-2.25.pom
+Download https://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.8.0/jackson-annotations-2.8.0.pom
+Download https://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-core/2.8.5/jackson-core-2.8.5.pom
+Download https://repo1.maven.org/maven2/javax/el/el-api/2.2/el-api-2.2.pom
+Download https://repo1.maven.org/maven2/org/glassfish/web/el/2.2/el-2.2.pom
+Download https://repo1.maven.org/maven2/org/jboss/spec/javax/interceptor/jboss-interceptors-api_1.1_spec/1.0.0.Beta1/jboss-interceptors-api_1.1_spec-1.0.0.Beta1.pom
+Download https://repo1.maven.org/maven2/org/jboss/spec/jboss-specs-parent/1.0.0.Beta1/jboss-specs-parent-1.0.0.Beta1.pom
+Download https://repo1.maven.org/maven2/org/jboss/jboss-parent/5-beta-5/jboss-parent-5-beta-5.pom
+Download https://repo1.maven.org/maven2/javax/annotation/jsr250-api/1.0/jsr250-api-1.0.pom
+Download https://repo1.maven.org/maven2/javax/inject/javax.inject/1/javax.inject-1.pom
+Download https://repo1.maven.org/maven2/org/glassfish/jersey/bundles/repackaged/jersey-guava/2.25/jersey-guava-2.25.pom
+Download https://repo1.maven.org/maven2/org/glassfish/jersey/bundles/repackaged/project/2.25/project-2.25.pom
+Download https://repo1.maven.org/maven2/org/glassfish/jersey/bundles/project/2.25/project-2.25.pom
+Download https://repo1.maven.org/maven2/org/glassfish/hk2/osgi-resource-locator/1.0.1/osgi-resource-locator-1.0.1.pom
+Download https://repo1.maven.org/maven2/org/glassfish/pom/8/pom-8.pom
+Download https://repo1.maven.org/maven2/org/glassfish/hk2/hk2-utils/2.5.0-b30/hk2-utils-2.5.0-b30.pom
+Download https://repo1.maven.org/maven2/org/glassfish/hk2/external/aopalliance-repackaged/2.5.0-b30/aopalliance-repackaged-2.5.0-b30.pom
+Download https://repo1.maven.org/maven2/io/netty/netty-all/4.1.5.Final/netty-all-4.1.5.Final.pom
+Download https://repo1.maven.org/maven2/io/netty/netty-parent/4.1.5.Final/netty-parent-4.1.5.Final.pom
+Download https://repo1.maven.org/maven2/org/sonatype/oss/oss-parent/9/oss-parent-9.pom
+Download https://repo1.maven.org/maven2/org/hibernate/hibernate-core/5.2.4.Final/hibernate-core-5.2.4.Final.jar
+Download https://repo1.maven.org/maven2/org/postgresql/postgresql/9.4.1208/postgresql-9.4.1208.jar
+Download https://repo1.maven.org/maven2/org/glassfish/jersey/core/jersey-server/2.25/jersey-server-2.25.jar
+Download https://repo1.maven.org/maven2/org/glassfish/jersey/containers/jersey-container-netty-http/2.25/jersey-container-netty-http-2.25.jar
+Download https://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-databind/2.8.5/jackson-databind-2.8.5.jar
+Download https://repo1.maven.org/maven2/com/beust/jcommander/1.7/jcommander-1.7.jar
+Download https://repo1.maven.org/maven2/org/jboss/logging/jboss-logging/3.3.0.Final/jboss-logging-3.3.0.Final.jar
+Download https://repo1.maven.org/maven2/org/hibernate/javax/persistence/hibernate-jpa-2.1-api/1.0.0.Final/hibernate-jpa-2.1-api-1.0.0.Final.jar
+Download https://repo1.maven.org/maven2/org/javassist/javassist/3.20.0-GA/javassist-3.20.0-GA.jar
+Download https://repo1.maven.org/maven2/antlr/antlr/2.7.7/antlr-2.7.7.jar
+Download https://repo1.maven.org/maven2/org/apache/geronimo/specs/geronimo-jta_1.1_spec/1.1.1/geronimo-jta_1.1_spec-1.1.1.jar
+Download https://repo1.maven.org/maven2/org/jboss/jandex/2.0.0.Final/jandex-2.0.0.Final.jar
+Download https://repo1.maven.org/maven2/com/fasterxml/classmate/1.3.0/classmate-1.3.0.jar
+Download https://repo1.maven.org/maven2/dom4j/dom4j/1.6.1/dom4j-1.6.1.jar
+Download https://repo1.maven.org/maven2/org/hibernate/common/hibernate-commons-annotations/5.0.1.Final/hibernate-commons-annotations-5.0.1.Final.jar
+Download https://repo1.maven.org/maven2/javax/enterprise/cdi-api/1.1/cdi-api-1.1.jar
+Download https://repo1.maven.org/maven2/org/glassfish/jersey/core/jersey-common/2.25/jersey-common-2.25.jar
+Download https://repo1.maven.org/maven2/org/glassfish/jersey/core/jersey-client/2.25/jersey-client-2.25.jar
+Download https://repo1.maven.org/maven2/javax/ws/rs/javax.ws.rs-api/2.0.1/javax.ws.rs-api-2.0.1.jar
+Download https://repo1.maven.org/maven2/org/glassfish/jersey/media/jersey-media-jaxb/2.25/jersey-media-jaxb-2.25.jar
+Download https://repo1.maven.org/maven2/javax/annotation/javax.annotation-api/1.2/javax.annotation-api-1.2.jar
+Download https://repo1.maven.org/maven2/org/glassfish/hk2/hk2-api/2.5.0-b30/hk2-api-2.5.0-b30.jar
+Download https://repo1.maven.org/maven2/org/glassfish/hk2/external/javax.inject/2.5.0-b30/javax.inject-2.5.0-b30.jar
+Download https://repo1.maven.org/maven2/org/glassfish/hk2/hk2-locator/2.5.0-b30/hk2-locator-2.5.0-b30.jar
+Download https://repo1.maven.org/maven2/javax/validation/validation-api/1.1.0.Final/validation-api-1.1.0.Final.jar
+Download https://repo1.maven.org/maven2/org/glassfish/jersey/connectors/jersey-netty-connector/2.25/jersey-netty-connector-2.25.jar
+Download https://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.8.0/jackson-annotations-2.8.0.jar
+Download https://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-core/2.8.5/jackson-core-2.8.5.jar
+Download https://repo1.maven.org/maven2/javax/el/el-api/2.2/el-api-2.2.jar
+Download https://repo1.maven.org/maven2/org/jboss/spec/javax/interceptor/jboss-interceptors-api_1.1_spec/1.0.0.Beta1/jboss-interceptors-api_1.1_spec-1.0.0.Beta1.jar
+Download https://repo1.maven.org/maven2/javax/annotation/jsr250-api/1.0/jsr250-api-1.0.jar
+Download https://repo1.maven.org/maven2/javax/inject/javax.inject/1/javax.inject-1.jar
+Download https://repo1.maven.org/maven2/org/glassfish/jersey/bundles/repackaged/jersey-guava/2.25/jersey-guava-2.25.jar
+Download https://repo1.maven.org/maven2/org/glassfish/hk2/osgi-resource-locator/1.0.1/osgi-resource-locator-1.0.1.jar
+Download https://repo1.maven.org/maven2/org/glassfish/hk2/hk2-utils/2.5.0-b30/hk2-utils-2.5.0-b30.jar
+Download https://repo1.maven.org/maven2/org/glassfish/hk2/external/aopalliance-repackaged/2.5.0-b30/aopalliance-repackaged-2.5.0-b30.jar
+Download https://repo1.maven.org/maven2/io/netty/netty-all/4.1.5.Final/netty-all-4.1.5.Final.jar
+:compileJava UP-TO-DATE
+:processResources UP-TO-DATE
+:classes UP-TO-DATE
+:jar UP-TO-DATE
+:startScripts UP-TO-DATE
+:distTar UP-TO-DATE
+:distZip UP-TO-DATE
+:assemble UP-TO-DATE
+
+BUILD SUCCESSFUL
+
+Total time: 20.571 secs
+make[1]: Leaving directory '/examples-orms/java/hibernate'
+# make deps -C ./ruby/activerecord
+go test -v -i ./testing
+go test -v ./testing  -run Hibernate
+##teamcity[testStarted timestamp='2017-01-02T04:05:06.789' name='TestHibernate' captureStandardOutput='true']
+make[1]: Entering directory '/examples-orms/java/hibernate'
+:compileJava UP-TO-DATE
+:processResources UP-TO-DATE
+:classes UP-TO-DATE
+:run
+Hibernate: create table customers (id  bigserial not null, name varchar(255), primary key (id))
+Hibernate: create table order_products (order_id int8 not null, product_id int8 not null, primary key (order_id, product_id))
+Hibernate: create table orders (id  bigserial not null, subtotal numeric(18, 2), customer_id int8, primary key (id))
+Hibernate: create table products (id  bigserial not null, name varchar(255), price numeric(18, 2), primary key (id))
+Hibernate: alter table order_products add constraint FKdxjduvg7991r4qja26fsckxv8 foreign key (product_id) references products
+Hibernate: alter table order_products add constraint FKawxpt1ns1sr7al76nvjkv21of foreign key (order_id) references orders
+Hibernate: alter table orders add constraint FKpxtb8awmi0dk6smoh2vp1litg foreign key (customer_id) references customers
+##teamcity[testFinished timestamp='2017-01-02T04:05:06.789' name='TestHibernate' duration='53060']
+##teamcity[testStarted timestamp='2017-01-02T04:05:06.789' name='TestHibernate/GeneratedTables' captureStandardOutput='true']
+##teamcity[testFinished timestamp='2017-01-02T04:05:06.789' name='TestHibernate/GeneratedTables' duration='0']
+##teamcity[testStarted timestamp='2017-01-02T04:05:06.789' name='TestHibernate/GeneratedColumns' captureStandardOutput='true']
+##teamcity[testFinished timestamp='2017-01-02T04:05:06.789' name='TestHibernate/GeneratedColumns' duration='0']
+##teamcity[testStarted timestamp='2017-01-02T04:05:06.789' name='TestHibernate/GeneratedColumns/ProductsTable' captureStandardOutput='true']
+##teamcity[testFinished timestamp='2017-01-02T04:05:06.789' name='TestHibernate/GeneratedColumns/ProductsTable' duration='0']
+##teamcity[testStarted timestamp='2017-01-02T04:05:06.789' name='TestHibernate/GeneratedColumns/OrderProductsTable' captureStandardOutput='true']
+##teamcity[testFinished timestamp='2017-01-02T04:05:06.789' name='TestHibernate/GeneratedColumns/OrderProductsTable' duration='0']
+##teamcity[testStarted timestamp='2017-01-02T04:05:06.789' name='TestHibernate/GeneratedColumns/OrdersTable' captureStandardOutput='true']
+##teamcity[testFinished timestamp='2017-01-02T04:05:06.789' name='TestHibernate/GeneratedColumns/OrdersTable' duration='10']
+##teamcity[testStarted timestamp='2017-01-02T04:05:06.789' name='TestHibernate/GeneratedColumns/CustomersTable' captureStandardOutput='true']
+##teamcity[testFinished timestamp='2017-01-02T04:05:06.789' name='TestHibernate/GeneratedColumns/CustomersTable' duration='20']
+##teamcity[testStarted timestamp='2017-01-02T04:05:06.789' name='TestHibernate/EmptyTables' captureStandardOutput='true']
+##teamcity[testFinished timestamp='2017-01-02T04:05:06.789' name='TestHibernate/EmptyTables' duration='0']
+##teamcity[testStarted timestamp='2017-01-02T04:05:06.789' name='TestHibernate/EmptyTables/OrderProductsTable' captureStandardOutput='true']
+##teamcity[testFinished timestamp='2017-01-02T04:05:06.789' name='TestHibernate/EmptyTables/OrderProductsTable' duration='20']
+##teamcity[testStarted timestamp='2017-01-02T04:05:06.789' name='TestHibernate/EmptyTables/CustomersTable' captureStandardOutput='true']
+##teamcity[testFinished timestamp='2017-01-02T04:05:06.789' name='TestHibernate/EmptyTables/CustomersTable' duration='30']
+##teamcity[testStarted timestamp='2017-01-02T04:05:06.789' name='TestHibernate/EmptyTables/OrdersTable' captureStandardOutput='true']
+##teamcity[testFinished timestamp='2017-01-02T04:05:06.789' name='TestHibernate/EmptyTables/OrdersTable' duration='0']
+##teamcity[testStarted timestamp='2017-01-02T04:05:06.789' name='TestHibernate/EmptyTables/ProductsTable' captureStandardOutput='true']
+##teamcity[testFinished timestamp='2017-01-02T04:05:06.789' name='TestHibernate/EmptyTables/ProductsTable' duration='0']
+##teamcity[testStarted timestamp='2017-01-02T04:05:06.789' name='TestHibernate/RetrieveFromAPIBeforeCreation' captureStandardOutput='true']
+##teamcity[testFinished timestamp='2017-01-02T04:05:06.789' name='TestHibernate/RetrieveFromAPIBeforeCreation' duration='0']
+##teamcity[testStarted timestamp='2017-01-02T04:05:06.789' name='TestHibernate/RetrieveFromAPIBeforeCreation/Products' captureStandardOutput='true']
+Hibernate: select product0_.id as id1_3_, product0_.name as name2_3_, product0_.price as price3_3_ from products product0_
+Hibernate: select product0_.id as id1_3_, product0_.name as name2_3_, product0_.price as price3_3_ from products product0_
+Hibernate: select product0_.id as id1_3_, product0_.name as name2_3_, product0_.price as price3_3_ from products product0_
+##teamcity[testFinished timestamp='2017-01-02T04:05:06.789' name='TestHibernate/RetrieveFromAPIBeforeCreation/Products' duration='2100']
+##teamcity[testStarted timestamp='2017-01-02T04:05:06.789' name='TestHibernate/RetrieveFromAPIBeforeCreation/Customers' captureStandardOutput='true']
+##teamcity[testFinished timestamp='2017-01-02T04:05:06.789' name='TestHibernate/RetrieveFromAPIBeforeCreation/Customers' duration='10']
+##teamcity[testStarted timestamp='2017-01-02T04:05:06.789' name='TestHibernate/RetrieveFromAPIBeforeCreation/Orders' captureStandardOutput='true']
+##teamcity[testFinished timestamp='2017-01-02T04:05:06.789' name='TestHibernate/RetrieveFromAPIBeforeCreation/Orders' duration='2120']
+##teamcity[testStarted timestamp='2017-01-02T04:05:06.789' name='TestHibernate/CreateCustomer' captureStandardOutput='true']
+Hibernate: insert into customers (name) values (?)
+##teamcity[testFinished timestamp='2017-01-02T04:05:06.789' name='TestHibernate/CreateCustomer' duration='250']
+##teamcity[testStarted timestamp='2017-01-02T04:05:06.789' name='TestHibernate/CreateProduct' captureStandardOutput='true']
+Hibernate: insert into products (name, price) values (?, ?)
+##teamcity[testFinished timestamp='2017-01-02T04:05:06.789' name='TestHibernate/CreateProduct' duration='40']
+##teamcity[testStarted timestamp='2017-01-02T04:05:06.789' name='TestHibernate/RetrieveFromAPIAfterInitialCreation' captureStandardOutput='true']
+##teamcity[testFinished timestamp='2017-01-02T04:05:06.789' name='TestHibernate/RetrieveFromAPIAfterInitialCreation' duration='0']
+##teamcity[testStarted timestamp='2017-01-02T04:05:06.789' name='TestHibernate/RetrieveFromAPIAfterInitialCreation/Customers' captureStandardOutput='true']
+##teamcity[testFinished timestamp='2017-01-02T04:05:06.789' name='TestHibernate/RetrieveFromAPIAfterInitialCreation/Customers' duration='120']
+##teamcity[testStarted timestamp='2017-01-02T04:05:06.789' name='TestHibernate/RetrieveFromAPIAfterInitialCreation/Products' captureStandardOutput='true']
+Hibernate: select product0_.id as id1_3_, product0_.name as name2_3_, product0_.price as price3_3_ from products product0_
+Hibernate: select product0_.id as id1_3_, product0_.name as name2_3_, product0_.price as price3_3_ from products product0_
+Hibernate: select orders0_.product_id as product_2_1_0_, orders0_.order_id as order_id1_1_0_, order1_.id as id1_2_1_, order1_.customer_id as customer3_2_1_, order1_.subtotal as subtotal2_2_1_, customer2_.id as id1_0_2_, customer2_.name as name2_0_2_ from order_products orders0_ inner join orders order1_ on orders0_.order_id=order1_.id left outer join customers customer2_ on order1_.customer_id=customer2_.id where orders0_.product_id=?
+Hibernate: select orders0_.product_id as product_2_1_0_, orders0_.order_id as order_id1_1_0_, order1_.id as id1_2_1_, order1_.customer_id as customer3_2_1_, order1_.subtotal as subtotal2_2_1_, customer2_.id as id1_0_2_, customer2_.name as name2_0_2_ from order_products orders0_ inner join orders order1_ on orders0_.order_id=order1_.id left outer join customers customer2_ on order1_.customer_id=customer2_.id where orders0_.product_id=?
+##teamcity[testFinished timestamp='2017-01-02T04:05:06.789' name='TestHibernate/RetrieveFromAPIAfterInitialCreation/Products' duration='130']
+##teamcity[testStarted timestamp='2017-01-02T04:05:06.789' name='TestHibernate/CreateOrder' captureStandardOutput='true']
+Hibernate: insert into orders (customer_id, subtotal) values (?, ?)
+##teamcity[testFinished timestamp='2017-01-02T04:05:06.789' name='TestHibernate/CreateOrder' duration='40']
+##teamcity[testStarted timestamp='2017-01-02T04:05:06.789' name='TestHibernate/RetrieveFromAPIAfterDependentCreation' captureStandardOutput='true']
+##teamcity[testFinished timestamp='2017-01-02T04:05:06.789' name='TestHibernate/RetrieveFromAPIAfterDependentCreation' duration='0']
+##teamcity[testStarted timestamp='2017-01-02T04:05:06.789' name='TestHibernate/RetrieveFromAPIAfterDependentCreation/Order' captureStandardOutput='true']
+Hibernate: select product0_.id as id1_3_, product0_.name as name2_3_, product0_.price as price3_3_ from products product0_
+Hibernate: select orders0_.product_id as product_2_1_0_, orders0_.order_id as order_id1_1_0_, order1_.id as id1_2_1_, order1_.customer_id as customer3_2_1_, order1_.subtotal as subtotal2_2_1_, customer2_.id as id1_0_2_, customer2_.name as name2_0_2_ from order_products orders0_ inner join orders order1_ on orders0_.order_id=order1_.id left outer join customers customer2_ on order1_.customer_id=customer2_.id where orders0_.product_id=?
+make[1]: Entering directory '/examples-orms/java/hibernate'
+Starting a Gradle Daemon (subsequent builds will be faster)
+:compileJava UP-TO-DATE
+:processResources UP-TO-DATE
+:classes UP-TO-DATE
+:run
+##teamcity[testFinished timestamp='2017-01-02T04:05:06.789' name='TestHibernate/RetrieveFromAPIAfterDependentCreation/Order' duration='10']
+##teamcity[testStarted timestamp='2017-01-02T04:05:06.789' name='TestHibernate/RetrieveFromAPIAfterRestart' captureStandardOutput='true']
+##teamcity[testFinished timestamp='2017-01-02T04:05:06.789' name='TestHibernate/RetrieveFromAPIAfterRestart' duration='0']
+##teamcity[testStarted timestamp='2017-01-02T04:05:06.789' name='TestHibernate/RetrieveFromAPIAfterRestart/Products' captureStandardOutput='true']
+
+Hibernate: select product0_.id as id1_3_, product0_.name as name2_3_, product0_.price as price3_3_ from products product0_
+Hibernate: select product0_.id as id1_3_, product0_.name as name2_3_, product0_.price as price3_3_ from products product0_
+Hibernate: select orders0_.product_id as product_2_1_0_, orders0_.order_id as order_id1_1_0_, order1_.id as id1_2_1_, order1_.customer_id as customer3_2_1_, order1_.subtotal as subtotal2_2_1_, customer2_.id as id1_0_2_, customer2_.name as name2_0_2_ from order_products orders0_ inner join orders order1_ on orders0_.order_id=order1_.id left outer join customers customer2_ on order1_.customer_id=customer2_.id where orders0_.product_id=?
+Hibernate: select orders0_.product_id as product_2_1_0_, orders0_.order_id as order_id1_1_0_, order1_.id as id1_2_1_, order1_.customer_id as customer3_2_1_, order1_.subtotal as subtotal2_2_1_, customer2_.id as id1_0_2_, customer2_.name as name2_0_2_ from order_products orders0_ inner join orders order1_ on orders0_.order_id=order1_.id left outer join customers customer2_ on order1_.customer_id=customer2_.id where orders0_.product_id=?
+Hibernate: select product0_.id as id1_3_, product0_.name as name2_3_, product0_.price as price3_3_ from products product0_
+Hibernate: select orders0_.product_id as product_2_1_0_, orders0_.order_id as order_id1_1_0_, order1_.id as id1_2_1_, order1_.customer_id as customer3_2_1_, order1_.subtotal as subtotal2_2_1_, customer2_.id as id1_0_2_, customer2_.name as name2_0_2_ from order_products orders0_ inner join orders order1_ on orders0_.order_id=order1_.id left outer join customers customer2_ on order1_.customer_id=customer2_.id where orders0_.product_id=?
+##teamcity[testFinished timestamp='2017-01-02T04:05:06.789' name='TestHibernate/RetrieveFromAPIAfterRestart/Products' duration='1640']
+##teamcity[testStarted timestamp='2017-01-02T04:05:06.789' name='TestHibernate/RetrieveFromAPIAfterRestart/Order' captureStandardOutput='true']
+##teamcity[testFinished timestamp='2017-01-02T04:05:06.789' name='TestHibernate/RetrieveFromAPIAfterRestart/Order' duration='1650']
+##teamcity[testStarted timestamp='2017-01-02T04:05:06.789' name='TestHibernate/RetrieveFromAPIAfterRestart/Customers' captureStandardOutput='true']
+##teamcity[testFinished timestamp='2017-01-02T04:05:06.789' name='TestHibernate/RetrieveFromAPIAfterRestart/Customers' duration='30']
+make: Leaving directory '/examples-orms'
+PASS
+ok  	_/examples-orms/testing	53.064s
