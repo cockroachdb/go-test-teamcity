@@ -116,6 +116,13 @@ func processReader(r *bufio.Reader, w io.Writer) {
 			tests[test.Name] = test
 		} else if endOut != nil {
 			test = tests[endOut[3]]
+			if test == nil {
+				test = &Test{
+					Name:  endOut[3],
+					Start: getNow(),
+				}
+				tests[test.Name] = test
+			}
 			prefix = endOut[1] + "\t"
 			test.Status = endOut[2]
 			test.Duration, _ = time.ParseDuration(endOut[4])
