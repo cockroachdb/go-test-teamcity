@@ -128,7 +128,7 @@ func processReader(r *bufio.Reader, w io.Writer) {
 			test.Duration, _ = time.ParseDuration(endOut[4])
 		} else if suiteOut != nil {
 			final += line
-		} else if race.MatchString(line) {
+		} else if test != nil && race.MatchString(line) {
 			test.Race = true
 		} else if test != nil && test.Status != "" && strings.HasPrefix(line, prefix) {
 			line = line[:len(line)-1]
