@@ -1,0 +1,69 @@
+==================
+WARNING: DATA RACE
+Read at 0x00c425eb2020 by goroutine 216:
+  runtime.slicecopy()
+      /usr/local/go/src/runtime/slice.go:160 +0x0
+  encoding/gob.encUint8Array()
+      /usr/local/go/src/encoding/gob/encode.go:55 +0x269
+  encoding/gob.(*Encoder).encodeStruct()
+      /usr/local/go/src/encoding/gob/encode.go:328 +0x3ee
+  encoding/gob.encOpFor.func4()
+      /usr/local/go/src/encoding/gob/encode.go:581 +0xed
+  encoding/gob.(*Encoder).encodeStruct()
+      /usr/local/go/src/encoding/gob/encode.go:328 +0x3ee
+  encoding/gob.encOpFor.func4()
+      /usr/local/go/src/encoding/gob/encode.go:581 +0xed
+  encoding/gob.(*Encoder).encodeArray()
+      /usr/local/go/src/encoding/gob/encode.go:351 +0x313
+  encoding/gob.encOpFor.func1()
+      /usr/local/go/src/encoding/gob/encode.go:551 +0x170
+  encoding/gob.(*Encoder).encodeStruct()
+      /usr/local/go/src/encoding/gob/encode.go:328 +0x3ee
+  encoding/gob.(*Encoder).encode()
+      /usr/local/go/src/encoding/gob/encode.go:701 +0x24e
+  encoding/gob.(*Encoder).EncodeValue()
+      /usr/local/go/src/encoding/gob/encoder.go:250 +0x625
+  encoding/gob.(*Encoder).Encode()
+      /usr/local/go/src/encoding/gob/encoder.go:175 +0x72
+  github.com/cockroachdb/cockroach/pkg/kv.GRPCTransportFactory.func1()
+      /go/src/github.com/cockroachdb/cockroach/pkg/kv/transport_race.go:84 +0x195
+  github.com/cockroachdb/cockroach/pkg/util/stop.(*Stopper).RunAsyncTask.func1()
+      /go/src/github.com/cockroachdb/cockroach/pkg/util/stop/stopper.go:269 +0xf3
+
+Previous write at 0x00c425eb2020 by goroutine 484:
+  [failed to restore the stack]
+
+Goroutine 216 (running) created at:
+  github.com/cockroachdb/cockroach/pkg/util/stop.(*Stopper).RunAsyncTask()
+      /go/src/github.com/cockroachdb/cockroach/pkg/util/stop/stopper.go:264 +0x14c
+  github.com/cockroachdb/cockroach/pkg/kv.GRPCTransportFactory()
+      /go/src/github.com/cockroachdb/cockroach/pkg/kv/transport_race.go:62 +0x32b
+  github.com/cockroachdb/cockroach/pkg/kv.(*DistSender).sendToReplicas()
+      /go/src/github.com/cockroachdb/cockroach/pkg/kv/dist_sender.go:1123 +0x355
+  github.com/cockroachdb/cockroach/pkg/kv.(*DistSender).sendRPC()
+      /go/src/github.com/cockroachdb/cockroach/pkg/kv/dist_sender.go:382 +0x352
+  github.com/cockroachdb/cockroach/pkg/kv.(*DistSender).RangeLookup()
+      /go/src/github.com/cockroachdb/cockroach/pkg/kv/dist_sender.go:299 +0x301
+  github.com/cockroachdb/cockroach/pkg/kv.(*RangeDescriptorCache).performRangeLookup()
+      /go/src/github.com/cockroachdb/cockroach/pkg/kv/range_cache.go:425 +0x4a2
+  github.com/cockroachdb/cockroach/pkg/kv.(*RangeDescriptorCache).lookupRangeDescriptorInternal.func3()
+      /go/src/github.com/cockroachdb/cockroach/pkg/kv/range_cache.go:284 +0x187
+  github.com/cockroachdb/cockroach/pkg/util/syncutil/singleflight.(*Group).doCall()
+      /go/src/github.com/cockroachdb/cockroach/pkg/util/syncutil/singleflight/singleflight.go:101 +0x4c
+
+Goroutine 484 (running) created at:
+  testing.(*B).doBench()
+      /usr/local/go/src/testing/benchmark.go:260 +0x7d
+  testing.(*benchContext).processBench()
+      /usr/local/go/src/testing/benchmark.go:447 +0x302
+  testing.(*B).run()
+      /usr/local/go/src/testing/benchmark.go:251 +0x116
+  testing.(*B).Run()
+      /usr/local/go/src/testing/benchmark.go:514 +0x53c
+  github.com/cockroachdb/cockroach/pkg/ccl/storageccl_test.BenchmarkWriteBatch()
+      /go/src/github.com/cockroachdb/cockroach/pkg/ccl/storageccl/bench_test.go:95 +0x12b
+  testing.(*B).runN()
+      /usr/local/go/src/testing/benchmark.go:141 +0x12a
+  testing.(*B).run1.func1()
+      /usr/local/go/src/testing/benchmark.go:214 +0x6b
+==================
