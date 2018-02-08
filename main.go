@@ -31,10 +31,10 @@ var (
 
 	additionalTestName = ""
 
-	run   = regexp.MustCompile("^=== RUN\\s+([a-zA-Z_]\\S*)")
-	end   = regexp.MustCompile("^(\\s*)--- (PASS|SKIP|FAIL):\\s+([a-zA-Z_]\\S*) \\((-?[\\.\\ds]+)\\)")
-	suite = regexp.MustCompile("^(ok|PASS|FAIL|exit status|Found)")
-	race  = regexp.MustCompile("^WARNING: DATA RACE")
+	run  = regexp.MustCompile("^=== RUN\\s+([a-zA-Z_]\\S*)")
+	end  = regexp.MustCompile("^(\\s*)--- (PASS|SKIP|FAIL):\\s+([a-zA-Z_]\\S*) \\((-?[\\.\\ds]+)\\)")
+	pkg  = regexp.MustCompile("^(ok|PASS|FAIL|exit status|Found)")
+	race = regexp.MustCompile("^WARNING: DATA RACE")
 )
 
 func init() {
@@ -100,9 +100,9 @@ func processReader(r *bufio.Reader, w io.Writer) {
 
 		runOut := run.FindStringSubmatch(line)
 		endOut := end.FindStringSubmatch(line)
-		suiteOut := suite.FindStringSubmatch(line)
+		pkgOut := pkg.FindStringSubmatch(line)
 
-		if test != nil && test.Status != "" && (runOut != nil || endOut != nil || suiteOut != nil) {
+		if test != nil && test.Status != "" && (runOut != nil || endOut != nil || pkgOut != nil) {
 			outputTest(w, test)
 			delete(tests, test.Name)
 			test = nil
@@ -126,7 +126,7 @@ func processReader(r *bufio.Reader, w io.Writer) {
 			prefix = endOut[1] + "\t"
 			test.Status = endOut[2]
 			test.Duration, _ = time.ParseDuration(endOut[4])
-		} else if suiteOut != nil {
+		} else if pkgOut != nil {
 			final += line
 		} else if test != nil && race.MatchString(line) {
 			test.Race = true
