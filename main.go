@@ -23,6 +23,7 @@ type Test struct {
 	Duration time.Duration
 	Status   string
 	Race     bool
+	Suite    bool
 }
 
 var (
@@ -31,10 +32,10 @@ var (
 
 	additionalTestName = ""
 
-	run   = regexp.MustCompile("^=== RUN\\s+([a-zA-Z_]\\S*)")
-	end   = regexp.MustCompile("^(\\s*)--- (PASS|SKIP|FAIL):\\s+([a-zA-Z_]\\S*) \\((-?[\\.\\ds]+)\\)")
-	suite = regexp.MustCompile("^(ok|PASS|FAIL|exit status|Found)")
-	race  = regexp.MustCompile("^WARNING: DATA RACE")
+	run  = regexp.MustCompile("^=== RUN\\s+([a-zA-Z_]\\S*)")
+	end  = regexp.MustCompile("^(\\s*)--- (PASS|SKIP|FAIL):\\s+([a-zA-Z_]\\S*) \\((-?[\\.\\ds]+)\\)")
+	pkg  = regexp.MustCompile("^(ok|PASS|FAIL|exit status|Found)")
+	race = regexp.MustCompile("^WARNING: DATA RACE")
 )
 
 func init() {
@@ -87,9 +88,38 @@ func outputTest(w io.Writer, test *Test) {
 	}
 }
 
+func startSuite(w io.Writer, name string) {
+	fmt.Fprintf(w, "##teamcity[testSuiteStarted name='%s']\n", escape(name))
+}
+
+func finishSuite(w io.Writer, name string) {
+	fmt.Fprintf(w, "##teamcity[testSuiteFinished name='%s']\n", escape(name))
+}
+
+func suite(name string) string {
+	if idx := strings.LastIndex(name, "/"); idx != -1 {
+		return name[:idx]
+	}
+	return ""
+}
+
 func processReader(r *bufio.Reader, w io.Writer) {
-	tests := make(map[string]*Test)
+	tests := map[string]*Test{}
+	suites := []string{}
 	var test *Test
+	newTest := func(name string) *Test {
+		t := &Test{
+			Name:  name,
+			Start: getNow(),
+		}
+		tests[t.Name] = t
+		for n := suite(name); n != ""; n = suite(n) {
+			if p := tests[n]; p != nil {
+				p.Suite = true
+			}
+		}
+		return t
+	}
 	var final string
 	prefix := "\t"
 	for {
@@ -100,33 +130,35 @@ func processReader(r *bufio.Reader, w io.Writer) {
 
 		runOut := run.FindStringSubmatch(line)
 		endOut := end.FindStringSubmatch(line)
-		suiteOut := suite.FindStringSubmatch(line)
+		pkgOut := pkg.FindStringSubmatch(line)
 
-		if test != nil && test.Status != "" && (runOut != nil || endOut != nil || suiteOut != nil) {
+		if test != nil && test.Status != "" && (runOut != nil || endOut != nil || pkgOut != nil) {
+			for j := len(suites) - 1; j >= 0; j-- {
+				if !strings.HasPrefix(test.Name, suites[j]) {
+					finishSuite(w, suites[j])
+					suites = suites[:j]
+				}
+			}
+			if test.Suite {
+				startSuite(w, test.Name)
+				suites = append(suites, test.Name)
+			}
 			outputTest(w, test)
 			delete(tests, test.Name)
 			test = nil
 		}
 
 		if runOut != nil {
-			test = &Test{
-				Name:  runOut[1],
-				Start: getNow(),
-			}
-			tests[test.Name] = test
+			test = newTest(runOut[1])
 		} else if endOut != nil {
 			test = tests[endOut[3]]
 			if test == nil {
-				test = &Test{
-					Name:  endOut[3],
-					Start: getNow(),
-				}
-				tests[test.Name] = test
+				test = newTest(endOut[3])
 			}
 			prefix = endOut[1] + "\t"
 			test.Status = endOut[2]
 			test.Duration, _ = time.ParseDuration(endOut[4])
-		} else if suiteOut != nil {
+		} else if pkgOut != nil {
 			final += line
 		} else if test != nil && race.MatchString(line) {
 			test.Race = true
@@ -143,6 +175,9 @@ func processReader(r *bufio.Reader, w io.Writer) {
 	if test != nil {
 		outputTest(w, test)
 		delete(tests, test.Name)
+	}
+	for j := len(suites) - 1; j >= 0; j-- {
+		finishSuite(w, suites[j])
 	}
 	for _, t := range tests {
 		outputTest(w, t)

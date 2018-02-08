@@ -7,6 +7,7 @@
 === RUN   TestGDA/add/addx1004
 === RUN   TestGDA/add/addx1005
 === RUN   TestGDA/add/addx1006
+=== RUN   TestGDA/add/addx1006/subtest/name/with/slashes/in/it
 --- FAIL: TestGDA (0.13s)
     --- FAIL: TestGDA/add (0.13s)
         --- PASS: TestGDA/add/addx100 (0.00s)
@@ -70,6 +71,7 @@
         	gda_test.go:620: got: 1.524E-80 ({Coeff: 1524, Exponent: -83})
         	gda_test.go:639: unexpected result
         	gda_test.go:464: duration: 113.143µs
+		--- PASS: TestGDA/add/addx1006/subtest/name/with/slashes/in/it (0.01s)
 FAIL
 exit status 1
 FAIL	github.com/cockroachdb/apd	0.138s
