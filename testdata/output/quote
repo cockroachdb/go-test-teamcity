@@ -1,4 +1,5 @@
 I170222 16:43:32.465723 1 rand.go:76  Random seed: 7421160166306389396
+##teamcity[testSuiteStarted name='TestSimplifyExpr']
 ##teamcity[testStarted timestamp='2017-01-02T04:05:06.789' name='TestSimplifyExpr' captureStandardOutput='true']
 ##teamcity[testFinished timestamp='2017-01-02T04:05:06.789' name='TestSimplifyExpr' duration='10']
 ##teamcity[testStarted timestamp='2017-01-02T04:05:06.789' name='TestSimplifyExpr/true~true' captureStandardOutput='true']
@@ -145,5 +146,6 @@ I170222 16:43:32.465723 1 rand.go:76  Random seed: 7421160166306389396
 ##teamcity[testFinished timestamp='2017-01-02T04:05:06.789' name='TestSimplifyExpr/((a_<_0)_AND_(a_<_0_AND_b_>_0))_OR_(a_>_1_AND_a_<_0)~(a_<_0)_AND_(b_>_0)' duration='0']
 ##teamcity[testStarted timestamp='2017-01-02T04:05:06.789' name='TestSimplifyExpr/((a_<_0)_OR_(a_<_0_OR_b_>_0))_AND_(a_>_0_OR_a_<_1)~((a_<_0)_OR_(b_>_0))_AND_(a_IS_NOT_NULL)' captureStandardOutput='true']
 ##teamcity[testFinished timestamp='2017-01-02T04:05:06.789' name='TestSimplifyExpr/((a_<_0)_OR_(a_<_0_OR_b_>_0))_AND_(a_>_0_OR_a_<_1)~((a_<_0)_OR_(b_>_0))_AND_(a_IS_NOT_NULL)' duration='0']
+##teamcity[testSuiteFinished name='TestSimplifyExpr']
 PASS
 ok      github.com/cockroachdb/cockroach/pkg/sql        0.062s
