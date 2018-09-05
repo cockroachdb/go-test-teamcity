@@ -1,17 +1,17 @@
-##teamcity[testStarted timestamp='faketime #00001' name='TestSomething' captureStandardOutput='true']
+##teamcity[testStarted timestamp='faketime #00001' pkg='github.com/garbageday' name='TestSomething' captureStandardOutput='true']
 log output
 ##teamcity[testFinished timestamp='faketime #00002' name='TestSomething' duration='40']
-##teamcity[testStarted timestamp='faketime #00003' name='TestNegativeDuration' captureStandardOutput='true']
+##teamcity[testStarted timestamp='faketime #00003' pkg='github.com/garbageday' name='TestNegativeDuration' captureStandardOutput='true']
 ##teamcity[testFinished timestamp='faketime #00004' name='TestNegativeDuration' duration='-40']
-##teamcity[testStarted timestamp='faketime #00005' name='TestFailWithMessage' captureStandardOutput='true']
+##teamcity[testStarted timestamp='faketime #00005' pkg='github.com/garbageday' name='TestFailWithMessage' captureStandardOutput='true']
 foo
 bar
 baz
 ##teamcity[testFailed timestamp='faketime #00006' name='TestFailWithMessage' details='']
 ##teamcity[testFinished timestamp='faketime #00006' name='TestFailWithMessage' duration='40']
-##teamcity[testStarted timestamp='faketime #00008' name='TestBlah' captureStandardOutput='true']
+##teamcity[testStarted timestamp='faketime #00008' pkg='github.com/garbageday' name='TestBlah' captureStandardOutput='true']
 ##teamcity[testFinished timestamp='faketime #00009' name='TestBlah' duration='3050']
-##teamcity[testStarted timestamp='faketime #00007' name='TestPanic' captureStandardOutput='true']
+##teamcity[testStarted timestamp='faketime #00007' pkg='github.com/garbageday' name='TestPanic' captureStandardOutput='true']
 explode
 ##teamcity[testFailed timestamp='faketime #00010' name='TestPanic' message='Test ended in panic.' details='']
 ##teamcity[testFinished timestamp='faketime #00010' name='TestPanic' duration='0']

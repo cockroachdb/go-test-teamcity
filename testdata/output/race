@@ -1,11 +1,11 @@
-##teamcity[testStarted timestamp='faketime #00001' name='TestConstWithPrecision' captureStandardOutput='true']
+##teamcity[testStarted timestamp='faketime #00001' pkg='github.com/cockroachdb/apd' name='TestConstWithPrecision' captureStandardOutput='true']
 ##teamcity[testFinished timestamp='faketime #00002' name='TestConstWithPrecision' duration='0']
-##teamcity[testStarted timestamp='faketime #00003' name='TestConstBlah' captureStandardOutput='true']
+##teamcity[testStarted timestamp='faketime #00003' pkg='github.com/cockroachdb/apd' name='TestConstBlah' captureStandardOutput='true']
 ##teamcity[testFinished timestamp='faketime #00004' name='TestConstBlah' duration='0']
-##teamcity[testStarted timestamp='faketime #00005' name='TestConstRace' captureStandardOutput='true']
+##teamcity[testStarted timestamp='faketime #00005' pkg='github.com/cockroachdb/apd' name='TestConstRace' captureStandardOutput='true']
 ##teamcity[testFinished timestamp='faketime #00006' name='TestConstRace' duration='0']
 ##teamcity[testSuiteStarted name='TestConstSub']
-##teamcity[testStarted timestamp='faketime #00007' name='TestConstSub' captureStandardOutput='true']
+##teamcity[testStarted timestamp='faketime #00007' pkg='github.com/cockroachdb/apd' name='TestConstSub' captureStandardOutput='true']
 ==================
 Write at 0x00c42007bdf0 by goroutine 9:
   github.com/cockroachdb/apd.TestConstRace.func1()
@@ -39,7 +39,7 @@ Goroutine 8 (finished) created at:
 ==================
 ##teamcity[testFailed timestamp='faketime #00009' name='TestConstSub' message='Race detected!' details='']
 ##teamcity[testFinished timestamp='faketime #00009' name='TestConstSub' duration='0']
-##teamcity[testStarted timestamp='faketime #00008' name='TestConstSub/subtest' captureStandardOutput='true']
+##teamcity[testStarted timestamp='faketime #00008' pkg='github.com/cockroachdb/apd' name='TestConstSub/subtest' captureStandardOutput='true']
 ##teamcity[testFinished timestamp='faketime #00010' name='TestConstSub/subtest' duration='0']
 ##teamcity[testSuiteFinished name='TestConstSub']
 PASS
