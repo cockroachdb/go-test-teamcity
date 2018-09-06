@@ -12,18 +12,26 @@ import (
 )
 
 const (
-	TEAMCITY_TIMESTAMP_FORMAT = "2006-01-02T15:04:05.000"
+	teamCityTimestampFormat = "2006-01-02T15:04:05.000"
 )
 
+// A Test represents a Go test result.
 type Test struct {
-	Start    string
-	Name     string
-	Output   string
-	Details  []string
-	Duration time.Duration
-	Status   string
-	Race     bool
-	Suite    bool
+	// StringOutput is a mock test that when output simply prints the given string.
+	// For such a Test, everything else is assumed zero.
+	StringOutput string
+
+	// An actual test.
+	Start, End string
+	Name       string
+	Output     string
+	Details    []string
+	Duration   time.Duration
+	Status     string
+	Race       bool
+	Suite      bool
+
+	Pkg string
 }
 
 var (
@@ -32,10 +40,11 @@ var (
 
 	additionalTestName = ""
 
-	run  = regexp.MustCompile("^=== RUN\\s+([a-zA-Z_]\\S*)")
-	end  = regexp.MustCompile("^(\\s*)--- (PASS|SKIP|FAIL):\\s+([a-zA-Z_]\\S*) \\((-?[\\.\\ds]+)\\)")
-	pkg  = regexp.MustCompile("^(ok|PASS|FAIL|exit status|Found)")
-	race = regexp.MustCompile("^WARNING: DATA RACE")
+	run    = regexp.MustCompile("^=== RUN\\s+([a-zA-Z_]\\S*)")
+	end    = regexp.MustCompile("^(\\s*)--- (PASS|SKIP|FAIL):\\s+([a-zA-Z_]\\S*) \\((-?[\\.\\ds]+)\\)")
+	ending = regexp.MustCompile(`^PASS|FAIL|exit status|Found \d+ data race|coverage:`)
+	pkg    = regexp.MustCompile(`^(?:ok|FAIL)\s+([a-z][^\s]*)`)
+	race   = regexp.MustCompile("^WARNING: DATA RACE")
 )
 
 func init() {
@@ -56,44 +65,54 @@ func escape(s string) string {
 	return s
 }
 
-func getNow() string {
-	return time.Now().Format(TEAMCITY_TIMESTAMP_FORMAT)
+var getNow = func() string {
+	return time.Now().Format(teamCityTimestampFormat)
 }
 
-func outputTest(w io.Writer, test *Test) {
-	now := getNow()
+type printer interface {
+	WriteTo(pkg string)
+}
+
+func outputTest(w io.Writer, test *Test, pkg string) {
+	if test.Pkg != "" {
+		pkg = test.Pkg
+	}
+	if test.StringOutput != "" {
+		fmt.Fprint(w, test.StringOutput)
+		return
+	}
 	testName := escape(additionalTestName + test.Name)
-	fmt.Fprintf(w, "##teamcity[testStarted timestamp='%s' name='%s' captureStandardOutput='true']\n", test.Start, testName)
+	fmt.Fprintf(w, "##teamcity[testStarted timestamp='%s' pkg='%s' name='%s' captureStandardOutput='true']\n", test.Start, pkg, testName)
 	fmt.Fprint(w, test.Output)
 	if test.Status == "SKIP" {
-		fmt.Fprintf(w, "##teamcity[testIgnored timestamp='%s' name='%s']\n", now, testName)
+		fmt.Fprintf(w, "##teamcity[testIgnored timestamp='%s' name='%s']\n", test.End, testName)
 	} else {
 		if test.Race {
 			fmt.Fprintf(w, "##teamcity[testFailed timestamp='%s' name='%s' message='Race detected!' details='%s']\n",
-				now, testName, escapeLines(test.Details))
+				test.End, testName, escapeLines(test.Details))
 		} else {
 			switch test.Status {
 			case "FAIL":
 				fmt.Fprintf(w, "##teamcity[testFailed timestamp='%s' name='%s' details='%s']\n",
-					now, testName, escapeLines(test.Details))
+					test.End, testName, escapeLines(test.Details))
 			case "PASS":
 				// ignore
 			default:
 				fmt.Fprintf(w, "##teamcity[testFailed timestamp='%s' name='%s' message='Test ended in panic.' details='%s']\n",
-					now, testName, escapeLines(test.Details))
+					test.End, testName, escapeLines(test.Details))
 			}
 		}
 		fmt.Fprintf(w, "##teamcity[testFinished timestamp='%s' name='%s' duration='%d']\n",
-			now, testName, test.Duration/time.Millisecond)
+			test.End, testName, test.Duration/time.Millisecond)
 	}
 }
 
-func startSuite(w io.Writer, name string) {
-	fmt.Fprintf(w, "##teamcity[testSuiteStarted name='%s']\n", escape(name))
+func startSuite(name string) *Test {
+	return &Test{StringOutput: fmt.Sprintf("##teamcity[testSuiteStarted name='%s']\n", escape(name))}
 }
 
-func finishSuite(w io.Writer, name string) {
-	fmt.Fprintf(w, "##teamcity[testSuiteFinished name='%s']\n", escape(name))
+func finishSuite(name string) *Test {
+	return &Test{StringOutput: fmt.Sprintf("##teamcity[testSuiteFinished name='%s']\n", escape(name))}
 }
 
 func suite(name string) string {
@@ -104,6 +123,8 @@ func suite(name string) string {
 }
 
 func processReader(r *bufio.Reader, w io.Writer) {
+	var staged []*Test // output when pkg finishes
+
 	tests := map[string]*Test{}
 	suites := []string{}
 	var test *Test
@@ -131,19 +152,20 @@ func processReader(r *bufio.Reader, w io.Writer) {
 		runOut := run.FindStringSubmatch(line)
 		endOut := end.FindStringSubmatch(line)
 		pkgOut := pkg.FindStringSubmatch(line)
+		endingOut := ending.FindStringSubmatch(line)
 
 		if test != nil && test.Status != "" && (runOut != nil || endOut != nil || pkgOut != nil) {
 			for j := len(suites) - 1; j >= 0; j-- {
 				if !strings.HasPrefix(test.Name, suites[j]) {
-					finishSuite(w, suites[j])
 					suites = suites[:j]
 				}
 			}
 			if test.Suite {
-				startSuite(w, test.Name)
+				staged = append(staged, startSuite(test.Name))
 				suites = append(suites, test.Name)
 			}
-			outputTest(w, test)
+			test.End = getNow()
+			staged = append(staged, test)
 			delete(tests, test.Name)
 			test = nil
 		}
@@ -159,6 +181,18 @@ func processReader(r *bufio.Reader, w io.Writer) {
 			test.Status = endOut[2]
 			test.Duration, _ = time.ParseDuration(endOut[4])
 		} else if pkgOut != nil {
+			for _, test := range staged {
+				outputTest(w, test, pkgOut[1])
+			}
+			for _, test := range tests {
+				// These tests haven't officially terminated yet (panic?), so
+				// we can't output them yet. Instead, store the package in them
+				// (which will override the package supplied to outputTest).
+				test.Pkg = pkgOut[1]
+			}
+			staged = nil
+			final += line
+		} else if endingOut != nil {
 			final += line
 		} else if test != nil && race.MatchString(line) {
 			test.Race = true
@@ -169,18 +203,23 @@ func processReader(r *bufio.Reader, w io.Writer) {
 		} else if test != nil {
 			test.Output += line
 		} else {
-			fmt.Fprint(w, line)
+			staged = append(staged, &Test{StringOutput: line})
 		}
 	}
+	for _, test := range staged {
+		outputTest(w, test, "unknown")
+	}
 	if test != nil {
-		outputTest(w, test)
+		test.End = getNow()
+		outputTest(w, test, "unknown")
 		delete(tests, test.Name)
 	}
 	for j := len(suites) - 1; j >= 0; j-- {
-		finishSuite(w, suites[j])
+		outputTest(w, finishSuite(suites[j]), "irrelevant")
 	}
-	for _, t := range tests {
-		outputTest(w, t)
+	for _, test := range tests {
+		test.End = getNow()
+		outputTest(w, test, "unknown")
 	}
 
 	fmt.Fprint(w, final)
