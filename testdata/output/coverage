@@ -1,10 +1,10 @@
-##teamcity[testStarted timestamp='faketime #00001' name='TestGC' captureStandardOutput='true']
+##teamcity[testStarted timestamp='2017-01-02T04:05:06.789' name='TestGC' captureStandardOutput='true']
 E170508 17:54:18.682162 88 util/log/clog_test.go:697  test2
-##teamcity[testFailed timestamp='faketime #00002' name='TestGC' details='test_log_scope.go:80: test logs captured to: /go/src/github.com/cockroachdb/cockroach/artifacts/logTestGC367962640|nclog_test.go:581: expected 2 files, but found 1']
-##teamcity[testFinished timestamp='faketime #00002' name='TestGC' duration='320']
+##teamcity[testFailed timestamp='2017-01-02T04:05:06.789' name='TestGC' details='test_log_scope.go:80: test logs captured to: /go/src/github.com/cockroachdb/cockroach/artifacts/logTestGC367962640|nclog_test.go:581: expected 2 files, but found 1']
+##teamcity[testFinished timestamp='2017-01-02T04:05:06.789' name='TestGC' duration='320']
+coverage: 22.0% of statements in github.com/cockroachdb/cockroach/pkg/util/humanizeutil, github.com/cockroachdb/cockroach/pkg/util/syncutil
 Makefile:193: recipe for target 'test' failed
 make[1]: Leaving directory '/go/src/github.com/cockroachdb/cockroach'
 Makefile:228: recipe for target 'upload-coverage' failed
 FAIL
-coverage: 22.0% of statements in github.com/cockroachdb/cockroach/pkg/util/humanizeutil, github.com/cockroachdb/cockroach/pkg/util/syncutil
 FAIL	github.com/cockroachdb/cockroach/pkg/util/log	0.436s
