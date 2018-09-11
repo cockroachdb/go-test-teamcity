@@ -1,17 +1,17 @@
-##teamcity[testStarted timestamp='faketime #00001' pkg='github.com/cockroachdb/apd' name='TestConstWithPrecision' captureStandardOutput='true']
+##teamcity[testStarted timestamp='faketime #00001' name='TestConstWithPrecision' captureStandardOutput='true']
 OUT
 PUT
 ##teamcity[testFinished timestamp='faketime #00002' name='TestConstWithPrecision' duration='1000']
-##teamcity[testStarted timestamp='faketime #00003' pkg='github.com/cockroachdb/apd' name='TestConstBlah' captureStandardOutput='true']
+##teamcity[testStarted timestamp='faketime #00003' name='TestConstBlah' captureStandardOutput='true']
 ##teamcity[testFinished timestamp='faketime #00004' name='TestConstBlah' duration='200']
-##teamcity[testStarted timestamp='faketime #00005' pkg='github.com/cockroachdb/apd' name='TestConstError' captureStandardOutput='true']
+##teamcity[testStarted timestamp='faketime #00005' name='TestConstError' captureStandardOutput='true']
 TEST
 ##teamcity[testFailed timestamp='faketime #00006' name='TestConstError' details='const_test.go:56: nope']
 ##teamcity[testFinished timestamp='faketime #00006' name='TestConstError' duration='30']
 ##teamcity[testSuiteStarted name='TestConstSub']
-##teamcity[testStarted timestamp='faketime #00007' pkg='github.com/cockroachdb/apd' name='TestConstSub' captureStandardOutput='true']
+##teamcity[testStarted timestamp='faketime #00007' name='TestConstSub' captureStandardOutput='true']
 ##teamcity[testFinished timestamp='faketime #00009' name='TestConstSub' duration='450']
-##teamcity[testStarted timestamp='faketime #00008' pkg='github.com/cockroachdb/apd' name='TestConstSub/subtest' captureStandardOutput='true']
+##teamcity[testStarted timestamp='faketime #00008' name='TestConstSub/subtest' captureStandardOutput='true']
 SUBTEST
 ##teamcity[testFinished timestamp='faketime #00010' name='TestConstSub/subtest' duration='0']
 ##teamcity[testSuiteFinished name='TestConstSub']

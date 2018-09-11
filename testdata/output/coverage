@@ -1,4 +1,4 @@
-##teamcity[testStarted timestamp='faketime #00001' pkg='github.com/cockroachdb/cockroach/pkg/util/log' name='TestGC' captureStandardOutput='true']
+##teamcity[testStarted timestamp='faketime #00001' name='TestGC' captureStandardOutput='true']
 E170508 17:54:18.682162 88 util/log/clog_test.go:697  test2
 ##teamcity[testFailed timestamp='faketime #00002' name='TestGC' details='test_log_scope.go:80: test logs captured to: /go/src/github.com/cockroachdb/cockroach/artifacts/logTestGC367962640|nclog_test.go:581: expected 2 files, but found 1']
 ##teamcity[testFinished timestamp='faketime #00002' name='TestGC' duration='320']

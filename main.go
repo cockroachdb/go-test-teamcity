@@ -82,7 +82,9 @@ func outputTest(w io.Writer, test *Test, pkg string) {
 		return
 	}
 	testName := escape(additionalTestName + test.Name)
-	fmt.Fprintf(w, "##teamcity[testStarted timestamp='%s' pkg='%s' name='%s' captureStandardOutput='true']\n", test.Start, pkg, testName)
+	// TODO(tschottdorf): output the package.
+	// fmt.Fprintf(w, "##teamcity[testStarted timestamp='%s' pkg='%s' name='%s' captureStandardOutput='true']\n", test.Start, pkg, testName)
+	fmt.Fprintf(w, "##teamcity[testStarted timestamp='%s' name='%s' captureStandardOutput='true']\n", test.Start, testName)
 	fmt.Fprint(w, test.Output)
 	if test.Status == "SKIP" {
 		fmt.Fprintf(w, "##teamcity[testIgnored timestamp='%s' name='%s']\n", test.End, testName)
