@@ -1,0 +1,402 @@
+build/builder.sh env TZ=America/New_York COCKROACH_FAILSUITE=true make test PKG=./pkg/util/failsuite/... TESTFLAGS=-v -json
+GOPATH set to /go
+github.com/cockroachdb/cockroach/vendor/github.com/grpc-ecosystem/grpc-gateway/utilities
+github.com/cockroachdb/cockroach/vendor/github.com/armon/go-radix
+github.com/cockroachdb/cockroach/vendor/github.com/golang/dep/gps/paths
+github.com/cockroachdb/cockroach/vendor/github.com/cockroachdb/ttycolor
+github.com/cockroachdb/cockroach/vendor/github.com/cockroachdb/gostdlib/x/tools/internal/fastwalk
+github.com/cockroachdb/cockroach/vendor/golang.org/x/tools/go/ast/astutil
+github.com/cockroachdb/cockroach/vendor/github.com/cockroachdb/gostdlib/go/printer
+github.com/cockroachdb/cockroach/vendor/github.com/cockroachdb/stress
+github.com/cockroachdb/cockroach/vendor/github.com/client9/misspell
+github.com/cockroachdb/cockroach/vendor/github.com/Masterminds/semver
+github.com/cockroachdb/cockroach/vendor/github.com/Masterminds/vcs
+github.com/cockroachdb/cockroach/vendor/github.com/boltdb/bolt
+github.com/cockroachdb/cockroach/vendor/github.com/golang/protobuf/proto
+github.com/cockroachdb/cockroach/vendor/golang.org/x/tools/imports
+github.com/cockroachdb/cockroach/vendor/github.com/cockroachdb/gostdlib/cmd/gofmt
+github.com/cockroachdb/cockroach/vendor/github.com/cockroachdb/gostdlib/go/format
+github.com/cockroachdb/cockroach/vendor/github.com/golang/dep/gps/pkgtree
+github.com/cockroachdb/cockroach/vendor/github.com/cockroachdb/gostdlib/x/tools/imports
+github.com/cockroachdb/cockroach/vendor/github.com/pkg/errors
+github.com/cockroachdb/cockroach/vendor/github.com/golang/dep/internal/fs
+github.com/cockroachdb/cockroach/vendor/github.com/jmank88/nuts
+github.com/cockroachdb/cockroach/vendor/github.com/nightlyone/lockfile
+github.com/cockroachdb/cockroach/vendor/github.com/sdboyer/constext
+github.com/cockroachdb/cockroach/vendor/golang.org/x/net/context
+github.com/cockroachdb/cockroach/vendor/github.com/pelletier/go-toml
+github.com/cockroachdb/cockroach/vendor/golang.org/x/sync/errgroup
+github.com/cockroachdb/cockroach/vendor/gopkg.in/yaml.v2
+github.com/cockroachdb/cockroach/vendor/golang.org/x/tools/go/gcimporter15
+github.com/cockroachdb/cockroach/vendor/github.com/cockroachdb/crlfmt
+github.com/cockroachdb/cockroach/vendor/github.com/client9/misspell/cmd/misspell
+github.com/cockroachdb/cockroach/vendor/github.com/golang/glog
+github.com/cockroachdb/cockroach/vendor/github.com/cockroachdb/gostdlib/x/tools/cmd/goimports
+github.com/cockroachdb/cockroach/vendor/github.com/golang/dep/gps/internal/pb
+github.com/cockroachdb/cockroach/vendor/golang.org/x/tools/go/gcexportdata
+github.com/cockroachdb/cockroach/vendor/github.com/golang/protobuf/protoc-gen-go/descriptor
+github.com/cockroachdb/cockroach/vendor/github.com/golang/lint
+github.com/cockroachdb/cockroach/vendor/github.com/golang/dep/gps
+github.com/cockroachdb/cockroach/vendor/github.com/golang/protobuf/protoc-gen-go/generator/internal/remap
+github.com/cockroachdb/cockroach/vendor/github.com/grpc-ecosystem/grpc-gateway/protoc-gen-grpc-gateway/httprule
+github.com/cockroachdb/cockroach/vendor/github.com/jteeuwen/go-bindata
+github.com/cockroachdb/cockroach/vendor/github.com/golang/lint/golint
+github.com/cockroachdb/cockroach/vendor/golang.org/x/tools/go/buildutil
+github.com/cockroachdb/cockroach/vendor/github.com/golang/protobuf/protoc-gen-go/plugin
+github.com/cockroachdb/cockroach/vendor/google.golang.org/genproto/googleapis/api/annotations
+github.com/cockroachdb/cockroach/vendor/github.com/jteeuwen/go-bindata/go-bindata
+github.com/cockroachdb/cockroach/vendor/github.com/golang/protobuf/protoc-gen-go/generator
+github.com/cockroachdb/cockroach/vendor/golang.org/x/tools/go/loader
+github.com/cockroachdb/cockroach/vendor/github.com/kisielk/gotool/internal/load
+github.com/cockroachdb/cockroach/vendor/golang.org/x/tools/cover
+github.com/cockroachdb/cockroach/vendor/github.com/kisielk/gotool
+github.com/cockroachdb/cockroach/vendor/github.com/mibk/dupl/suffixtree
+github.com/cockroachdb/cockroach/vendor/github.com/mattn/goveralls
+github.com/cockroachdb/cockroach/vendor/github.com/kisielk/errcheck/internal/errcheck
+github.com/cockroachdb/cockroach/vendor/github.com/mibk/dupl/syntax
+github.com/cockroachdb/cockroach/vendor/github.com/mibk/dupl/syntax/golang
+github.com/cockroachdb/cockroach/vendor/github.com/mibk/dupl/output
+github.com/cockroachdb/cockroach/vendor/github.com/kisielk/errcheck
+github.com/cockroachdb/cockroach/vendor/github.com/mibk/dupl/job
+github.com/cockroachdb/cockroach/vendor/github.com/wadey/gocovmerge
+github.com/cockroachdb/cockroach/vendor/github.com/mibk/dupl
+github.com/cockroachdb/cockroach/vendor/golang.org/x/perf/internal/stats
+github.com/cockroachdb/cockroach/vendor/golang.org/x/perf/storage/benchfmt
+github.com/cockroachdb/cockroach/vendor/golang.org/x/tools/cmd/goyacc
+github.com/cockroachdb/cockroach/vendor/github.com/grpc-ecosystem/grpc-gateway/protoc-gen-grpc-gateway/descriptor
+github.com/cockroachdb/cockroach/vendor/golang.org/x/perf/benchstat
+github.com/cockroachdb/cockroach/vendor/github.com/golang/dep/gps/verify
+github.com/cockroachdb/cockroach/vendor/github.com/golang/dep/internal/feedback
+github.com/cockroachdb/cockroach/vendor/golang.org/x/perf/cmd/benchstat
+github.com/cockroachdb/cockroach/vendor/golang.org/x/tools/cmd/stringer
+github.com/cockroachdb/cockroach/vendor/github.com/golang/dep
+github.com/cockroachdb/cockroach/vendor/github.com/grpc-ecosystem/grpc-gateway/protoc-gen-grpc-gateway/generator
+github.com/cockroachdb/cockroach/vendor/github.com/grpc-ecosystem/grpc-gateway/protoc-gen-grpc-gateway/gengateway
+github.com/cockroachdb/cockroach/vendor/github.com/grpc-ecosystem/grpc-gateway/protoc-gen-grpc-gateway
+github.com/cockroachdb/cockroach/vendor/github.com/golang/dep/internal/importers/base
+github.com/cockroachdb/cockroach/vendor/github.com/golang/dep/internal/importers/glide
+github.com/cockroachdb/cockroach/vendor/github.com/golang/dep/internal/importers/glock
+github.com/cockroachdb/cockroach/vendor/github.com/golang/dep/internal/importers/govendor
+github.com/cockroachdb/cockroach/vendor/github.com/golang/dep/internal/importers/govend
+github.com/cockroachdb/cockroach/vendor/github.com/golang/dep/internal/importers/godep
+github.com/cockroachdb/cockroach/vendor/github.com/golang/dep/internal/importers/gvt
+github.com/cockroachdb/cockroach/vendor/github.com/golang/dep/internal/importers/vndr
+github.com/cockroachdb/cockroach/vendor/github.com/golang/dep/internal/importers
+github.com/cockroachdb/cockroach/vendor/github.com/golang/dep/cmd/dep
+touch bin/.bootstrap
+go install -v protoc-gen-gogoroach
+bin/prereqs ./pkg/cmd/protoc-gen-gogoroach > bin/protoc-gen-gogoroach.d.tmp
+mv -f bin/protoc-gen-gogoroach.d.tmp bin/protoc-gen-gogoroach.d
+github.com/cockroachdb/cockroach/vendor/github.com/gogo/protobuf/proto
+github.com/cockroachdb/cockroach/vendor/github.com/gogo/protobuf/protoc-gen-gogo/descriptor
+github.com/cockroachdb/cockroach/vendor/github.com/gogo/protobuf/protoc-gen-gogo/plugin
+github.com/cockroachdb/cockroach/vendor/github.com/gogo/protobuf/gogoproto
+github.com/cockroachdb/cockroach/vendor/github.com/gogo/protobuf/vanity
+github.com/cockroachdb/cockroach/vendor/github.com/gogo/protobuf/protoc-gen-gogo/generator
+github.com/cockroachdb/cockroach/vendor/github.com/gogo/protobuf/plugin/defaultcheck
+github.com/cockroachdb/cockroach/vendor/github.com/gogo/protobuf/plugin/testgen
+github.com/cockroachdb/cockroach/vendor/github.com/gogo/protobuf/plugin/unmarshal
+github.com/cockroachdb/cockroach/vendor/github.com/gogo/protobuf/plugin/marshalto
+github.com/cockroachdb/cockroach/vendor/github.com/gogo/protobuf/plugin/embedcheck
+github.com/cockroachdb/cockroach/vendor/github.com/gogo/protobuf/plugin/enumstringer
+github.com/cockroachdb/cockroach/vendor/github.com/gogo/protobuf/plugin/oneofcheck
+github.com/cockroachdb/cockroach/vendor/github.com/gogo/protobuf/plugin/populate
+github.com/cockroachdb/cockroach/vendor/github.com/gogo/protobuf/protoc-gen-gogo/grpc
+github.com/cockroachdb/cockroach/vendor/github.com/gogo/protobuf/plugin/description
+github.com/cockroachdb/cockroach/vendor/github.com/gogo/protobuf/plugin/compare
+github.com/cockroachdb/cockroach/vendor/github.com/gogo/protobuf/plugin/face
+github.com/cockroachdb/cockroach/vendor/github.com/gogo/protobuf/plugin/gostring
+github.com/cockroachdb/cockroach/vendor/github.com/gogo/protobuf/plugin/equal
+github.com/cockroachdb/cockroach/vendor/github.com/gogo/protobuf/plugin/size
+github.com/cockroachdb/cockroach/vendor/github.com/gogo/protobuf/plugin/stringer
+github.com/cockroachdb/cockroach/vendor/github.com/gogo/protobuf/plugin/union
+github.com/cockroachdb/cockroach/vendor/github.com/gogo/protobuf/vanity/command
+github.com/cockroachdb/cockroach/pkg/cmd/protoc-gen-gogoroach
+find ./pkg -name node_modules -prune -o -type f -name '*.pb.go' -exec rm {} +
+set -e; for dir in ./pkg/acceptance/cluster/ ./pkg/build/ ./pkg/ccl/backupccl/ ./pkg/ccl/baseccl/ ./pkg/ccl/storageccl/engineccl/enginepbccl/ ./pkg/ccl/utilccl/licenseccl/ ./pkg/config/ ./pkg/gossip/ ./pkg/internal/client/ ./pkg/jobs/jobspb/ ./pkg/roachpb/ ./pkg/rpc/ ./pkg/server/diagnosticspb/ ./pkg/server/serverpb/ ./pkg/server/status/ ./pkg/settings/cluster/ ./pkg/sql/distsqlrun/ ./pkg/sql/pgwire/pgerror/ ./pkg/sql/sqlbase/ ./pkg/sql/stats/ ./pkg/storage/ ./pkg/storage/closedts/ctpb/ ./pkg/storage/engine/enginepb/ ./pkg/storage/storagebase/ ./pkg/ts/tspb/ ./pkg/util/ ./pkg/util/hlc/ ./pkg/util/log/ ./pkg/util/metric/ ./pkg/util/protoutil/ ./pkg/util/tracing/; do \
+build/werror.sh /go/native/x86_64-pc-linux-gnu/protobuf/protoc -Ipkg:./vendor/github.com:./vendor/github.com/gogo/protobuf:./vendor/github.com/gogo/protobuf/protobuf:./vendor/go.etcd.io:./vendor/github.com/grpc-ecosystem/grpc-gateway/third_party/googleapis --gogoroach_out=Mgoogle/api/annotations.proto=github.com/grpc-ecosystem/grpc-gateway/third_party/googleapis/google/api,Mgoogle/protobuf/timestamp.proto=github.com/gogo/protobuf/types,Mgoogle/protobuf/any.proto=github.com/gogo/protobuf/types,,plugins=grpc,import_prefix=github.com/cockroachdb/cockroach/pkg/:./pkg $dir/*.proto; \
+done
+sed -i '/import _/d' ./pkg/acceptance/cluster/testconfig.pb.go ./pkg/build/info.pb.go ./pkg/ccl/backupccl/backup.pb.go ./pkg/ccl/baseccl/encryption_options.pb.go ./pkg/ccl/storageccl/engineccl/enginepbccl/key_registry.pb.go ./pkg/ccl/storageccl/engineccl/enginepbccl/stats.pb.go ./pkg/ccl/utilccl/licenseccl/license.pb.go ./pkg/config/system.pb.go ./pkg/config/zone.pb.go ./pkg/gossip/gossip.pb.go ./pkg/internal/client/lease.pb.go ./pkg/jobs/jobspb/jobs.pb.go ./pkg/roachpb/api.pb.go ./pkg/roachpb/app_stats.pb.go ./pkg/roachpb/data.pb.go ./pkg/roachpb/errors.pb.go ./pkg/roachpb/internal.pb.go ./pkg/roachpb/internal_raft.pb.go ./pkg/roachpb/io-formats.pb.go ./pkg/roachpb/metadata.pb.go ./pkg/rpc/heartbeat.pb.go ./pkg/server/diagnosticspb/diagnostics.pb.go ./pkg/server/serverpb/admin.pb.go ./pkg/server/serverpb/authentication.pb.go ./pkg/server/serverpb/init.pb.go ./pkg/server/serverpb/status.pb.go ./pkg/server/status/status.pb.go ./pkg/settings/cluster/cluster_version.pb.go ./pkg/sql/distsqlrun/api.pb.go ./pkg/sql/distsqlrun/data.pb.go ./pkg/sql/distsqlrun/processors.pb.go ./pkg/sql/distsqlrun/stats.pb.go ./pkg/sql/pgwire/pgerror/errors.pb.go ./pkg/sql/sqlbase/encoded_datum.pb.go ./pkg/sql/sqlbase/join_type.pb.go ./pkg/sql/sqlbase/privilege.pb.go ./pkg/sql/sqlbase/structured.pb.go ./pkg/sql/stats/histogram.pb.go ./pkg/storage/api.pb.go ./pkg/storage/closedts/ctpb/entry.pb.go ./pkg/storage/engine/enginepb/file_registry.pb.go ./pkg/storage/engine/enginepb/mvcc.pb.go ./pkg/storage/engine/enginepb/mvcc3.pb.go ./pkg/storage/engine/enginepb/rocksdb.pb.go ./pkg/storage/lease_status.pb.go ./pkg/storage/liveness.pb.go ./pkg/storage/log.pb.go ./pkg/storage/raft.pb.go ./pkg/storage/storagebase/proposer_kv.pb.go ./pkg/storage/storagebase/state.pb.go ./pkg/ts/tspb/timeseries.pb.go ./pkg/util/hlc/legacy_timestamp.pb.go ./pkg/util/hlc/timestamp.pb.go ./pkg/util/log/log.pb.go ./pkg/util/metric/metric.pb.go ./pkg/util/protoutil/clone.pb.go ./pkg/util/tracing/recorded_span.pb.go ./pkg/util/unresolved_addr.pb.go
+sed -i -E 's!import (fmt|math) "github.com/cockroachdb/cockroach/pkg/(fmt|math)"! !g' ./pkg/acceptance/cluster/testconfig.pb.go ./pkg/build/info.pb.go ./pkg/ccl/backupccl/backup.pb.go ./pkg/ccl/baseccl/encryption_options.pb.go ./pkg/ccl/storageccl/engineccl/enginepbccl/key_registry.pb.go ./pkg/ccl/storageccl/engineccl/enginepbccl/stats.pb.go ./pkg/ccl/utilccl/licenseccl/license.pb.go ./pkg/config/system.pb.go ./pkg/config/zone.pb.go ./pkg/gossip/gossip.pb.go ./pkg/internal/client/lease.pb.go ./pkg/jobs/jobspb/jobs.pb.go ./pkg/roachpb/api.pb.go ./pkg/roachpb/app_stats.pb.go ./pkg/roachpb/data.pb.go ./pkg/roachpb/errors.pb.go ./pkg/roachpb/internal.pb.go ./pkg/roachpb/internal_raft.pb.go ./pkg/roachpb/io-formats.pb.go ./pkg/roachpb/metadata.pb.go ./pkg/rpc/heartbeat.pb.go ./pkg/server/diagnosticspb/diagnostics.pb.go ./pkg/server/serverpb/admin.pb.go ./pkg/server/serverpb/authentication.pb.go ./pkg/server/serverpb/init.pb.go ./pkg/server/serverpb/status.pb.go ./pkg/server/status/status.pb.go ./pkg/settings/cluster/cluster_version.pb.go ./pkg/sql/distsqlrun/api.pb.go ./pkg/sql/distsqlrun/data.pb.go ./pkg/sql/distsqlrun/processors.pb.go ./pkg/sql/distsqlrun/stats.pb.go ./pkg/sql/pgwire/pgerror/errors.pb.go ./pkg/sql/sqlbase/encoded_datum.pb.go ./pkg/sql/sqlbase/join_type.pb.go ./pkg/sql/sqlbase/privilege.pb.go ./pkg/sql/sqlbase/structured.pb.go ./pkg/sql/stats/histogram.pb.go ./pkg/storage/api.pb.go ./pkg/storage/closedts/ctpb/entry.pb.go ./pkg/storage/engine/enginepb/file_registry.pb.go ./pkg/storage/engine/enginepb/mvcc.pb.go ./pkg/storage/engine/enginepb/mvcc3.pb.go ./pkg/storage/engine/enginepb/rocksdb.pb.go ./pkg/storage/lease_status.pb.go ./pkg/storage/liveness.pb.go ./pkg/storage/log.pb.go ./pkg/storage/raft.pb.go ./pkg/storage/storagebase/proposer_kv.pb.go ./pkg/storage/storagebase/state.pb.go ./pkg/ts/tspb/timeseries.pb.go ./pkg/util/hlc/legacy_timestamp.pb.go ./pkg/util/hlc/timestamp.pb.go ./pkg/util/log/log.pb.go ./pkg/util/metric/metric.pb.go ./pkg/util/protoutil/clone.pb.go ./pkg/util/tracing/recorded_span.pb.go ./pkg/util/unresolved_addr.pb.go
+sed -i -E 's!github\.com/cockroachdb/cockroach/pkg/(etcd)!go.etcd.io/\1!g' ./pkg/acceptance/cluster/testconfig.pb.go ./pkg/build/info.pb.go ./pkg/ccl/backupccl/backup.pb.go ./pkg/ccl/baseccl/encryption_options.pb.go ./pkg/ccl/storageccl/engineccl/enginepbccl/key_registry.pb.go ./pkg/ccl/storageccl/engineccl/enginepbccl/stats.pb.go ./pkg/ccl/utilccl/licenseccl/license.pb.go ./pkg/config/system.pb.go ./pkg/config/zone.pb.go ./pkg/gossip/gossip.pb.go ./pkg/internal/client/lease.pb.go ./pkg/jobs/jobspb/jobs.pb.go ./pkg/roachpb/api.pb.go ./pkg/roachpb/app_stats.pb.go ./pkg/roachpb/data.pb.go ./pkg/roachpb/errors.pb.go ./pkg/roachpb/internal.pb.go ./pkg/roachpb/internal_raft.pb.go ./pkg/roachpb/io-formats.pb.go ./pkg/roachpb/metadata.pb.go ./pkg/rpc/heartbeat.pb.go ./pkg/server/diagnosticspb/diagnostics.pb.go ./pkg/server/serverpb/admin.pb.go ./pkg/server/serverpb/authentication.pb.go ./pkg/server/serverpb/init.pb.go ./pkg/server/serverpb/status.pb.go ./pkg/server/status/status.pb.go ./pkg/settings/cluster/cluster_version.pb.go ./pkg/sql/distsqlrun/api.pb.go ./pkg/sql/distsqlrun/data.pb.go ./pkg/sql/distsqlrun/processors.pb.go ./pkg/sql/distsqlrun/stats.pb.go ./pkg/sql/pgwire/pgerror/errors.pb.go ./pkg/sql/sqlbase/encoded_datum.pb.go ./pkg/sql/sqlbase/join_type.pb.go ./pkg/sql/sqlbase/privilege.pb.go ./pkg/sql/sqlbase/structured.pb.go ./pkg/sql/stats/histogram.pb.go ./pkg/storage/api.pb.go ./pkg/storage/closedts/ctpb/entry.pb.go ./pkg/storage/engine/enginepb/file_registry.pb.go ./pkg/storage/engine/enginepb/mvcc.pb.go ./pkg/storage/engine/enginepb/mvcc3.pb.go ./pkg/storage/engine/enginepb/rocksdb.pb.go ./pkg/storage/lease_status.pb.go ./pkg/storage/liveness.pb.go ./pkg/storage/log.pb.go ./pkg/storage/raft.pb.go ./pkg/storage/storagebase/proposer_kv.pb.go ./pkg/storage/storagebase/state.pb.go ./pkg/ts/tspb/timeseries.pb.go ./pkg/util/hlc/legacy_timestamp.pb.go ./pkg/util/hlc/timestamp.pb.go ./pkg/util/log/log.pb.go ./pkg/util/metric/metric.pb.go ./pkg/util/protoutil/clone.pb.go ./pkg/util/tracing/recorded_span.pb.go ./pkg/util/unresolved_addr.pb.go
+sed -i -E 's!cockroachdb/cockroach/pkg/(prometheus/client_model)!\1/go!g' ./pkg/acceptance/cluster/testconfig.pb.go ./pkg/build/info.pb.go ./pkg/ccl/backupccl/backup.pb.go ./pkg/ccl/baseccl/encryption_options.pb.go ./pkg/ccl/storageccl/engineccl/enginepbccl/key_registry.pb.go ./pkg/ccl/storageccl/engineccl/enginepbccl/stats.pb.go ./pkg/ccl/utilccl/licenseccl/license.pb.go ./pkg/config/system.pb.go ./pkg/config/zone.pb.go ./pkg/gossip/gossip.pb.go ./pkg/internal/client/lease.pb.go ./pkg/jobs/jobspb/jobs.pb.go ./pkg/roachpb/api.pb.go ./pkg/roachpb/app_stats.pb.go ./pkg/roachpb/data.pb.go ./pkg/roachpb/errors.pb.go ./pkg/roachpb/internal.pb.go ./pkg/roachpb/internal_raft.pb.go ./pkg/roachpb/io-formats.pb.go ./pkg/roachpb/metadata.pb.go ./pkg/rpc/heartbeat.pb.go ./pkg/server/diagnosticspb/diagnostics.pb.go ./pkg/server/serverpb/admin.pb.go ./pkg/server/serverpb/authentication.pb.go ./pkg/server/serverpb/init.pb.go ./pkg/server/serverpb/status.pb.go ./pkg/server/status/status.pb.go ./pkg/settings/cluster/cluster_version.pb.go ./pkg/sql/distsqlrun/api.pb.go ./pkg/sql/distsqlrun/data.pb.go ./pkg/sql/distsqlrun/processors.pb.go ./pkg/sql/distsqlrun/stats.pb.go ./pkg/sql/pgwire/pgerror/errors.pb.go ./pkg/sql/sqlbase/encoded_datum.pb.go ./pkg/sql/sqlbase/join_type.pb.go ./pkg/sql/sqlbase/privilege.pb.go ./pkg/sql/sqlbase/structured.pb.go ./pkg/sql/stats/histogram.pb.go ./pkg/storage/api.pb.go ./pkg/storage/closedts/ctpb/entry.pb.go ./pkg/storage/engine/enginepb/file_registry.pb.go ./pkg/storage/engine/enginepb/mvcc.pb.go ./pkg/storage/engine/enginepb/mvcc3.pb.go ./pkg/storage/engine/enginepb/rocksdb.pb.go ./pkg/storage/lease_status.pb.go ./pkg/storage/liveness.pb.go ./pkg/storage/log.pb.go ./pkg/storage/raft.pb.go ./pkg/storage/storagebase/proposer_kv.pb.go ./pkg/storage/storagebase/state.pb.go ./pkg/ts/tspb/timeseries.pb.go ./pkg/util/hlc/legacy_timestamp.pb.go ./pkg/util/hlc/timestamp.pb.go ./pkg/util/log/log.pb.go ./pkg/util/metric/metric.pb.go ./pkg/util/protoutil/clone.pb.go ./pkg/util/tracing/recorded_span.pb.go ./pkg/util/unresolved_addr.pb.go
+sed -i -E 's!github.com/cockroachdb/cockroach/pkg/(bytes|encoding/binary|errors|fmt|io|math|github\.com|(google\.)?golang\.org)!\1!g' ./pkg/acceptance/cluster/testconfig.pb.go ./pkg/build/info.pb.go ./pkg/ccl/backupccl/backup.pb.go ./pkg/ccl/baseccl/encryption_options.pb.go ./pkg/ccl/storageccl/engineccl/enginepbccl/key_registry.pb.go ./pkg/ccl/storageccl/engineccl/enginepbccl/stats.pb.go ./pkg/ccl/utilccl/licenseccl/license.pb.go ./pkg/config/system.pb.go ./pkg/config/zone.pb.go ./pkg/gossip/gossip.pb.go ./pkg/internal/client/lease.pb.go ./pkg/jobs/jobspb/jobs.pb.go ./pkg/roachpb/api.pb.go ./pkg/roachpb/app_stats.pb.go ./pkg/roachpb/data.pb.go ./pkg/roachpb/errors.pb.go ./pkg/roachpb/internal.pb.go ./pkg/roachpb/internal_raft.pb.go ./pkg/roachpb/io-formats.pb.go ./pkg/roachpb/metadata.pb.go ./pkg/rpc/heartbeat.pb.go ./pkg/server/diagnosticspb/diagnostics.pb.go ./pkg/server/serverpb/admin.pb.go ./pkg/server/serverpb/authentication.pb.go ./pkg/server/serverpb/init.pb.go ./pkg/server/serverpb/status.pb.go ./pkg/server/status/status.pb.go ./pkg/settings/cluster/cluster_version.pb.go ./pkg/sql/distsqlrun/api.pb.go ./pkg/sql/distsqlrun/data.pb.go ./pkg/sql/distsqlrun/processors.pb.go ./pkg/sql/distsqlrun/stats.pb.go ./pkg/sql/pgwire/pgerror/errors.pb.go ./pkg/sql/sqlbase/encoded_datum.pb.go ./pkg/sql/sqlbase/join_type.pb.go ./pkg/sql/sqlbase/privilege.pb.go ./pkg/sql/sqlbase/structured.pb.go ./pkg/sql/stats/histogram.pb.go ./pkg/storage/api.pb.go ./pkg/storage/closedts/ctpb/entry.pb.go ./pkg/storage/engine/enginepb/file_registry.pb.go ./pkg/storage/engine/enginepb/mvcc.pb.go ./pkg/storage/engine/enginepb/mvcc3.pb.go ./pkg/storage/engine/enginepb/rocksdb.pb.go ./pkg/storage/lease_status.pb.go ./pkg/storage/liveness.pb.go ./pkg/storage/log.pb.go ./pkg/storage/raft.pb.go ./pkg/storage/storagebase/proposer_kv.pb.go ./pkg/storage/storagebase/state.pb.go ./pkg/ts/tspb/timeseries.pb.go ./pkg/util/hlc/legacy_timestamp.pb.go ./pkg/util/hlc/timestamp.pb.go ./pkg/util/log/log.pb.go ./pkg/util/metric/metric.pb.go ./pkg/util/protoutil/clone.pb.go ./pkg/util/tracing/recorded_span.pb.go ./pkg/util/unresolved_addr.pb.go
+sed -i -E 's!golang.org/x/net/context!context!g' ./pkg/acceptance/cluster/testconfig.pb.go ./pkg/build/info.pb.go ./pkg/ccl/backupccl/backup.pb.go ./pkg/ccl/baseccl/encryption_options.pb.go ./pkg/ccl/storageccl/engineccl/enginepbccl/key_registry.pb.go ./pkg/ccl/storageccl/engineccl/enginepbccl/stats.pb.go ./pkg/ccl/utilccl/licenseccl/license.pb.go ./pkg/config/system.pb.go ./pkg/config/zone.pb.go ./pkg/gossip/gossip.pb.go ./pkg/internal/client/lease.pb.go ./pkg/jobs/jobspb/jobs.pb.go ./pkg/roachpb/api.pb.go ./pkg/roachpb/app_stats.pb.go ./pkg/roachpb/data.pb.go ./pkg/roachpb/errors.pb.go ./pkg/roachpb/internal.pb.go ./pkg/roachpb/internal_raft.pb.go ./pkg/roachpb/io-formats.pb.go ./pkg/roachpb/metadata.pb.go ./pkg/rpc/heartbeat.pb.go ./pkg/server/diagnosticspb/diagnostics.pb.go ./pkg/server/serverpb/admin.pb.go ./pkg/server/serverpb/authentication.pb.go ./pkg/server/serverpb/init.pb.go ./pkg/server/serverpb/status.pb.go ./pkg/server/status/status.pb.go ./pkg/settings/cluster/cluster_version.pb.go ./pkg/sql/distsqlrun/api.pb.go ./pkg/sql/distsqlrun/data.pb.go ./pkg/sql/distsqlrun/processors.pb.go ./pkg/sql/distsqlrun/stats.pb.go ./pkg/sql/pgwire/pgerror/errors.pb.go ./pkg/sql/sqlbase/encoded_datum.pb.go ./pkg/sql/sqlbase/join_type.pb.go ./pkg/sql/sqlbase/privilege.pb.go ./pkg/sql/sqlbase/structured.pb.go ./pkg/sql/stats/histogram.pb.go ./pkg/storage/api.pb.go ./pkg/storage/closedts/ctpb/entry.pb.go ./pkg/storage/engine/enginepb/file_registry.pb.go ./pkg/storage/engine/enginepb/mvcc.pb.go ./pkg/storage/engine/enginepb/mvcc3.pb.go ./pkg/storage/engine/enginepb/rocksdb.pb.go ./pkg/storage/lease_status.pb.go ./pkg/storage/liveness.pb.go ./pkg/storage/log.pb.go ./pkg/storage/raft.pb.go ./pkg/storage/storagebase/proposer_kv.pb.go ./pkg/storage/storagebase/state.pb.go ./pkg/ts/tspb/timeseries.pb.go ./pkg/util/hlc/legacy_timestamp.pb.go ./pkg/util/hlc/timestamp.pb.go ./pkg/util/log/log.pb.go ./pkg/util/metric/metric.pb.go ./pkg/util/protoutil/clone.pb.go ./pkg/util/tracing/recorded_span.pb.go ./pkg/util/unresolved_addr.pb.go
+gofmt -s -w ./pkg/acceptance/cluster/testconfig.pb.go ./pkg/build/info.pb.go ./pkg/ccl/backupccl/backup.pb.go ./pkg/ccl/baseccl/encryption_options.pb.go ./pkg/ccl/storageccl/engineccl/enginepbccl/key_registry.pb.go ./pkg/ccl/storageccl/engineccl/enginepbccl/stats.pb.go ./pkg/ccl/utilccl/licenseccl/license.pb.go ./pkg/config/system.pb.go ./pkg/config/zone.pb.go ./pkg/gossip/gossip.pb.go ./pkg/internal/client/lease.pb.go ./pkg/jobs/jobspb/jobs.pb.go ./pkg/roachpb/api.pb.go ./pkg/roachpb/app_stats.pb.go ./pkg/roachpb/data.pb.go ./pkg/roachpb/errors.pb.go ./pkg/roachpb/internal.pb.go ./pkg/roachpb/internal_raft.pb.go ./pkg/roachpb/io-formats.pb.go ./pkg/roachpb/metadata.pb.go ./pkg/rpc/heartbeat.pb.go ./pkg/server/diagnosticspb/diagnostics.pb.go ./pkg/server/serverpb/admin.pb.go ./pkg/server/serverpb/authentication.pb.go ./pkg/server/serverpb/init.pb.go ./pkg/server/serverpb/status.pb.go ./pkg/server/status/status.pb.go ./pkg/settings/cluster/cluster_version.pb.go ./pkg/sql/distsqlrun/api.pb.go ./pkg/sql/distsqlrun/data.pb.go ./pkg/sql/distsqlrun/processors.pb.go ./pkg/sql/distsqlrun/stats.pb.go ./pkg/sql/pgwire/pgerror/errors.pb.go ./pkg/sql/sqlbase/encoded_datum.pb.go ./pkg/sql/sqlbase/join_type.pb.go ./pkg/sql/sqlbase/privilege.pb.go ./pkg/sql/sqlbase/structured.pb.go ./pkg/sql/stats/histogram.pb.go ./pkg/storage/api.pb.go ./pkg/storage/closedts/ctpb/entry.pb.go ./pkg/storage/engine/enginepb/file_registry.pb.go ./pkg/storage/engine/enginepb/mvcc.pb.go ./pkg/storage/engine/enginepb/mvcc3.pb.go ./pkg/storage/engine/enginepb/rocksdb.pb.go ./pkg/storage/lease_status.pb.go ./pkg/storage/liveness.pb.go ./pkg/storage/log.pb.go ./pkg/storage/raft.pb.go ./pkg/storage/storagebase/proposer_kv.pb.go ./pkg/storage/storagebase/state.pb.go ./pkg/ts/tspb/timeseries.pb.go ./pkg/util/hlc/legacy_timestamp.pb.go ./pkg/util/hlc/timestamp.pb.go ./pkg/util/log/log.pb.go ./pkg/util/metric/metric.pb.go ./pkg/util/protoutil/clone.pb.go ./pkg/util/tracing/recorded_span.pb.go ./pkg/util/unresolved_addr.pb.go
+touch bin/.go_protobuf_sources
+find ./pkg -name node_modules -prune -o -type f -name '*.pb.gw.go' -exec rm {} +
+build/werror.sh /go/native/x86_64-pc-linux-gnu/protobuf/protoc -Ipkg:./vendor/github.com:./vendor/github.com/gogo/protobuf:./vendor/github.com/gogo/protobuf/protobuf:./vendor/go.etcd.io:./vendor/github.com/grpc-ecosystem/grpc-gateway/third_party/googleapis --grpc-gateway_out=logtostderr=true,request_context=true:./pkg ./pkg/server/serverpb/admin.proto ./pkg/server/serverpb/status.proto ./pkg/server/serverpb/authentication.proto
+build/werror.sh /go/native/x86_64-pc-linux-gnu/protobuf/protoc -Ipkg:./vendor/github.com:./vendor/github.com/gogo/protobuf:./vendor/github.com/gogo/protobuf/protobuf:./vendor/go.etcd.io:./vendor/github.com/grpc-ecosystem/grpc-gateway/third_party/googleapis --grpc-gateway_out=logtostderr=true,request_context=true:./pkg ./pkg/ts/tspb/timeseries.proto
+sed -i -E 's!golang.org/x/net/context!context!g' ./pkg/server/serverpb/admin.pb.gw.go ./pkg/server/serverpb/status.pb.gw.go ./pkg/server/serverpb/authentication.pb.gw.go ./pkg/ts/tspb/timeseries.pb.gw.go
+gofmt -s -w ./pkg/server/serverpb/admin.pb.gw.go ./pkg/server/serverpb/status.pb.gw.go ./pkg/server/serverpb/authentication.pb.gw.go ./pkg/ts/tspb/timeseries.pb.gw.go
+goimports -w ./pkg/server/serverpb/admin.pb.gw.go ./pkg/server/serverpb/status.pb.gw.go ./pkg/server/serverpb/authentication.pb.gw.go ./pkg/ts/tspb/timeseries.pb.gw.go
+touch bin/.gw_protobuf_sources
+mkdir -p pkg/sql/parser/gen
+set -euo pipefail; \
+TYPES=$(awk '/func.*sqlSymUnion/ {print $(NF - 1)}' pkg/sql/parser/sql.y | sed -e 's/[]\/$*.^|[]/\\&/g' | tr '\n' '|' | sed -E '$s/.$//'); \
+sed -E "s_(type|token) <($TYPES)>_\1 <union> /* <\2> */_" < pkg/sql/parser/sql.y | \
+awk -f pkg/sql/parser/replace_help_rules.awk | \
+sed -Ee 's,//.*$,,g;s,/[*]([^*]|[*][^/])*[*]/, ,g;s/ +$//g' > pkg/sql/parser/gen/sql-gen.y.tmp || rm pkg/sql/parser/gen/sql-gen.y.tmp
+mv -f pkg/sql/parser/gen/sql-gen.y.tmp pkg/sql/parser/gen/sql-gen.y
+set -euo pipefail; \
+  ret=$(cd pkg/sql/parser/gen && goyacc -p sql -o sql.go.tmp sql-gen.y); \
+  if expr "$ret" : ".*conflicts" >/dev/null; then \
+    echo "$ret"; exit 1; \
+  fi
+(echo "// Code generated by goyacc. DO NOT EDIT."; \
+ echo "// GENERATED FILE DO NOT EDIT"; \
+ cat pkg/sql/parser/gen/sql.go.tmp | \
+ sed -E 's/^const ([A-Z][_A-Z0-9]*) =.*$/const \1 = lex.\1/g') > pkg/sql/parser/sql.go.tmp || rm pkg/sql/parser/sql.go.tmp
+mv -f pkg/sql/parser/sql.go.tmp pkg/sql/parser/sql.go
+goimports -w pkg/sql/parser/sql.go
+mv -f pkg/sql/parser/helpmap_test.go.tmp pkg/sql/parser/helpmap_test.go
+gofmt -s -w pkg/sql/parser/helpmap_test.go
+awk -f pkg/sql/parser/help.awk < pkg/sql/parser/sql.y > pkg/sql/parser/help_messages.go.tmp || rm pkg/sql/parser/help_messages.go.tmp
+mv -f pkg/sql/parser/help_messages.go.tmp pkg/sql/parser/help_messages.go
+gofmt -s -w pkg/sql/parser/help_messages.go
+(echo "// Code generated by make. DO NOT EDIT."; \
+ echo "// GENERATED FILE DO NOT EDIT"; \
+ echo; \
+ echo "package lex"; \
+ echo; \
+ grep '^const [A-Z][_A-Z0-9]* ' pkg/sql/parser/gen/sql.go.tmp) > pkg/sql/lex/tokens.go.tmp || rm pkg/sql/lex/tokens.go.tmp
+mv -f pkg/sql/lex/tokens.go.tmp pkg/sql/lex/tokens.go
+awk -f pkg/sql/parser/all_keywords.awk < pkg/sql/parser/sql.y > pkg/sql/lex/keywords.go.tmp || rm pkg/sql/lex/keywords.go.tmp
+mv -f pkg/sql/lex/keywords.go.tmp pkg/sql/lex/keywords.go
+gofmt -s -w pkg/sql/lex/keywords.go
+awk -f pkg/sql/parser/reserved_keywords.awk < pkg/sql/parser/sql.y > pkg/sql/lex/reserved_keywords.go.tmp || rm pkg/sql/lex/reserved_keywords.go.tmp
+mv -f pkg/sql/lex/reserved_keywords.go.tmp pkg/sql/lex/reserved_keywords.go
+gofmt -s -w pkg/sql/lex/reserved_keywords.go
+go install -v optgen
+bin/prereqs ./pkg/sql/opt/optgen/cmd/optgen > bin/optgen.d.tmp
+mv -f bin/optgen.d.tmp bin/optgen.d
+github.com/cockroachdb/cockroach/pkg/sql/opt/optgen/lang
+github.com/cockroachdb/cockroach/pkg/sql/opt/optgen/cmd/optgen
+optgen -out pkg/sql/opt/memo/expr.og.go exprs pkg/sql/opt/ops/*.opt
+optgen -out pkg/sql/opt/operator.og.go ops pkg/sql/opt/ops/*.opt
+optgen -out pkg/sql/opt/xform/explorer.og.go explorer pkg/sql/opt/ops/*.opt pkg/sql/opt/xform/rules/*.opt
+optgen -out pkg/sql/opt/norm/factory.og.go factory pkg/sql/opt/ops/*.opt pkg/sql/opt/norm/rules/*.opt
+optgen -out pkg/sql/opt/rule_name.og.go rulenames pkg/sql/opt/ops/*.opt pkg/sql/opt/norm/rules/*.opt pkg/sql/opt/xform/rules/*.opt
+stringer -output=pkg/sql/opt/rule_name_string.go -type=RuleName pkg/sql/opt/rule_name.go pkg/sql/opt/rule_name.og.go
+go test  -tags ' make x86_64_pc_linux_gnu' -ldflags '-X github.com/cockroachdb/cockroach/pkg/build.typ=development -extldflags "" -X "github.com/cockroachdb/cockroach/pkg/build.tag=v2.2.0-alpha.00000000-925-g3baa3d9" -X "github.com/cockroachdb/cockroach/pkg/build.rev=3baa3d9b299a392b7d9b737dbfb333d095e672a9" -X "github.com/cockroachdb/cockroach/pkg/build.cgoTargetTriple=x86_64-pc-linux-gnu"  ' -run "."  -timeout 8m ./pkg/util/failsuite/... -v -json
+##teamcity[testStarted timestamp='2017-01-02T04:05:06.789' name='TestZPanics' captureStandardOutput='true']
+=== RUN   TestZPanics
+first output something
+--- FAIL: TestZPanics (0.00s)
+	main_test.go:35: then log something
+	main_test.go:36: an error, why not
+panic: boom [recovered]
+	panic: boom
+
+goroutine 6 [running]:
+testing.tRunner.func1(0xc4200d41e0)
+	/usr/local/go/src/testing/testing.go:742 +0x29d
+panic(0x51c5e0, 0x56c2b0)
+	/usr/local/go/src/runtime/panic.go:502 +0x229
+github.com/cockroachdb/cockroach/pkg/util/failsuite/failsuitepanic.TestZPanics(0xc4200d41e0)
+	/go/src/github.com/cockroachdb/cockroach/pkg/util/failsuite/failsuitepanic/main_test.go:37 +0x113
+testing.tRunner(0xc4200d41e0, 0x55c110)
+	/usr/local/go/src/testing/testing.go:777 +0xd0
+created by testing.(*T).Run
+	/usr/local/go/src/testing/testing.go:824 +0x2e0
+
+goroutine 1 [chan receive]:
+testing.(*T).Run(0xc4200d41e0, 0x554258, 0xb, 0x55c110, 0x473276)
+	/usr/local/go/src/testing/testing.go:825 +0x301
+testing.runTests.func1(0xc4200d40f0)
+	/usr/local/go/src/testing/testing.go:1063 +0x64
+testing.tRunner(0xc4200d40f0, 0xc420067dc8)
+	/usr/local/go/src/testing/testing.go:777 +0xd0
+testing.runTests(0xc42000c380, 0x609720, 0x1, 0x1, 0x0)
+	/usr/local/go/src/testing/testing.go:1061 +0x2c4
+testing.(*M).Run(0xc4200d6000, 0x0)
+	/usr/local/go/src/testing/testing.go:978 +0x171
+github.com/cockroachdb/cockroach/pkg/util/failsuite/failsuitepanic.TestMain(0xc4200d6000)
+	/go/src/github.com/cockroachdb/cockroach/pkg/util/failsuite/failsuitepanic/main_test.go:30 +0x52
+main.main()
+	_testmain.go:40 +0x151
+FAIL	github.com/cockroachdb/cockroach/pkg/util/failsuite/failsuitepanic	0.006s
+##teamcity[testFailed timestamp='2017-01-02T04:05:06.789' name='TestZPanics' details='']
+##teamcity[testFinished timestamp='2017-01-02T04:05:06.789' name='TestZPanics' duration='6']
+##teamcity[testStarted timestamp='2017-01-02T04:05:06.789' name='TestThatPasses' captureStandardOutput='true']
+=== RUN   TestThatPasses
+output of TestThatPasses
+--- PASS: TestThatPasses (0.00s)
+##teamcity[testFinished timestamp='2017-01-02T04:05:06.789' name='TestThatPasses' duration='0']
+##teamcity[testStarted timestamp='2017-01-02T04:05:06.789' name='TestThatFails' captureStandardOutput='true']
+=== RUN   TestThatFails
+--- FAIL: TestThatFails (0.00s)
+	main_test.go:41: an error occurs
+	main_test.go:42: then the test fatals
+##teamcity[testFailed timestamp='2017-01-02T04:05:06.789' name='TestThatFails' details='']
+##teamcity[testFinished timestamp='2017-01-02T04:05:06.789' name='TestThatFails' duration='0']
+##teamcity[testStarted timestamp='2017-01-02T04:05:06.789' name='TestThatGetsSkipped' captureStandardOutput='true']
+=== RUN   TestThatGetsSkipped
+--- SKIP: TestThatGetsSkipped (0.00s)
+	main_test.go:46: logging something
+	main_test.go:47: skipped
+##teamcity[testIgnored timestamp='2017-01-02T04:05:06.789' name='TestThatGetsSkipped']
+##teamcity[testStarted timestamp='2017-01-02T04:05:06.789' name='TestParallelOneWithDataRaceWithoutFailures/5' captureStandardOutput='true']
+=== RUN   TestParallelOneWithDataRaceWithoutFailures/5
+=== PAUSE TestParallelOneWithDataRaceWithoutFailures/5
+=== CONT  TestParallelOneWithDataRaceWithoutFailures/5
+    --- PASS: TestParallelOneWithDataRaceWithoutFailures/5 (0.14s)
+    	main_test.go:83: something gets logged
+##teamcity[testFinished timestamp='2017-01-02T04:05:06.789' name='TestParallelOneWithDataRaceWithoutFailures/5' duration='140']
+##teamcity[testStarted timestamp='2017-01-02T04:05:06.789' name='TestParallelOneWithDataRaceWithoutFailures/3' captureStandardOutput='true']
+=== RUN   TestParallelOneWithDataRaceWithoutFailures/3
+=== PAUSE TestParallelOneWithDataRaceWithoutFailures/3
+=== CONT  TestParallelOneWithDataRaceWithoutFailures/3
+    --- PASS: TestParallelOneWithDataRaceWithoutFailures/3 (0.21s)
+    	main_test.go:83: something gets logged
+##teamcity[testFinished timestamp='2017-01-02T04:05:06.789' name='TestParallelOneWithDataRaceWithoutFailures/3' duration='210']
+##teamcity[testStarted timestamp='2017-01-02T04:05:06.789' name='TestParallelOneWithDataRaceWithoutFailures/0' captureStandardOutput='true']
+=== RUN   TestParallelOneWithDataRaceWithoutFailures/0
+=== PAUSE TestParallelOneWithDataRaceWithoutFailures/0
+=== CONT  TestParallelOneWithDataRaceWithoutFailures/0
+    --- PASS: TestParallelOneWithDataRaceWithoutFailures/0 (0.30s)
+    	main_test.go:83: something gets logged
+##teamcity[testFinished timestamp='2017-01-02T04:05:06.789' name='TestParallelOneWithDataRaceWithoutFailures/0' duration='300']
+##teamcity[testStarted timestamp='2017-01-02T04:05:06.789' name='TestParallelOneWithDataRaceWithoutFailures/1' captureStandardOutput='true']
+=== RUN   TestParallelOneWithDataRaceWithoutFailures/1
+=== PAUSE TestParallelOneWithDataRaceWithoutFailures/1
+=== CONT  TestParallelOneWithDataRaceWithoutFailures/1
+    --- PASS: TestParallelOneWithDataRaceWithoutFailures/1 (0.11s)
+    	main_test.go:83: something gets logged
+##teamcity[testFinished timestamp='2017-01-02T04:05:06.789' name='TestParallelOneWithDataRaceWithoutFailures/1' duration='110']
+##teamcity[testStarted timestamp='2017-01-02T04:05:06.789' name='TestParallelOneWithDataRaceWithoutFailures/4' captureStandardOutput='true']
+=== RUN   TestParallelOneWithDataRaceWithoutFailures/4
+=== PAUSE TestParallelOneWithDataRaceWithoutFailures/4
+=== CONT  TestParallelOneWithDataRaceWithoutFailures/4
+    --- PASS: TestParallelOneWithDataRaceWithoutFailures/4 (0.34s)
+    	main_test.go:83: something gets logged
+##teamcity[testFinished timestamp='2017-01-02T04:05:06.789' name='TestParallelOneWithDataRaceWithoutFailures/4' duration='340']
+##teamcity[testStarted timestamp='2017-01-02T04:05:06.789' name='TestParallelOneWithDataRaceWithoutFailures/9' captureStandardOutput='true']
+=== RUN   TestParallelOneWithDataRaceWithoutFailures/9
+=== PAUSE TestParallelOneWithDataRaceWithoutFailures/9
+=== CONT  TestParallelOneWithDataRaceWithoutFailures/9
+    --- PASS: TestParallelOneWithDataRaceWithoutFailures/9 (0.43s)
+    	main_test.go:83: something gets logged
+##teamcity[testFinished timestamp='2017-01-02T04:05:06.789' name='TestParallelOneWithDataRaceWithoutFailures/9' duration='430']
+##teamcity[testStarted timestamp='2017-01-02T04:05:06.789' name='TestParallelOneWithDataRaceWithoutFailures/6' captureStandardOutput='true']
+=== RUN   TestParallelOneWithDataRaceWithoutFailures/6
+=== PAUSE TestParallelOneWithDataRaceWithoutFailures/6
+=== CONT  TestParallelOneWithDataRaceWithoutFailures/6
+    --- PASS: TestParallelOneWithDataRaceWithoutFailures/6 (0.48s)
+    	main_test.go:83: something gets logged
+##teamcity[testFinished timestamp='2017-01-02T04:05:06.789' name='TestParallelOneWithDataRaceWithoutFailures/6' duration='480']
+##teamcity[testStarted timestamp='2017-01-02T04:05:06.789' name='TestParallelOneWithDataRaceWithoutFailures/2' captureStandardOutput='true']
+=== RUN   TestParallelOneWithDataRaceWithoutFailures/2
+=== PAUSE TestParallelOneWithDataRaceWithoutFailures/2
+=== CONT  TestParallelOneWithDataRaceWithoutFailures/2
+    --- PASS: TestParallelOneWithDataRaceWithoutFailures/2 (0.65s)
+    	main_test.go:83: something gets logged
+##teamcity[testFinished timestamp='2017-01-02T04:05:06.789' name='TestParallelOneWithDataRaceWithoutFailures/2' duration='650']
+##teamcity[testStarted timestamp='2017-01-02T04:05:06.789' name='TestParallelOneWithDataRaceWithoutFailures/7' captureStandardOutput='true']
+=== RUN   TestParallelOneWithDataRaceWithoutFailures/7
+=== PAUSE TestParallelOneWithDataRaceWithoutFailures/7
+=== CONT  TestParallelOneWithDataRaceWithoutFailures/7
+    --- PASS: TestParallelOneWithDataRaceWithoutFailures/7 (0.91s)
+    	main_test.go:83: something gets logged
+##teamcity[testFinished timestamp='2017-01-02T04:05:06.789' name='TestParallelOneWithDataRaceWithoutFailures/7' duration='910']
+##teamcity[testStarted timestamp='2017-01-02T04:05:06.789' name='TestParallelOneWithDataRaceWithoutFailures/8' captureStandardOutput='true']
+=== RUN   TestParallelOneWithDataRaceWithoutFailures/8
+=== PAUSE TestParallelOneWithDataRaceWithoutFailures/8
+=== CONT  TestParallelOneWithDataRaceWithoutFailures/8
+    --- PASS: TestParallelOneWithDataRaceWithoutFailures/8 (0.94s)
+    	main_test.go:83: something gets logged
+##teamcity[testFinished timestamp='2017-01-02T04:05:06.789' name='TestParallelOneWithDataRaceWithoutFailures/8' duration='940']
+##teamcity[testStarted timestamp='2017-01-02T04:05:06.789' name='TestParallelOneWithDataRaceWithoutFailures' captureStandardOutput='true']
+=== RUN   TestParallelOneWithDataRaceWithoutFailures
+output before calling t.Parallel()
+=== PAUSE TestParallelOneWithDataRaceWithoutFailures
+=== CONT  TestParallelOneWithDataRaceWithoutFailures
+--- PASS: TestParallelOneWithDataRaceWithoutFailures (0.00s)
+##teamcity[testFinished timestamp='2017-01-02T04:05:06.789' name='TestParallelOneWithDataRaceWithoutFailures' duration='0']
+##teamcity[testStarted timestamp='2017-01-02T04:05:06.789' name='TestParallelWithDataRaceAndFailures/6' captureStandardOutput='true']
+=== RUN   TestParallelWithDataRaceAndFailures/6
+=== PAUSE TestParallelWithDataRaceAndFailures/6
+=== CONT  TestParallelWithDataRaceAndFailures/6
+    --- FAIL: TestParallelWithDataRaceAndFailures/6 (0.01s)
+    	main_test.go:81: subtest failed
+##teamcity[testFailed timestamp='2017-01-02T04:05:06.789' name='TestParallelWithDataRaceAndFailures/6' details='']
+##teamcity[testFinished timestamp='2017-01-02T04:05:06.789' name='TestParallelWithDataRaceAndFailures/6' duration='10']
+##teamcity[testStarted timestamp='2017-01-02T04:05:06.789' name='TestParallelWithDataRaceAndFailures/9' captureStandardOutput='true']
+=== RUN   TestParallelWithDataRaceAndFailures/9
+=== PAUSE TestParallelWithDataRaceAndFailures/9
+=== CONT  TestParallelWithDataRaceAndFailures/9
+    --- FAIL: TestParallelWithDataRaceAndFailures/9 (0.46s)
+    	main_test.go:81: subtest failed
+##teamcity[testFailed timestamp='2017-01-02T04:05:06.789' name='TestParallelWithDataRaceAndFailures/9' details='']
+##teamcity[testFinished timestamp='2017-01-02T04:05:06.789' name='TestParallelWithDataRaceAndFailures/9' duration='460']
+##teamcity[testStarted timestamp='2017-01-02T04:05:06.789' name='TestParallelWithDataRaceAndFailures/0' captureStandardOutput='true']
+=== RUN   TestParallelWithDataRaceAndFailures/0
+=== PAUSE TestParallelWithDataRaceAndFailures/0
+=== CONT  TestParallelWithDataRaceAndFailures/0
+    --- FAIL: TestParallelWithDataRaceAndFailures/0 (0.75s)
+    	main_test.go:81: subtest failed
+##teamcity[testFailed timestamp='2017-01-02T04:05:06.789' name='TestParallelWithDataRaceAndFailures/0' details='']
+##teamcity[testFinished timestamp='2017-01-02T04:05:06.789' name='TestParallelWithDataRaceAndFailures/0' duration='750']
+##teamcity[testStarted timestamp='2017-01-02T04:05:06.789' name='TestParallelWithDataRaceAndFailures/5' captureStandardOutput='true']
+=== RUN   TestParallelWithDataRaceAndFailures/5
+=== PAUSE TestParallelWithDataRaceAndFailures/5
+=== CONT  TestParallelWithDataRaceAndFailures/5
+    --- PASS: TestParallelWithDataRaceAndFailures/5 (0.61s)
+    	main_test.go:83: something gets logged
+##teamcity[testFinished timestamp='2017-01-02T04:05:06.789' name='TestParallelWithDataRaceAndFailures/5' duration='610']
+##teamcity[testStarted timestamp='2017-01-02T04:05:06.789' name='TestParallelWithDataRaceAndFailures/7' captureStandardOutput='true']
+=== RUN   TestParallelWithDataRaceAndFailures/7
+=== PAUSE TestParallelWithDataRaceAndFailures/7
+=== CONT  TestParallelWithDataRaceAndFailures/7
+    --- PASS: TestParallelWithDataRaceAndFailures/7 (0.68s)
+    	main_test.go:83: something gets logged
+##teamcity[testFinished timestamp='2017-01-02T04:05:06.789' name='TestParallelWithDataRaceAndFailures/7' duration='680']
+##teamcity[testStarted timestamp='2017-01-02T04:05:06.789' name='TestParallelWithDataRaceAndFailures/8' captureStandardOutput='true']
+=== RUN   TestParallelWithDataRaceAndFailures/8
+=== PAUSE TestParallelWithDataRaceAndFailures/8
+=== CONT  TestParallelWithDataRaceAndFailures/8
+    --- PASS: TestParallelWithDataRaceAndFailures/8 (0.82s)
+    	main_test.go:83: something gets logged
+##teamcity[testFinished timestamp='2017-01-02T04:05:06.789' name='TestParallelWithDataRaceAndFailures/8' duration='820']
+##teamcity[testStarted timestamp='2017-01-02T04:05:06.789' name='TestParallelWithDataRaceAndFailures/3' captureStandardOutput='true']
+=== RUN   TestParallelWithDataRaceAndFailures/3
+=== PAUSE TestParallelWithDataRaceAndFailures/3
+=== CONT  TestParallelWithDataRaceAndFailures/3
+    --- FAIL: TestParallelWithDataRaceAndFailures/3 (0.46s)
+    	main_test.go:81: subtest failed
+##teamcity[testFailed timestamp='2017-01-02T04:05:06.789' name='TestParallelWithDataRaceAndFailures/3' details='']
+##teamcity[testFinished timestamp='2017-01-02T04:05:06.789' name='TestParallelWithDataRaceAndFailures/3' duration='460']
+##teamcity[testStarted timestamp='2017-01-02T04:05:06.789' name='TestParallelWithDataRaceAndFailures/1' captureStandardOutput='true']
+=== RUN   TestParallelWithDataRaceAndFailures/1
+=== PAUSE TestParallelWithDataRaceAndFailures/1
+=== CONT  TestParallelWithDataRaceAndFailures/1
+    --- PASS: TestParallelWithDataRaceAndFailures/1 (0.44s)
+    	main_test.go:83: something gets logged
+##teamcity[testFinished timestamp='2017-01-02T04:05:06.789' name='TestParallelWithDataRaceAndFailures/1' duration='440']
+##teamcity[testStarted timestamp='2017-01-02T04:05:06.789' name='TestParallelWithDataRaceAndFailures/2' captureStandardOutput='true']
+=== RUN   TestParallelWithDataRaceAndFailures/2
+=== PAUSE TestParallelWithDataRaceAndFailures/2
+=== CONT  TestParallelWithDataRaceAndFailures/2
+    --- PASS: TestParallelWithDataRaceAndFailures/2 (0.47s)
+    	main_test.go:83: something gets logged
+##teamcity[testFinished timestamp='2017-01-02T04:05:06.789' name='TestParallelWithDataRaceAndFailures/2' duration='470']
+##teamcity[testStarted timestamp='2017-01-02T04:05:06.789' name='TestParallelWithDataRaceAndFailures/4' captureStandardOutput='true']
+=== RUN   TestParallelWithDataRaceAndFailures/4
+=== PAUSE TestParallelWithDataRaceAndFailures/4
+=== CONT  TestParallelWithDataRaceAndFailures/4
+    --- PASS: TestParallelWithDataRaceAndFailures/4 (0.63s)
+    	main_test.go:83: something gets logged
+##teamcity[testFinished timestamp='2017-01-02T04:05:06.789' name='TestParallelWithDataRaceAndFailures/4' duration='630']
+##teamcity[testStarted timestamp='2017-01-02T04:05:06.789' name='TestParallelWithDataRaceAndFailures' captureStandardOutput='true']
+=== RUN   TestParallelWithDataRaceAndFailures
+output before calling t.Parallel()
+=== PAUSE TestParallelWithDataRaceAndFailures
+=== CONT  TestParallelWithDataRaceAndFailures
+--- FAIL: TestParallelWithDataRaceAndFailures (0.00s)
+##teamcity[testFailed timestamp='2017-01-02T04:05:06.789' name='TestParallelWithDataRaceAndFailures' details='']
+##teamcity[testFinished timestamp='2017-01-02T04:05:06.789' name='TestParallelWithDataRaceAndFailures' duration='0']
+FAIL
+FAIL	github.com/cockroachdb/cockroach/pkg/util/failsuite	1.409s
+make: *** [test] Error 1
+Makefile:830: recipe for target 'test' failed
+

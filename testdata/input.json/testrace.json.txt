@@ -1,0 +1,643 @@
+build/builder.sh env COCKROACH_FAILSUITE=1 COCKROACH_LOGIC_TESTS_SKIP=true make testrace PKG=./pkg/util/failsuite/... TESTTIMEOUT=45m TESTFLAGS=-v -json USE_ROCKSDB_ASSERTIONS=1
+GOPATH set to /go
+rm -rf /go/native/x86_64-pc-linux-gnu/rocksdb_assert
+mkdir -p /go/native/x86_64-pc-linux-gnu/rocksdb_assert
+cd /go/native/x86_64-pc-linux-gnu/rocksdb_assert && CFLAGS+=" -msse3" && CXXFLAGS+=" -msse3" && cmake -DCMAKE_TARGET_MESSAGES=OFF   /go/src/github.com/cockroachdb/cockroach/c-deps/rocksdb \
+   -DWITH_GFLAGS=OFF \
+  -DSNAPPY_LIBRARIES=/go/native/x86_64-pc-linux-gnu/snappy/libsnappy.a -DSNAPPY_INCLUDE_DIR="/go/src/github.com/cockroachdb/cockroach/c-deps/snappy;/go/native/x86_64-pc-linux-gnu/snappy" -DWITH_SNAPPY=ON \
+  -DJEMALLOC_LIBRARIES=/go/native/x86_64-pc-linux-gnu/jemalloc/lib/libjemalloc.a -DJEMALLOC_INCLUDE_DIR=/go/native/x86_64-pc-linux-gnu/jemalloc/include -DWITH_JEMALLOC=ON \
+  -DCMAKE_BUILD_TYPE=Release
+-- The C compiler identification is Clang 3.8.0
+-- The CXX compiler identification is Clang 3.8.0
+-- Check for working C compiler: /usr/lib/ccache/cc
+-- Check for working C compiler: /usr/lib/ccache/cc -- works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Check for working CXX compiler: /usr/lib/ccache/c++
+-- Check for working CXX compiler: /usr/lib/ccache/c++ -- works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- The ASM compiler identification is Clang
+-- Found assembler: /usr/lib/ccache/cc
+-- Found jemalloc: /go/native/x86_64-pc-linux-gnu/jemalloc/lib/libjemalloc.a  
+-- Found snappy: /go/native/x86_64-pc-linux-gnu/snappy/libsnappy.a  
+-- Found Git: /usr/bin/git (found version "2.7.4") 
+-- Performing Test HAVE_OMIT_LEAF_FRAME_POINTER
+-- Performing Test HAVE_OMIT_LEAF_FRAME_POINTER - Success
+-- Performing Test HAVE_SSE42
+-- Performing Test HAVE_SSE42 - Success
+-- Performing Test HAVE_THREAD_LOCAL
+-- Performing Test HAVE_THREAD_LOCAL - Success
+-- Could NOT find NUMA (missing:  NUMA_LIBRARIES NUMA_INCLUDE_DIR) 
+-- Could NOT find TBB (missing:  TBB_LIBRARIES TBB_INCLUDE_DIR) 
+-- Performing Test HAVE_FALLOCATE
+-- Performing Test HAVE_FALLOCATE - Success
+-- Performing Test HAVE_SYNC_FILE_RANGE_WRITE
+-- Performing Test HAVE_SYNC_FILE_RANGE_WRITE - Success
+-- Performing Test HAVE_PTHREAD_MUTEX_ADAPTIVE_NP
+-- Performing Test HAVE_PTHREAD_MUTEX_ADAPTIVE_NP - Success
+-- Looking for malloc_usable_size
+-- Looking for malloc_usable_size - found
+-- Looking for sched_getcpu
+-- Looking for sched_getcpu - found
+-- Looking for pthread.h
+-- Looking for pthread.h - found
+-- Looking for pthread_create
+-- Looking for pthread_create - not found
+-- Looking for pthread_create in pthreads
+-- Looking for pthread_create in pthreads - not found
+-- Looking for pthread_create in pthread
+-- Looking for pthread_create in pthread - found
+-- Found Threads: TRUE  
+-- JNI library is disabled
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /go/native/x86_64-pc-linux-gnu/rocksdb_assert
+Scanning dependencies of target build_version
+[  0%] Building CXX object CMakeFiles/build_version.dir/build_version.cc.o
+Scanning dependencies of target rocksdb
+[  0%] Building CXX object CMakeFiles/rocksdb.dir/cache/clock_cache.cc.o
+[  0%] Building CXX object CMakeFiles/rocksdb.dir/cache/lru_cache.cc.o
+[  0%] Building CXX object CMakeFiles/rocksdb.dir/cache/sharded_cache.cc.o
+[  0%] Building CXX object CMakeFiles/rocksdb.dir/db/builder.cc.o
+[  0%] Building CXX object CMakeFiles/rocksdb.dir/db/c.cc.o
+[  0%] Building CXX object CMakeFiles/rocksdb.dir/db/column_family.cc.o
+[  3%] Building CXX object CMakeFiles/rocksdb.dir/db/compacted_db_impl.cc.o
+[  3%] Building CXX object CMakeFiles/rocksdb.dir/db/compaction.cc.o
+[  3%] Building CXX object CMakeFiles/rocksdb.dir/db/compaction_iterator.cc.o
+[  3%] Building CXX object CMakeFiles/rocksdb.dir/db/compaction_job.cc.o
+[  3%] Building CXX object CMakeFiles/rocksdb.dir/db/compaction_picker.cc.o
+[  3%] Building CXX object CMakeFiles/rocksdb.dir/db/compaction_picker_universal.cc.o
+[  3%] Building CXX object CMakeFiles/rocksdb.dir/db/convenience.cc.o
+[  6%] Building CXX object CMakeFiles/rocksdb.dir/db/db_filesnapshot.cc.o
+[  6%] Building CXX object CMakeFiles/rocksdb.dir/db/db_impl.cc.o
+[  6%] Building CXX object CMakeFiles/rocksdb.dir/db/db_impl_write.cc.o
+[  6%] Building CXX object CMakeFiles/rocksdb.dir/db/db_impl_compaction_flush.cc.o
+[  6%] Building CXX object CMakeFiles/rocksdb.dir/db/db_impl_files.cc.o
+[  6%] Building CXX object CMakeFiles/rocksdb.dir/db/db_impl_open.cc.o
+[  6%] Building CXX object CMakeFiles/rocksdb.dir/db/db_impl_debug.cc.o
+[  6%] Building CXX object CMakeFiles/rocksdb.dir/db/db_impl_experimental.cc.o
+[ 10%] Building CXX object CMakeFiles/rocksdb.dir/db/db_impl_readonly.cc.o
+[ 10%] Building CXX object CMakeFiles/rocksdb.dir/db/db_info_dumper.cc.o
+[ 10%] Building CXX object CMakeFiles/rocksdb.dir/db/db_iter.cc.o
+[ 10%] Building CXX object CMakeFiles/rocksdb.dir/db/dbformat.cc.o
+[ 10%] Building CXX object CMakeFiles/rocksdb.dir/db/event_helpers.cc.o
+[ 10%] Building CXX object CMakeFiles/rocksdb.dir/db/experimental.cc.o
+[ 10%] Building CXX object CMakeFiles/rocksdb.dir/db/external_sst_file_ingestion_job.cc.o
+[ 13%] Building CXX object CMakeFiles/rocksdb.dir/db/file_indexer.cc.o
+[ 13%] Building CXX object CMakeFiles/rocksdb.dir/db/flush_job.cc.o
+[ 13%] Building CXX object CMakeFiles/rocksdb.dir/db/flush_scheduler.cc.o
+[ 13%] Building CXX object CMakeFiles/rocksdb.dir/db/forward_iterator.cc.o
+[ 13%] Building CXX object CMakeFiles/rocksdb.dir/db/internal_stats.cc.o
+[ 13%] Building CXX object CMakeFiles/rocksdb.dir/db/log_reader.cc.o
+[ 13%] Building CXX object CMakeFiles/rocksdb.dir/db/log_writer.cc.o
+[ 13%] Building CXX object CMakeFiles/rocksdb.dir/db/malloc_stats.cc.o
+[ 17%] Building CXX object CMakeFiles/rocksdb.dir/db/managed_iterator.cc.o
+[ 17%] Building CXX object CMakeFiles/rocksdb.dir/db/memtable.cc.o
+[ 17%] Building CXX object CMakeFiles/rocksdb.dir/db/memtable_list.cc.o
+[ 17%] Building CXX object CMakeFiles/rocksdb.dir/db/merge_helper.cc.o
+[ 17%] Building CXX object CMakeFiles/rocksdb.dir/db/merge_operator.cc.o
+[ 17%] Building CXX object CMakeFiles/rocksdb.dir/db/range_del_aggregator.cc.o
+[ 17%] Building CXX object CMakeFiles/rocksdb.dir/db/repair.cc.o
+[ 20%] Building CXX object CMakeFiles/rocksdb.dir/db/snapshot_impl.cc.o
+[ 20%] Building CXX object CMakeFiles/rocksdb.dir/db/table_cache.cc.o
+[ 20%] Building CXX object CMakeFiles/rocksdb.dir/db/table_properties_collector.cc.o
+[ 20%] Building CXX object CMakeFiles/rocksdb.dir/db/transaction_log_impl.cc.o
+[ 20%] Building CXX object CMakeFiles/rocksdb.dir/db/version_builder.cc.o
+[ 20%] Building CXX object CMakeFiles/rocksdb.dir/db/version_edit.cc.o
+[ 20%] Building CXX object CMakeFiles/rocksdb.dir/db/version_set.cc.o
+[ 24%] Building CXX object CMakeFiles/rocksdb.dir/db/wal_manager.cc.o
+[ 24%] Building CXX object CMakeFiles/rocksdb.dir/db/write_batch.cc.o
+[ 24%] Building CXX object CMakeFiles/rocksdb.dir/db/write_batch_base.cc.o
+[ 24%] Building CXX object CMakeFiles/rocksdb.dir/db/write_controller.cc.o
+[ 24%] Building CXX object CMakeFiles/rocksdb.dir/db/write_thread.cc.o
+[ 24%] Building CXX object CMakeFiles/rocksdb.dir/env/env.cc.o
+[ 24%] Building CXX object CMakeFiles/rocksdb.dir/env/env_chroot.cc.o
+[ 24%] Building CXX object CMakeFiles/rocksdb.dir/env/env_encryption.cc.o
+[ 27%] Building CXX object CMakeFiles/rocksdb.dir/env/env_hdfs.cc.o
+[ 27%] Building CXX object CMakeFiles/rocksdb.dir/env/mock_env.cc.o
+[ 27%] Building CXX object CMakeFiles/rocksdb.dir/memtable/alloc_tracker.cc.o
+[ 27%] Building CXX object CMakeFiles/rocksdb.dir/memtable/hash_cuckoo_rep.cc.o
+[ 27%] Building CXX object CMakeFiles/rocksdb.dir/memtable/hash_linklist_rep.cc.o
+[ 27%] Building CXX object CMakeFiles/rocksdb.dir/memtable/hash_skiplist_rep.cc.o
+[ 27%] Building CXX object CMakeFiles/rocksdb.dir/memtable/skiplistrep.cc.o
+[ 31%] Building CXX object CMakeFiles/rocksdb.dir/memtable/vectorrep.cc.o
+[ 31%] Building CXX object CMakeFiles/rocksdb.dir/memtable/write_buffer_manager.cc.o
+[ 31%] Building CXX object CMakeFiles/rocksdb.dir/monitoring/histogram.cc.o
+[ 31%] Building CXX object CMakeFiles/rocksdb.dir/monitoring/histogram_windowing.cc.o
+[ 31%] Building CXX object CMakeFiles/rocksdb.dir/monitoring/instrumented_mutex.cc.o
+[ 31%] Building CXX object CMakeFiles/rocksdb.dir/monitoring/iostats_context.cc.o
+[ 31%] Building CXX object CMakeFiles/rocksdb.dir/monitoring/perf_context.cc.o
+[ 31%] Building CXX object CMakeFiles/rocksdb.dir/monitoring/perf_level.cc.o
+[ 34%] Building CXX object CMakeFiles/rocksdb.dir/monitoring/statistics.cc.o
+[ 34%] Building CXX object CMakeFiles/rocksdb.dir/monitoring/thread_status_impl.cc.o
+[ 34%] Building CXX object CMakeFiles/rocksdb.dir/monitoring/thread_status_updater.cc.o
+[ 34%] Building CXX object CMakeFiles/rocksdb.dir/monitoring/thread_status_util.cc.o
+[ 34%] Building CXX object CMakeFiles/rocksdb.dir/monitoring/thread_status_util_debug.cc.o
+[ 34%] Building CXX object CMakeFiles/rocksdb.dir/options/cf_options.cc.o
+[ 34%] Building CXX object CMakeFiles/rocksdb.dir/options/db_options.cc.o
+[ 37%] Building CXX object CMakeFiles/rocksdb.dir/options/options.cc.o
+[ 37%] Building CXX object CMakeFiles/rocksdb.dir/options/options_helper.cc.o
+[ 37%] Building CXX object CMakeFiles/rocksdb.dir/options/options_parser.cc.o
+[ 37%] Building CXX object CMakeFiles/rocksdb.dir/options/options_sanity_check.cc.o
+[ 37%] Building CXX object CMakeFiles/rocksdb.dir/port/stack_trace.cc.o
+[ 37%] Building CXX object CMakeFiles/rocksdb.dir/table/adaptive_table_factory.cc.o
+[ 37%] Building CXX object CMakeFiles/rocksdb.dir/table/block.cc.o
+[ 41%] Building CXX object CMakeFiles/rocksdb.dir/table/block_based_filter_block.cc.o
+[ 41%] Building CXX object CMakeFiles/rocksdb.dir/table/block_based_table_builder.cc.o
+[ 41%] Building CXX object CMakeFiles/rocksdb.dir/table/block_based_table_factory.cc.o
+[ 41%] Building CXX object CMakeFiles/rocksdb.dir/table/block_based_table_reader.cc.o
+[ 41%] Building CXX object CMakeFiles/rocksdb.dir/table/block_builder.cc.o
+[ 41%] Building CXX object CMakeFiles/rocksdb.dir/table/block_fetcher.cc.o
+[ 41%] Building CXX object CMakeFiles/rocksdb.dir/table/block_prefix_index.cc.o
+[ 41%] Building CXX object CMakeFiles/rocksdb.dir/table/bloom_block.cc.o
+[ 44%] Building CXX object CMakeFiles/rocksdb.dir/table/cuckoo_table_builder.cc.o
+[ 44%] Building CXX object CMakeFiles/rocksdb.dir/table/cuckoo_table_factory.cc.o
+[ 44%] Building CXX object CMakeFiles/rocksdb.dir/table/cuckoo_table_reader.cc.o
+[ 44%] Building CXX object CMakeFiles/rocksdb.dir/table/flush_block_policy.cc.o
+[ 44%] Building CXX object CMakeFiles/rocksdb.dir/table/format.cc.o
+[ 44%] Building CXX object CMakeFiles/rocksdb.dir/table/full_filter_block.cc.o
+[ 44%] Building CXX object CMakeFiles/rocksdb.dir/table/get_context.cc.o
+[ 48%] Building CXX object CMakeFiles/rocksdb.dir/table/index_builder.cc.o
+[ 48%] Building CXX object CMakeFiles/rocksdb.dir/table/iterator.cc.o
+[ 48%] Building CXX object CMakeFiles/rocksdb.dir/table/merging_iterator.cc.o
+[ 48%] Building CXX object CMakeFiles/rocksdb.dir/table/meta_blocks.cc.o
+[ 48%] Building CXX object CMakeFiles/rocksdb.dir/table/partitioned_filter_block.cc.o
+[ 48%] Building CXX object CMakeFiles/rocksdb.dir/table/persistent_cache_helper.cc.o
+[ 48%] Building CXX object CMakeFiles/rocksdb.dir/table/plain_table_builder.cc.o
+[ 48%] Building CXX object CMakeFiles/rocksdb.dir/table/plain_table_factory.cc.o
+[ 51%] Building CXX object CMakeFiles/rocksdb.dir/table/plain_table_index.cc.o
+[ 51%] Building CXX object CMakeFiles/rocksdb.dir/table/plain_table_key_coding.cc.o
+[ 51%] Building CXX object CMakeFiles/rocksdb.dir/table/plain_table_reader.cc.o
+[ 51%] Building CXX object CMakeFiles/rocksdb.dir/table/sst_file_writer.cc.o
+[ 51%] Building CXX object CMakeFiles/rocksdb.dir/table/table_properties.cc.o
+[ 51%] Building CXX object CMakeFiles/rocksdb.dir/table/two_level_iterator.cc.o
+[ 51%] Building CXX object CMakeFiles/rocksdb.dir/tools/db_bench_tool.cc.o
+[ 55%] Building CXX object CMakeFiles/rocksdb.dir/tools/dump/db_dump_tool.cc.o
+[ 55%] Building CXX object CMakeFiles/rocksdb.dir/tools/ldb_cmd.cc.o
+[ 55%] Building CXX object CMakeFiles/rocksdb.dir/tools/ldb_tool.cc.o
+[ 55%] Building CXX object CMakeFiles/rocksdb.dir/tools/sst_dump_tool.cc.o
+[ 55%] Building CXX object CMakeFiles/rocksdb.dir/util/arena.cc.o
+[ 55%] Building CXX object CMakeFiles/rocksdb.dir/util/auto_roll_logger.cc.o
+[ 55%] Building CXX object CMakeFiles/rocksdb.dir/util/bloom.cc.o
+[ 58%] Building CXX object CMakeFiles/rocksdb.dir/util/coding.cc.o
+[ 58%] Building CXX object CMakeFiles/rocksdb.dir/util/compaction_job_stats_impl.cc.o
+[ 58%] Building CXX object CMakeFiles/rocksdb.dir/util/comparator.cc.o
+[ 58%] Building CXX object CMakeFiles/rocksdb.dir/util/concurrent_arena.cc.o
+[ 58%] Building CXX object CMakeFiles/rocksdb.dir/util/crc32c.cc.o
+[ 58%] Building CXX object CMakeFiles/rocksdb.dir/util/delete_scheduler.cc.o
+[ 58%] Building CXX object CMakeFiles/rocksdb.dir/util/dynamic_bloom.cc.o
+[ 58%] Building CXX object CMakeFiles/rocksdb.dir/util/event_logger.cc.o
+[ 62%] Building CXX object CMakeFiles/rocksdb.dir/util/file_reader_writer.cc.o
+[ 62%] Building CXX object CMakeFiles/rocksdb.dir/util/file_util.cc.o
+[ 62%] Building CXX object CMakeFiles/rocksdb.dir/util/filename.cc.o
+[ 62%] Building CXX object CMakeFiles/rocksdb.dir/util/filter_policy.cc.o
+[ 62%] Building CXX object CMakeFiles/rocksdb.dir/util/hash.cc.o
+[ 62%] Building CXX object CMakeFiles/rocksdb.dir/util/log_buffer.cc.o
+[ 62%] Building CXX object CMakeFiles/rocksdb.dir/util/murmurhash.cc.o
+[ 65%] Building CXX object CMakeFiles/rocksdb.dir/util/random.cc.o
+[ 65%] Building CXX object CMakeFiles/rocksdb.dir/util/rate_limiter.cc.o
+[ 65%] Building CXX object CMakeFiles/rocksdb.dir/util/slice.cc.o
+[ 65%] Building CXX object CMakeFiles/rocksdb.dir/util/sst_file_manager_impl.cc.o
+[ 65%] Building CXX object CMakeFiles/rocksdb.dir/util/status.cc.o
+[ 65%] Building CXX object CMakeFiles/rocksdb.dir/util/status_message.cc.o
+[ 65%] Building CXX object CMakeFiles/rocksdb.dir/util/string_util.cc.o
+[ 65%] Building CXX object CMakeFiles/rocksdb.dir/util/sync_point.cc.o
+[ 68%] Building CXX object CMakeFiles/rocksdb.dir/util/testutil.cc.o
+[ 68%] Building CXX object CMakeFiles/rocksdb.dir/util/thread_local.cc.o
+[ 68%] Building CXX object CMakeFiles/rocksdb.dir/util/threadpool_imp.cc.o
+[ 68%] Building CXX object CMakeFiles/rocksdb.dir/util/transaction_test_util.cc.o
+[ 68%] Building CXX object CMakeFiles/rocksdb.dir/util/xxhash.cc.o
+[ 68%] Building CXX object CMakeFiles/rocksdb.dir/utilities/backupable/backupable_db.cc.o
+[ 68%] Building CXX object CMakeFiles/rocksdb.dir/utilities/blob_db/blob_compaction_filter.cc.o
+[ 72%] Building CXX object CMakeFiles/rocksdb.dir/utilities/blob_db/blob_db.cc.o
+[ 72%] Building CXX object CMakeFiles/rocksdb.dir/utilities/blob_db/blob_db_impl.cc.o
+[ 72%] Building CXX object CMakeFiles/rocksdb.dir/utilities/blob_db/blob_dump_tool.cc.o
+[ 72%] Building CXX object CMakeFiles/rocksdb.dir/utilities/blob_db/blob_file.cc.o
+[ 72%] Building CXX object CMakeFiles/rocksdb.dir/utilities/blob_db/blob_log_reader.cc.o
+[ 72%] Building CXX object CMakeFiles/rocksdb.dir/utilities/blob_db/blob_log_writer.cc.o
+[ 72%] Building CXX object CMakeFiles/rocksdb.dir/utilities/blob_db/blob_log_format.cc.o
+[ 75%] Building CXX object CMakeFiles/rocksdb.dir/utilities/blob_db/ttl_extractor.cc.o
+[ 75%] Building CXX object CMakeFiles/rocksdb.dir/utilities/cassandra/cassandra_compaction_filter.cc.o
+[ 75%] Building CXX object CMakeFiles/rocksdb.dir/utilities/cassandra/format.cc.o
+[ 75%] Building CXX object CMakeFiles/rocksdb.dir/utilities/cassandra/merge_operator.cc.o
+[ 75%] Building CXX object CMakeFiles/rocksdb.dir/utilities/checkpoint/checkpoint_impl.cc.o
+[ 75%] Building CXX object CMakeFiles/rocksdb.dir/utilities/col_buf_decoder.cc.o
+[ 75%] Building CXX object CMakeFiles/rocksdb.dir/utilities/col_buf_encoder.cc.o
+[ 75%] Building CXX object CMakeFiles/rocksdb.dir/utilities/column_aware_encoding_util.cc.o
+[ 79%] Building CXX object CMakeFiles/rocksdb.dir/utilities/compaction_filters/remove_emptyvalue_compactionfilter.cc.o
+[ 79%] Building CXX object CMakeFiles/rocksdb.dir/utilities/date_tiered/date_tiered_db_impl.cc.o
+[ 79%] Building CXX object CMakeFiles/rocksdb.dir/utilities/debug.cc.o
+[ 79%] Building CXX object CMakeFiles/rocksdb.dir/utilities/document/document_db.cc.o
+[ 79%] Building CXX object CMakeFiles/rocksdb.dir/utilities/document/json_document.cc.o
+[ 79%] Building CXX object CMakeFiles/rocksdb.dir/utilities/document/json_document_builder.cc.o
+[ 79%] Building CXX object CMakeFiles/rocksdb.dir/utilities/env_mirror.cc.o
+[ 82%] Building CXX object CMakeFiles/rocksdb.dir/utilities/env_timed.cc.o
+[ 82%] Building CXX object CMakeFiles/rocksdb.dir/utilities/geodb/geodb_impl.cc.o
+[ 82%] Building CXX object CMakeFiles/rocksdb.dir/utilities/leveldb_options/leveldb_options.cc.o
+[ 82%] Building CXX object CMakeFiles/rocksdb.dir/utilities/lua/rocks_lua_compaction_filter.cc.o
+[ 82%] Building CXX object CMakeFiles/rocksdb.dir/utilities/memory/memory_util.cc.o
+[ 82%] Building CXX object CMakeFiles/rocksdb.dir/utilities/merge_operators/bytesxor.cc.o
+[ 82%] Building CXX object CMakeFiles/rocksdb.dir/utilities/merge_operators/max.cc.o
+[ 82%] Building CXX object CMakeFiles/rocksdb.dir/utilities/merge_operators/put.cc.o
+[ 86%] Building CXX object CMakeFiles/rocksdb.dir/utilities/merge_operators/string_append/stringappend.cc.o
+[ 86%] Building CXX object CMakeFiles/rocksdb.dir/utilities/merge_operators/string_append/stringappend2.cc.o
+[ 86%] Building CXX object CMakeFiles/rocksdb.dir/utilities/merge_operators/uint64add.cc.o
+[ 86%] Building CXX object CMakeFiles/rocksdb.dir/utilities/option_change_migration/option_change_migration.cc.o
+[ 86%] Building CXX object CMakeFiles/rocksdb.dir/utilities/options/options_util.cc.o
+[ 86%] Building CXX object CMakeFiles/rocksdb.dir/utilities/persistent_cache/block_cache_tier.cc.o
+[ 86%] Building CXX object CMakeFiles/rocksdb.dir/utilities/persistent_cache/block_cache_tier_file.cc.o
+[ 89%] Building CXX object CMakeFiles/rocksdb.dir/utilities/persistent_cache/block_cache_tier_metadata.cc.o
+[ 89%] Building CXX object CMakeFiles/rocksdb.dir/utilities/persistent_cache/persistent_cache_tier.cc.o
+[ 89%] Building CXX object CMakeFiles/rocksdb.dir/utilities/persistent_cache/volatile_tier_impl.cc.o
+[ 89%] Building CXX object CMakeFiles/rocksdb.dir/utilities/redis/redis_lists.cc.o
+[ 89%] Building CXX object CMakeFiles/rocksdb.dir/utilities/simulator_cache/sim_cache.cc.o
+[ 89%] Building CXX object CMakeFiles/rocksdb.dir/utilities/spatialdb/spatial_db.cc.o
+[ 89%] Building CXX object CMakeFiles/rocksdb.dir/utilities/table_properties_collectors/compact_on_deletion_collector.cc.o
+[ 93%] Building CXX object CMakeFiles/rocksdb.dir/utilities/transactions/optimistic_transaction_db_impl.cc.o
+[ 93%] Building CXX object CMakeFiles/rocksdb.dir/utilities/transactions/optimistic_transaction.cc.o
+[ 93%] Building CXX object CMakeFiles/rocksdb.dir/utilities/transactions/pessimistic_transaction.cc.o
+[ 93%] Building CXX object CMakeFiles/rocksdb.dir/utilities/transactions/pessimistic_transaction_db.cc.o
+[ 93%] Building CXX object CMakeFiles/rocksdb.dir/utilities/transactions/snapshot_checker.cc.o
+[ 93%] Building CXX object CMakeFiles/rocksdb.dir/utilities/transactions/transaction_base.cc.o
+[ 93%] Building CXX object CMakeFiles/rocksdb.dir/utilities/transactions/transaction_db_mutex_impl.cc.o
+[ 93%] Building CXX object CMakeFiles/rocksdb.dir/utilities/transactions/transaction_lock_mgr.cc.o
+[ 96%] Building CXX object CMakeFiles/rocksdb.dir/utilities/transactions/transaction_util.cc.o
+[ 96%] Building CXX object CMakeFiles/rocksdb.dir/utilities/transactions/write_prepared_txn.cc.o
+[ 96%] Building CXX object CMakeFiles/rocksdb.dir/utilities/transactions/write_prepared_txn_db.cc.o
+[ 96%] Building CXX object CMakeFiles/rocksdb.dir/utilities/ttl/db_ttl_impl.cc.o
+[ 96%] Building CXX object CMakeFiles/rocksdb.dir/utilities/write_batch_with_index/write_batch_with_index.cc.o
+[ 96%] Building CXX object CMakeFiles/rocksdb.dir/utilities/write_batch_with_index/write_batch_with_index_internal.cc.o
+[ 96%] Building CXX object CMakeFiles/rocksdb.dir/port/port_posix.cc.o
+[100%] Building CXX object CMakeFiles/rocksdb.dir/env/env_posix.cc.o
+[100%] Building CXX object CMakeFiles/rocksdb.dir/env/io_posix.cc.o
+[100%] Linking CXX static library librocksdb.a
+github.com/cockroachdb/cockroach/vendor/github.com/armon/go-radix
+github.com/cockroachdb/cockroach/vendor/github.com/golang/dep/gps/paths
+github.com/cockroachdb/cockroach/vendor/github.com/grpc-ecosystem/grpc-gateway/utilities
+github.com/cockroachdb/cockroach/vendor/github.com/cockroachdb/ttycolor
+github.com/cockroachdb/cockroach/vendor/golang.org/x/tools/go/ast/astutil
+github.com/cockroachdb/cockroach/vendor/github.com/cockroachdb/gostdlib/go/printer
+github.com/cockroachdb/cockroach/vendor/github.com/cockroachdb/gostdlib/x/tools/internal/fastwalk
+github.com/cockroachdb/cockroach/vendor/github.com/cockroachdb/stress
+github.com/cockroachdb/cockroach/vendor/github.com/client9/misspell
+github.com/cockroachdb/cockroach/vendor/github.com/Masterminds/semver
+github.com/cockroachdb/cockroach/vendor/github.com/Masterminds/vcs
+github.com/cockroachdb/cockroach/vendor/github.com/boltdb/bolt
+github.com/cockroachdb/cockroach/vendor/github.com/golang/protobuf/proto
+github.com/cockroachdb/cockroach/vendor/github.com/cockroachdb/gostdlib/cmd/gofmt
+github.com/cockroachdb/cockroach/vendor/golang.org/x/tools/imports
+github.com/cockroachdb/cockroach/vendor/github.com/cockroachdb/gostdlib/go/format
+github.com/cockroachdb/cockroach/vendor/github.com/golang/dep/gps/pkgtree
+github.com/cockroachdb/cockroach/vendor/github.com/cockroachdb/gostdlib/x/tools/imports
+github.com/cockroachdb/cockroach/vendor/github.com/pkg/errors
+github.com/cockroachdb/cockroach/vendor/github.com/jmank88/nuts
+github.com/cockroachdb/cockroach/vendor/github.com/golang/dep/internal/fs
+github.com/cockroachdb/cockroach/vendor/github.com/nightlyone/lockfile
+github.com/cockroachdb/cockroach/vendor/github.com/sdboyer/constext
+github.com/cockroachdb/cockroach/vendor/golang.org/x/net/context
+github.com/cockroachdb/cockroach/vendor/github.com/pelletier/go-toml
+github.com/cockroachdb/cockroach/vendor/gopkg.in/yaml.v2
+github.com/cockroachdb/cockroach/vendor/golang.org/x/sync/errgroup
+github.com/cockroachdb/cockroach/vendor/github.com/client9/misspell/cmd/misspell
+github.com/cockroachdb/cockroach/vendor/golang.org/x/tools/go/gcimporter15
+github.com/cockroachdb/cockroach/vendor/github.com/cockroachdb/crlfmt
+github.com/cockroachdb/cockroach/vendor/github.com/golang/glog
+github.com/cockroachdb/cockroach/vendor/github.com/golang/dep/gps/internal/pb
+github.com/cockroachdb/cockroach/vendor/github.com/cockroachdb/gostdlib/x/tools/cmd/goimports
+github.com/cockroachdb/cockroach/vendor/github.com/golang/protobuf/protoc-gen-go/descriptor
+github.com/cockroachdb/cockroach/vendor/github.com/golang/dep/gps
+github.com/cockroachdb/cockroach/vendor/github.com/golang/protobuf/protoc-gen-go/generator/internal/remap
+github.com/cockroachdb/cockroach/vendor/golang.org/x/tools/go/gcexportdata
+github.com/cockroachdb/cockroach/vendor/github.com/golang/protobuf/protoc-gen-go/plugin
+github.com/cockroachdb/cockroach/vendor/github.com/grpc-ecosystem/grpc-gateway/protoc-gen-grpc-gateway/httprule
+github.com/cockroachdb/cockroach/vendor/github.com/golang/lint
+github.com/cockroachdb/cockroach/vendor/google.golang.org/genproto/googleapis/api/annotations
+github.com/cockroachdb/cockroach/vendor/github.com/golang/protobuf/protoc-gen-go/generator
+github.com/cockroachdb/cockroach/vendor/github.com/jteeuwen/go-bindata
+github.com/cockroachdb/cockroach/vendor/golang.org/x/tools/go/buildutil
+github.com/cockroachdb/cockroach/vendor/github.com/jteeuwen/go-bindata/go-bindata
+github.com/cockroachdb/cockroach/vendor/github.com/golang/lint/golint
+github.com/cockroachdb/cockroach/vendor/golang.org/x/tools/go/loader
+github.com/cockroachdb/cockroach/vendor/github.com/kisielk/gotool/internal/load
+github.com/cockroachdb/cockroach/vendor/github.com/kisielk/gotool
+github.com/cockroachdb/cockroach/vendor/golang.org/x/tools/cover
+github.com/cockroachdb/cockroach/vendor/github.com/kisielk/errcheck/internal/errcheck
+github.com/cockroachdb/cockroach/vendor/github.com/mibk/dupl/suffixtree
+github.com/cockroachdb/cockroach/vendor/github.com/mattn/goveralls
+github.com/cockroachdb/cockroach/vendor/github.com/mibk/dupl/syntax
+github.com/cockroachdb/cockroach/vendor/github.com/wadey/gocovmerge
+github.com/cockroachdb/cockroach/vendor/github.com/mibk/dupl/syntax/golang
+github.com/cockroachdb/cockroach/vendor/github.com/kisielk/errcheck
+github.com/cockroachdb/cockroach/vendor/github.com/mibk/dupl/output
+github.com/cockroachdb/cockroach/vendor/github.com/mibk/dupl/job
+github.com/cockroachdb/cockroach/vendor/github.com/mibk/dupl
+github.com/cockroachdb/cockroach/vendor/golang.org/x/perf/internal/stats
+github.com/cockroachdb/cockroach/vendor/github.com/grpc-ecosystem/grpc-gateway/protoc-gen-grpc-gateway/descriptor
+github.com/cockroachdb/cockroach/vendor/github.com/golang/dep/gps/verify
+github.com/cockroachdb/cockroach/vendor/github.com/golang/dep/internal/feedback
+github.com/cockroachdb/cockroach/vendor/golang.org/x/perf/storage/benchfmt
+github.com/cockroachdb/cockroach/vendor/golang.org/x/tools/cmd/goyacc
+github.com/cockroachdb/cockroach/vendor/golang.org/x/perf/benchstat
+github.com/cockroachdb/cockroach/vendor/github.com/golang/dep
+github.com/cockroachdb/cockroach/vendor/golang.org/x/tools/cmd/stringer
+github.com/cockroachdb/cockroach/vendor/github.com/grpc-ecosystem/grpc-gateway/protoc-gen-grpc-gateway/generator
+github.com/cockroachdb/cockroach/vendor/golang.org/x/perf/cmd/benchstat
+github.com/cockroachdb/cockroach/vendor/github.com/grpc-ecosystem/grpc-gateway/protoc-gen-grpc-gateway/gengateway
+github.com/cockroachdb/cockroach/vendor/github.com/grpc-ecosystem/grpc-gateway/protoc-gen-grpc-gateway
+github.com/cockroachdb/cockroach/vendor/github.com/golang/dep/internal/importers/base
+github.com/cockroachdb/cockroach/vendor/github.com/golang/dep/internal/importers/glock
+github.com/cockroachdb/cockroach/vendor/github.com/golang/dep/internal/importers/godep
+github.com/cockroachdb/cockroach/vendor/github.com/golang/dep/internal/importers/glide
+github.com/cockroachdb/cockroach/vendor/github.com/golang/dep/internal/importers/govend
+github.com/cockroachdb/cockroach/vendor/github.com/golang/dep/internal/importers/govendor
+github.com/cockroachdb/cockroach/vendor/github.com/golang/dep/internal/importers/gvt
+github.com/cockroachdb/cockroach/vendor/github.com/golang/dep/internal/importers/vndr
+github.com/cockroachdb/cockroach/vendor/github.com/golang/dep/internal/importers
+github.com/cockroachdb/cockroach/vendor/github.com/golang/dep/cmd/dep
+touch bin/.bootstrap
+go install -v protoc-gen-gogoroach
+bin/prereqs ./pkg/cmd/protoc-gen-gogoroach > bin/protoc-gen-gogoroach.d.tmp
+mv -f bin/protoc-gen-gogoroach.d.tmp bin/protoc-gen-gogoroach.d
+github.com/cockroachdb/cockroach/vendor/github.com/gogo/protobuf/proto
+github.com/cockroachdb/cockroach/vendor/github.com/gogo/protobuf/protoc-gen-gogo/descriptor
+github.com/cockroachdb/cockroach/vendor/github.com/gogo/protobuf/protoc-gen-gogo/plugin
+github.com/cockroachdb/cockroach/vendor/github.com/gogo/protobuf/gogoproto
+github.com/cockroachdb/cockroach/vendor/github.com/gogo/protobuf/vanity
+github.com/cockroachdb/cockroach/vendor/github.com/gogo/protobuf/protoc-gen-gogo/generator
+github.com/cockroachdb/cockroach/vendor/github.com/gogo/protobuf/plugin/testgen
+github.com/cockroachdb/cockroach/vendor/github.com/gogo/protobuf/plugin/defaultcheck
+github.com/cockroachdb/cockroach/vendor/github.com/gogo/protobuf/plugin/embedcheck
+github.com/cockroachdb/cockroach/vendor/github.com/gogo/protobuf/plugin/enumstringer
+github.com/cockroachdb/cockroach/vendor/github.com/gogo/protobuf/plugin/oneofcheck
+github.com/cockroachdb/cockroach/vendor/github.com/gogo/protobuf/plugin/marshalto
+github.com/cockroachdb/cockroach/vendor/github.com/gogo/protobuf/plugin/populate
+github.com/cockroachdb/cockroach/vendor/github.com/gogo/protobuf/plugin/unmarshal
+github.com/cockroachdb/cockroach/vendor/github.com/gogo/protobuf/protoc-gen-gogo/grpc
+github.com/cockroachdb/cockroach/vendor/github.com/gogo/protobuf/plugin/compare
+github.com/cockroachdb/cockroach/vendor/github.com/gogo/protobuf/plugin/description
+github.com/cockroachdb/cockroach/vendor/github.com/gogo/protobuf/plugin/face
+github.com/cockroachdb/cockroach/vendor/github.com/gogo/protobuf/plugin/stringer
+github.com/cockroachdb/cockroach/vendor/github.com/gogo/protobuf/plugin/equal
+github.com/cockroachdb/cockroach/vendor/github.com/gogo/protobuf/plugin/size
+github.com/cockroachdb/cockroach/vendor/github.com/gogo/protobuf/plugin/gostring
+github.com/cockroachdb/cockroach/vendor/github.com/gogo/protobuf/plugin/union
+github.com/cockroachdb/cockroach/vendor/github.com/gogo/protobuf/vanity/command
+github.com/cockroachdb/cockroach/pkg/cmd/protoc-gen-gogoroach
+find ./pkg -name node_modules -prune -o -type f -name '*.pb.go' -exec rm {} +
+set -e; for dir in ./pkg/acceptance/cluster/ ./pkg/build/ ./pkg/ccl/backupccl/ ./pkg/ccl/baseccl/ ./pkg/ccl/storageccl/engineccl/enginepbccl/ ./pkg/ccl/utilccl/licenseccl/ ./pkg/config/ ./pkg/gossip/ ./pkg/internal/client/ ./pkg/jobs/jobspb/ ./pkg/roachpb/ ./pkg/rpc/ ./pkg/server/diagnosticspb/ ./pkg/server/serverpb/ ./pkg/server/status/ ./pkg/settings/cluster/ ./pkg/sql/distsqlrun/ ./pkg/sql/pgwire/pgerror/ ./pkg/sql/sqlbase/ ./pkg/sql/stats/ ./pkg/storage/ ./pkg/storage/closedts/ctpb/ ./pkg/storage/engine/enginepb/ ./pkg/storage/storagebase/ ./pkg/ts/tspb/ ./pkg/util/ ./pkg/util/hlc/ ./pkg/util/log/ ./pkg/util/metric/ ./pkg/util/protoutil/ ./pkg/util/tracing/; do \
+  build/werror.sh /go/native/x86_64-pc-linux-gnu/protobuf/protoc -Ipkg:./vendor/github.com:./vendor/github.com/gogo/protobuf:./vendor/github.com/gogo/protobuf/protobuf:./vendor/go.etcd.io:./vendor/github.com/grpc-ecosystem/grpc-gateway/third_party/googleapis --gogoroach_out=Mgoogle/api/annotations.proto=github.com/grpc-ecosystem/grpc-gateway/third_party/googleapis/google/api,Mgoogle/protobuf/timestamp.proto=github.com/gogo/protobuf/types,Mgoogle/protobuf/any.proto=github.com/gogo/protobuf/types,,plugins=grpc,import_prefix=github.com/cockroachdb/cockroach/pkg/:./pkg $dir/*.proto; \
+done
+sed -i '/import _/d' ./pkg/acceptance/cluster/testconfig.pb.go ./pkg/build/info.pb.go ./pkg/ccl/backupccl/backup.pb.go ./pkg/ccl/baseccl/encryption_options.pb.go ./pkg/ccl/storageccl/engineccl/enginepbccl/key_registry.pb.go ./pkg/ccl/storageccl/engineccl/enginepbccl/stats.pb.go ./pkg/ccl/utilccl/licenseccl/license.pb.go ./pkg/config/system.pb.go ./pkg/config/zone.pb.go ./pkg/gossip/gossip.pb.go ./pkg/internal/client/lease.pb.go ./pkg/jobs/jobspb/jobs.pb.go ./pkg/roachpb/api.pb.go ./pkg/roachpb/app_stats.pb.go ./pkg/roachpb/data.pb.go ./pkg/roachpb/errors.pb.go ./pkg/roachpb/internal.pb.go ./pkg/roachpb/internal_raft.pb.go ./pkg/roachpb/io-formats.pb.go ./pkg/roachpb/metadata.pb.go ./pkg/rpc/heartbeat.pb.go ./pkg/server/diagnosticspb/diagnostics.pb.go ./pkg/server/serverpb/admin.pb.go ./pkg/server/serverpb/authentication.pb.go ./pkg/server/serverpb/init.pb.go ./pkg/server/serverpb/status.pb.go ./pkg/server/status/status.pb.go ./pkg/settings/cluster/cluster_version.pb.go ./pkg/sql/distsqlrun/api.pb.go ./pkg/sql/distsqlrun/data.pb.go ./pkg/sql/distsqlrun/processors.pb.go ./pkg/sql/distsqlrun/stats.pb.go ./pkg/sql/pgwire/pgerror/errors.pb.go ./pkg/sql/sqlbase/encoded_datum.pb.go ./pkg/sql/sqlbase/join_type.pb.go ./pkg/sql/sqlbase/privilege.pb.go ./pkg/sql/sqlbase/structured.pb.go ./pkg/sql/stats/histogram.pb.go ./pkg/storage/api.pb.go ./pkg/storage/closedts/ctpb/entry.pb.go ./pkg/storage/engine/enginepb/file_registry.pb.go ./pkg/storage/engine/enginepb/mvcc.pb.go ./pkg/storage/engine/enginepb/mvcc3.pb.go ./pkg/storage/engine/enginepb/rocksdb.pb.go ./pkg/storage/lease_status.pb.go ./pkg/storage/liveness.pb.go ./pkg/storage/log.pb.go ./pkg/storage/raft.pb.go ./pkg/storage/storagebase/proposer_kv.pb.go ./pkg/storage/storagebase/state.pb.go ./pkg/ts/tspb/timeseries.pb.go ./pkg/util/hlc/legacy_timestamp.pb.go ./pkg/util/hlc/timestamp.pb.go ./pkg/util/log/log.pb.go ./pkg/util/metric/metric.pb.go ./pkg/util/protoutil/clone.pb.go ./pkg/util/tracing/recorded_span.pb.go ./pkg/util/unresolved_addr.pb.go
+sed -i -E 's!import (fmt|math) "github.com/cockroachdb/cockroach/pkg/(fmt|math)"! !g' ./pkg/acceptance/cluster/testconfig.pb.go ./pkg/build/info.pb.go ./pkg/ccl/backupccl/backup.pb.go ./pkg/ccl/baseccl/encryption_options.pb.go ./pkg/ccl/storageccl/engineccl/enginepbccl/key_registry.pb.go ./pkg/ccl/storageccl/engineccl/enginepbccl/stats.pb.go ./pkg/ccl/utilccl/licenseccl/license.pb.go ./pkg/config/system.pb.go ./pkg/config/zone.pb.go ./pkg/gossip/gossip.pb.go ./pkg/internal/client/lease.pb.go ./pkg/jobs/jobspb/jobs.pb.go ./pkg/roachpb/api.pb.go ./pkg/roachpb/app_stats.pb.go ./pkg/roachpb/data.pb.go ./pkg/roachpb/errors.pb.go ./pkg/roachpb/internal.pb.go ./pkg/roachpb/internal_raft.pb.go ./pkg/roachpb/io-formats.pb.go ./pkg/roachpb/metadata.pb.go ./pkg/rpc/heartbeat.pb.go ./pkg/server/diagnosticspb/diagnostics.pb.go ./pkg/server/serverpb/admin.pb.go ./pkg/server/serverpb/authentication.pb.go ./pkg/server/serverpb/init.pb.go ./pkg/server/serverpb/status.pb.go ./pkg/server/status/status.pb.go ./pkg/settings/cluster/cluster_version.pb.go ./pkg/sql/distsqlrun/api.pb.go ./pkg/sql/distsqlrun/data.pb.go ./pkg/sql/distsqlrun/processors.pb.go ./pkg/sql/distsqlrun/stats.pb.go ./pkg/sql/pgwire/pgerror/errors.pb.go ./pkg/sql/sqlbase/encoded_datum.pb.go ./pkg/sql/sqlbase/join_type.pb.go ./pkg/sql/sqlbase/privilege.pb.go ./pkg/sql/sqlbase/structured.pb.go ./pkg/sql/stats/histogram.pb.go ./pkg/storage/api.pb.go ./pkg/storage/closedts/ctpb/entry.pb.go ./pkg/storage/engine/enginepb/file_registry.pb.go ./pkg/storage/engine/enginepb/mvcc.pb.go ./pkg/storage/engine/enginepb/mvcc3.pb.go ./pkg/storage/engine/enginepb/rocksdb.pb.go ./pkg/storage/lease_status.pb.go ./pkg/storage/liveness.pb.go ./pkg/storage/log.pb.go ./pkg/storage/raft.pb.go ./pkg/storage/storagebase/proposer_kv.pb.go ./pkg/storage/storagebase/state.pb.go ./pkg/ts/tspb/timeseries.pb.go ./pkg/util/hlc/legacy_timestamp.pb.go ./pkg/util/hlc/timestamp.pb.go ./pkg/util/log/log.pb.go ./pkg/util/metric/metric.pb.go ./pkg/util/protoutil/clone.pb.go ./pkg/util/tracing/recorded_span.pb.go ./pkg/util/unresolved_addr.pb.go
+sed -i -E 's!github\.com/cockroachdb/cockroach/pkg/(etcd)!go.etcd.io/\1!g' ./pkg/acceptance/cluster/testconfig.pb.go ./pkg/build/info.pb.go ./pkg/ccl/backupccl/backup.pb.go ./pkg/ccl/baseccl/encryption_options.pb.go ./pkg/ccl/storageccl/engineccl/enginepbccl/key_registry.pb.go ./pkg/ccl/storageccl/engineccl/enginepbccl/stats.pb.go ./pkg/ccl/utilccl/licenseccl/license.pb.go ./pkg/config/system.pb.go ./pkg/config/zone.pb.go ./pkg/gossip/gossip.pb.go ./pkg/internal/client/lease.pb.go ./pkg/jobs/jobspb/jobs.pb.go ./pkg/roachpb/api.pb.go ./pkg/roachpb/app_stats.pb.go ./pkg/roachpb/data.pb.go ./pkg/roachpb/errors.pb.go ./pkg/roachpb/internal.pb.go ./pkg/roachpb/internal_raft.pb.go ./pkg/roachpb/io-formats.pb.go ./pkg/roachpb/metadata.pb.go ./pkg/rpc/heartbeat.pb.go ./pkg/server/diagnosticspb/diagnostics.pb.go ./pkg/server/serverpb/admin.pb.go ./pkg/server/serverpb/authentication.pb.go ./pkg/server/serverpb/init.pb.go ./pkg/server/serverpb/status.pb.go ./pkg/server/status/status.pb.go ./pkg/settings/cluster/cluster_version.pb.go ./pkg/sql/distsqlrun/api.pb.go ./pkg/sql/distsqlrun/data.pb.go ./pkg/sql/distsqlrun/processors.pb.go ./pkg/sql/distsqlrun/stats.pb.go ./pkg/sql/pgwire/pgerror/errors.pb.go ./pkg/sql/sqlbase/encoded_datum.pb.go ./pkg/sql/sqlbase/join_type.pb.go ./pkg/sql/sqlbase/privilege.pb.go ./pkg/sql/sqlbase/structured.pb.go ./pkg/sql/stats/histogram.pb.go ./pkg/storage/api.pb.go ./pkg/storage/closedts/ctpb/entry.pb.go ./pkg/storage/engine/enginepb/file_registry.pb.go ./pkg/storage/engine/enginepb/mvcc.pb.go ./pkg/storage/engine/enginepb/mvcc3.pb.go ./pkg/storage/engine/enginepb/rocksdb.pb.go ./pkg/storage/lease_status.pb.go ./pkg/storage/liveness.pb.go ./pkg/storage/log.pb.go ./pkg/storage/raft.pb.go ./pkg/storage/storagebase/proposer_kv.pb.go ./pkg/storage/storagebase/state.pb.go ./pkg/ts/tspb/timeseries.pb.go ./pkg/util/hlc/legacy_timestamp.pb.go ./pkg/util/hlc/timestamp.pb.go ./pkg/util/log/log.pb.go ./pkg/util/metric/metric.pb.go ./pkg/util/protoutil/clone.pb.go ./pkg/util/tracing/recorded_span.pb.go ./pkg/util/unresolved_addr.pb.go
+sed -i -E 's!cockroachdb/cockroach/pkg/(prometheus/client_model)!\1/go!g' ./pkg/acceptance/cluster/testconfig.pb.go ./pkg/build/info.pb.go ./pkg/ccl/backupccl/backup.pb.go ./pkg/ccl/baseccl/encryption_options.pb.go ./pkg/ccl/storageccl/engineccl/enginepbccl/key_registry.pb.go ./pkg/ccl/storageccl/engineccl/enginepbccl/stats.pb.go ./pkg/ccl/utilccl/licenseccl/license.pb.go ./pkg/config/system.pb.go ./pkg/config/zone.pb.go ./pkg/gossip/gossip.pb.go ./pkg/internal/client/lease.pb.go ./pkg/jobs/jobspb/jobs.pb.go ./pkg/roachpb/api.pb.go ./pkg/roachpb/app_stats.pb.go ./pkg/roachpb/data.pb.go ./pkg/roachpb/errors.pb.go ./pkg/roachpb/internal.pb.go ./pkg/roachpb/internal_raft.pb.go ./pkg/roachpb/io-formats.pb.go ./pkg/roachpb/metadata.pb.go ./pkg/rpc/heartbeat.pb.go ./pkg/server/diagnosticspb/diagnostics.pb.go ./pkg/server/serverpb/admin.pb.go ./pkg/server/serverpb/authentication.pb.go ./pkg/server/serverpb/init.pb.go ./pkg/server/serverpb/status.pb.go ./pkg/server/status/status.pb.go ./pkg/settings/cluster/cluster_version.pb.go ./pkg/sql/distsqlrun/api.pb.go ./pkg/sql/distsqlrun/data.pb.go ./pkg/sql/distsqlrun/processors.pb.go ./pkg/sql/distsqlrun/stats.pb.go ./pkg/sql/pgwire/pgerror/errors.pb.go ./pkg/sql/sqlbase/encoded_datum.pb.go ./pkg/sql/sqlbase/join_type.pb.go ./pkg/sql/sqlbase/privilege.pb.go ./pkg/sql/sqlbase/structured.pb.go ./pkg/sql/stats/histogram.pb.go ./pkg/storage/api.pb.go ./pkg/storage/closedts/ctpb/entry.pb.go ./pkg/storage/engine/enginepb/file_registry.pb.go ./pkg/storage/engine/enginepb/mvcc.pb.go ./pkg/storage/engine/enginepb/mvcc3.pb.go ./pkg/storage/engine/enginepb/rocksdb.pb.go ./pkg/storage/lease_status.pb.go ./pkg/storage/liveness.pb.go ./pkg/storage/log.pb.go ./pkg/storage/raft.pb.go ./pkg/storage/storagebase/proposer_kv.pb.go ./pkg/storage/storagebase/state.pb.go ./pkg/ts/tspb/timeseries.pb.go ./pkg/util/hlc/legacy_timestamp.pb.go ./pkg/util/hlc/timestamp.pb.go ./pkg/util/log/log.pb.go ./pkg/util/metric/metric.pb.go ./pkg/util/protoutil/clone.pb.go ./pkg/util/tracing/recorded_span.pb.go ./pkg/util/unresolved_addr.pb.go
+sed -i -E 's!github.com/cockroachdb/cockroach/pkg/(bytes|encoding/binary|errors|fmt|io|math|github\.com|(google\.)?golang\.org)!\1!g' ./pkg/acceptance/cluster/testconfig.pb.go ./pkg/build/info.pb.go ./pkg/ccl/backupccl/backup.pb.go ./pkg/ccl/baseccl/encryption_options.pb.go ./pkg/ccl/storageccl/engineccl/enginepbccl/key_registry.pb.go ./pkg/ccl/storageccl/engineccl/enginepbccl/stats.pb.go ./pkg/ccl/utilccl/licenseccl/license.pb.go ./pkg/config/system.pb.go ./pkg/config/zone.pb.go ./pkg/gossip/gossip.pb.go ./pkg/internal/client/lease.pb.go ./pkg/jobs/jobspb/jobs.pb.go ./pkg/roachpb/api.pb.go ./pkg/roachpb/app_stats.pb.go ./pkg/roachpb/data.pb.go ./pkg/roachpb/errors.pb.go ./pkg/roachpb/internal.pb.go ./pkg/roachpb/internal_raft.pb.go ./pkg/roachpb/io-formats.pb.go ./pkg/roachpb/metadata.pb.go ./pkg/rpc/heartbeat.pb.go ./pkg/server/diagnosticspb/diagnostics.pb.go ./pkg/server/serverpb/admin.pb.go ./pkg/server/serverpb/authentication.pb.go ./pkg/server/serverpb/init.pb.go ./pkg/server/serverpb/status.pb.go ./pkg/server/status/status.pb.go ./pkg/settings/cluster/cluster_version.pb.go ./pkg/sql/distsqlrun/api.pb.go ./pkg/sql/distsqlrun/data.pb.go ./pkg/sql/distsqlrun/processors.pb.go ./pkg/sql/distsqlrun/stats.pb.go ./pkg/sql/pgwire/pgerror/errors.pb.go ./pkg/sql/sqlbase/encoded_datum.pb.go ./pkg/sql/sqlbase/join_type.pb.go ./pkg/sql/sqlbase/privilege.pb.go ./pkg/sql/sqlbase/structured.pb.go ./pkg/sql/stats/histogram.pb.go ./pkg/storage/api.pb.go ./pkg/storage/closedts/ctpb/entry.pb.go ./pkg/storage/engine/enginepb/file_registry.pb.go ./pkg/storage/engine/enginepb/mvcc.pb.go ./pkg/storage/engine/enginepb/mvcc3.pb.go ./pkg/storage/engine/enginepb/rocksdb.pb.go ./pkg/storage/lease_status.pb.go ./pkg/storage/liveness.pb.go ./pkg/storage/log.pb.go ./pkg/storage/raft.pb.go ./pkg/storage/storagebase/proposer_kv.pb.go ./pkg/storage/storagebase/state.pb.go ./pkg/ts/tspb/timeseries.pb.go ./pkg/util/hlc/legacy_timestamp.pb.go ./pkg/util/hlc/timestamp.pb.go ./pkg/util/log/log.pb.go ./pkg/util/metric/metric.pb.go ./pkg/util/protoutil/clone.pb.go ./pkg/util/tracing/recorded_span.pb.go ./pkg/util/unresolved_addr.pb.go
+sed -i -E 's!golang.org/x/net/context!context!g' ./pkg/acceptance/cluster/testconfig.pb.go ./pkg/build/info.pb.go ./pkg/ccl/backupccl/backup.pb.go ./pkg/ccl/baseccl/encryption_options.pb.go ./pkg/ccl/storageccl/engineccl/enginepbccl/key_registry.pb.go ./pkg/ccl/storageccl/engineccl/enginepbccl/stats.pb.go ./pkg/ccl/utilccl/licenseccl/license.pb.go ./pkg/config/system.pb.go ./pkg/config/zone.pb.go ./pkg/gossip/gossip.pb.go ./pkg/internal/client/lease.pb.go ./pkg/jobs/jobspb/jobs.pb.go ./pkg/roachpb/api.pb.go ./pkg/roachpb/app_stats.pb.go ./pkg/roachpb/data.pb.go ./pkg/roachpb/errors.pb.go ./pkg/roachpb/internal.pb.go ./pkg/roachpb/internal_raft.pb.go ./pkg/roachpb/io-formats.pb.go ./pkg/roachpb/metadata.pb.go ./pkg/rpc/heartbeat.pb.go ./pkg/server/diagnosticspb/diagnostics.pb.go ./pkg/server/serverpb/admin.pb.go ./pkg/server/serverpb/authentication.pb.go ./pkg/server/serverpb/init.pb.go ./pkg/server/serverpb/status.pb.go ./pkg/server/status/status.pb.go ./pkg/settings/cluster/cluster_version.pb.go ./pkg/sql/distsqlrun/api.pb.go ./pkg/sql/distsqlrun/data.pb.go ./pkg/sql/distsqlrun/processors.pb.go ./pkg/sql/distsqlrun/stats.pb.go ./pkg/sql/pgwire/pgerror/errors.pb.go ./pkg/sql/sqlbase/encoded_datum.pb.go ./pkg/sql/sqlbase/join_type.pb.go ./pkg/sql/sqlbase/privilege.pb.go ./pkg/sql/sqlbase/structured.pb.go ./pkg/sql/stats/histogram.pb.go ./pkg/storage/api.pb.go ./pkg/storage/closedts/ctpb/entry.pb.go ./pkg/storage/engine/enginepb/file_registry.pb.go ./pkg/storage/engine/enginepb/mvcc.pb.go ./pkg/storage/engine/enginepb/mvcc3.pb.go ./pkg/storage/engine/enginepb/rocksdb.pb.go ./pkg/storage/lease_status.pb.go ./pkg/storage/liveness.pb.go ./pkg/storage/log.pb.go ./pkg/storage/raft.pb.go ./pkg/storage/storagebase/proposer_kv.pb.go ./pkg/storage/storagebase/state.pb.go ./pkg/ts/tspb/timeseries.pb.go ./pkg/util/hlc/legacy_timestamp.pb.go ./pkg/util/hlc/timestamp.pb.go ./pkg/util/log/log.pb.go ./pkg/util/metric/metric.pb.go ./pkg/util/protoutil/clone.pb.go ./pkg/util/tracing/recorded_span.pb.go ./pkg/util/unresolved_addr.pb.go
+gofmt -s -w ./pkg/acceptance/cluster/testconfig.pb.go ./pkg/build/info.pb.go ./pkg/ccl/backupccl/backup.pb.go ./pkg/ccl/baseccl/encryption_options.pb.go ./pkg/ccl/storageccl/engineccl/enginepbccl/key_registry.pb.go ./pkg/ccl/storageccl/engineccl/enginepbccl/stats.pb.go ./pkg/ccl/utilccl/licenseccl/license.pb.go ./pkg/config/system.pb.go ./pkg/config/zone.pb.go ./pkg/gossip/gossip.pb.go ./pkg/internal/client/lease.pb.go ./pkg/jobs/jobspb/jobs.pb.go ./pkg/roachpb/api.pb.go ./pkg/roachpb/app_stats.pb.go ./pkg/roachpb/data.pb.go ./pkg/roachpb/errors.pb.go ./pkg/roachpb/internal.pb.go ./pkg/roachpb/internal_raft.pb.go ./pkg/roachpb/io-formats.pb.go ./pkg/roachpb/metadata.pb.go ./pkg/rpc/heartbeat.pb.go ./pkg/server/diagnosticspb/diagnostics.pb.go ./pkg/server/serverpb/admin.pb.go ./pkg/server/serverpb/authentication.pb.go ./pkg/server/serverpb/init.pb.go ./pkg/server/serverpb/status.pb.go ./pkg/server/status/status.pb.go ./pkg/settings/cluster/cluster_version.pb.go ./pkg/sql/distsqlrun/api.pb.go ./pkg/sql/distsqlrun/data.pb.go ./pkg/sql/distsqlrun/processors.pb.go ./pkg/sql/distsqlrun/stats.pb.go ./pkg/sql/pgwire/pgerror/errors.pb.go ./pkg/sql/sqlbase/encoded_datum.pb.go ./pkg/sql/sqlbase/join_type.pb.go ./pkg/sql/sqlbase/privilege.pb.go ./pkg/sql/sqlbase/structured.pb.go ./pkg/sql/stats/histogram.pb.go ./pkg/storage/api.pb.go ./pkg/storage/closedts/ctpb/entry.pb.go ./pkg/storage/engine/enginepb/file_registry.pb.go ./pkg/storage/engine/enginepb/mvcc.pb.go ./pkg/storage/engine/enginepb/mvcc3.pb.go ./pkg/storage/engine/enginepb/rocksdb.pb.go ./pkg/storage/lease_status.pb.go ./pkg/storage/liveness.pb.go ./pkg/storage/log.pb.go ./pkg/storage/raft.pb.go ./pkg/storage/storagebase/proposer_kv.pb.go ./pkg/storage/storagebase/state.pb.go ./pkg/ts/tspb/timeseries.pb.go ./pkg/util/hlc/legacy_timestamp.pb.go ./pkg/util/hlc/timestamp.pb.go ./pkg/util/log/log.pb.go ./pkg/util/metric/metric.pb.go ./pkg/util/protoutil/clone.pb.go ./pkg/util/tracing/recorded_span.pb.go ./pkg/util/unresolved_addr.pb.go
+touch bin/.go_protobuf_sources
+find ./pkg -name node_modules -prune -o -type f -name '*.pb.gw.go' -exec rm {} +
+build/werror.sh /go/native/x86_64-pc-linux-gnu/protobuf/protoc -Ipkg:./vendor/github.com:./vendor/github.com/gogo/protobuf:./vendor/github.com/gogo/protobuf/protobuf:./vendor/go.etcd.io:./vendor/github.com/grpc-ecosystem/grpc-gateway/third_party/googleapis --grpc-gateway_out=logtostderr=true,request_context=true:./pkg ./pkg/server/serverpb/admin.proto ./pkg/server/serverpb/status.proto ./pkg/server/serverpb/authentication.proto
+build/werror.sh /go/native/x86_64-pc-linux-gnu/protobuf/protoc -Ipkg:./vendor/github.com:./vendor/github.com/gogo/protobuf:./vendor/github.com/gogo/protobuf/protobuf:./vendor/go.etcd.io:./vendor/github.com/grpc-ecosystem/grpc-gateway/third_party/googleapis --grpc-gateway_out=logtostderr=true,request_context=true:./pkg ./pkg/ts/tspb/timeseries.proto
+sed -i -E 's!golang.org/x/net/context!context!g' ./pkg/server/serverpb/admin.pb.gw.go ./pkg/server/serverpb/status.pb.gw.go ./pkg/server/serverpb/authentication.pb.gw.go ./pkg/ts/tspb/timeseries.pb.gw.go
+gofmt -s -w ./pkg/server/serverpb/admin.pb.gw.go ./pkg/server/serverpb/status.pb.gw.go ./pkg/server/serverpb/authentication.pb.gw.go ./pkg/ts/tspb/timeseries.pb.gw.go
+goimports -w ./pkg/server/serverpb/admin.pb.gw.go ./pkg/server/serverpb/status.pb.gw.go ./pkg/server/serverpb/authentication.pb.gw.go ./pkg/ts/tspb/timeseries.pb.gw.go
+touch bin/.gw_protobuf_sources
+mkdir -p pkg/sql/parser/gen
+set -euo pipefail; \
+TYPES=$(awk '/func.*sqlSymUnion/ {print $(NF - 1)}' pkg/sql/parser/sql.y | sed -e 's/[]\/$*.^|[]/\\&/g' | tr '\n' '|' | sed -E '$s/.$//'); \
+sed -E "s_(type|token) <($TYPES)>_\1 <union> /* <\2> */_" < pkg/sql/parser/sql.y | \
+awk -f pkg/sql/parser/replace_help_rules.awk | \
+sed -Ee 's,//.*$,,g;s,/[*]([^*]|[*][^/])*[*]/, ,g;s/ +$//g' > pkg/sql/parser/gen/sql-gen.y.tmp || rm pkg/sql/parser/gen/sql-gen.y.tmp
+mv -f pkg/sql/parser/gen/sql-gen.y.tmp pkg/sql/parser/gen/sql-gen.y
+set -euo pipefail; \
+  ret=$(cd pkg/sql/parser/gen && goyacc -p sql -o sql.go.tmp sql-gen.y); \
+  if expr "$ret" : ".*conflicts" >/dev/null; then \
+    echo "$ret"; exit 1; \
+  fi
+(echo "// Code generated by goyacc. DO NOT EDIT."; \
+ echo "// GENERATED FILE DO NOT EDIT"; \
+ cat pkg/sql/parser/gen/sql.go.tmp | \
+ sed -E 's/^const ([A-Z][_A-Z0-9]*) =.*$/const \1 = lex.\1/g') > pkg/sql/parser/sql.go.tmp || rm pkg/sql/parser/sql.go.tmp
+mv -f pkg/sql/parser/sql.go.tmp pkg/sql/parser/sql.go
+goimports -w pkg/sql/parser/sql.go
+mv -f pkg/sql/parser/helpmap_test.go.tmp pkg/sql/parser/helpmap_test.go
+gofmt -s -w pkg/sql/parser/helpmap_test.go
+awk -f pkg/sql/parser/help.awk < pkg/sql/parser/sql.y > pkg/sql/parser/help_messages.go.tmp || rm pkg/sql/parser/help_messages.go.tmp
+mv -f pkg/sql/parser/help_messages.go.tmp pkg/sql/parser/help_messages.go
+gofmt -s -w pkg/sql/parser/help_messages.go
+(echo "// Code generated by make. DO NOT EDIT."; \
+ echo "// GENERATED FILE DO NOT EDIT"; \
+ echo; \
+ echo "package lex"; \
+ echo; \
+ grep '^const [A-Z][_A-Z0-9]* ' pkg/sql/parser/gen/sql.go.tmp) > pkg/sql/lex/tokens.go.tmp || rm pkg/sql/lex/tokens.go.tmp
+mv -f pkg/sql/lex/tokens.go.tmp pkg/sql/lex/tokens.go
+awk -f pkg/sql/parser/all_keywords.awk < pkg/sql/parser/sql.y > pkg/sql/lex/keywords.go.tmp || rm pkg/sql/lex/keywords.go.tmp
+mv -f pkg/sql/lex/keywords.go.tmp pkg/sql/lex/keywords.go
+gofmt -s -w pkg/sql/lex/keywords.go
+awk -f pkg/sql/parser/reserved_keywords.awk < pkg/sql/parser/sql.y > pkg/sql/lex/reserved_keywords.go.tmp || rm pkg/sql/lex/reserved_keywords.go.tmp
+mv -f pkg/sql/lex/reserved_keywords.go.tmp pkg/sql/lex/reserved_keywords.go
+gofmt -s -w pkg/sql/lex/reserved_keywords.go
+go install -v optgen
+bin/prereqs ./pkg/sql/opt/optgen/cmd/optgen > bin/optgen.d.tmp
+mv -f bin/optgen.d.tmp bin/optgen.d
+github.com/cockroachdb/cockroach/pkg/sql/opt/optgen/lang
+github.com/cockroachdb/cockroach/pkg/sql/opt/optgen/cmd/optgen
+optgen -out pkg/sql/opt/memo/expr.og.go exprs pkg/sql/opt/ops/*.opt
+optgen -out pkg/sql/opt/operator.og.go ops pkg/sql/opt/ops/*.opt
+optgen -out pkg/sql/opt/xform/explorer.og.go explorer pkg/sql/opt/ops/*.opt pkg/sql/opt/xform/rules/*.opt
+optgen -out pkg/sql/opt/norm/factory.og.go factory pkg/sql/opt/ops/*.opt pkg/sql/opt/norm/rules/*.opt
+optgen -out pkg/sql/opt/rule_name.og.go rulenames pkg/sql/opt/ops/*.opt pkg/sql/opt/norm/rules/*.opt pkg/sql/opt/xform/rules/*.opt
+stringer -output=pkg/sql/opt/rule_name_string.go -type=RuleName pkg/sql/opt/rule_name.go pkg/sql/opt/rule_name.og.go
+go test -race -tags ' make x86_64_pc_linux_gnu' -ldflags '-X github.com/cockroachdb/cockroach/pkg/build.typ=development -extldflags "" -X "github.com/cockroachdb/cockroach/pkg/build.tag=v2.2.0-alpha.00000000-925-g3baa3d9" -X "github.com/cockroachdb/cockroach/pkg/build.rev=3baa3d9b299a392b7d9b737dbfb333d095e672a9" -X "github.com/cockroachdb/cockroach/pkg/build.cgoTargetTriple=x86_64-pc-linux-gnu"  ' -run "."  -timeout 45m ./pkg/util/failsuite/... -v -json
+{"Time":"2018-09-19T14:16:15.348540931Z","Action":"run","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestThatPasses"}
+{"Time":"2018-09-19T14:16:15.348696171Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestThatPasses","Output":"=== RUN   TestThatPasses\n"}
+{"Time":"2018-09-19T14:16:15.348711474Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestThatPasses","Output":"output of TestThatPasses\n"}
+{"Time":"2018-09-19T14:16:15.348757652Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestThatPasses","Output":"--- PASS: TestThatPasses (0.00s)\n"}
+{"Time":"2018-09-19T14:16:15.348813938Z","Action":"pass","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestThatPasses","Elapsed":0}
+{"Time":"2018-09-19T14:16:15.348833491Z","Action":"run","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestThatFails"}
+{"Time":"2018-09-19T14:16:15.348840851Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestThatFails","Output":"=== RUN   TestThatFails\n"}
+{"Time":"2018-09-19T14:16:15.349103824Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestThatFails","Output":"--- FAIL: TestThatFails (0.00s)\n"}
+{"Time":"2018-09-19T14:16:15.349153233Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestThatFails","Output":"\tmain_test.go:41: an error occurs\n"}
+{"Time":"2018-09-19T14:16:15.349174523Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestThatFails","Output":"\tmain_test.go:42: then the test fatals\n"}
+{"Time":"2018-09-19T14:16:15.349204229Z","Action":"fail","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestThatFails","Elapsed":0}
+{"Time":"2018-09-19T14:16:15.349226807Z","Action":"run","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestThatGetsSkipped"}
+{"Time":"2018-09-19T14:16:15.349234023Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestThatGetsSkipped","Output":"=== RUN   TestThatGetsSkipped\n"}
+{"Time":"2018-09-19T14:16:15.349468553Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestThatGetsSkipped","Output":"--- SKIP: TestThatGetsSkipped (0.00s)\n"}
+{"Time":"2018-09-19T14:16:15.349486443Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestThatGetsSkipped","Output":"\tmain_test.go:46: logging something\n"}
+{"Time":"2018-09-19T14:16:15.349494948Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestThatGetsSkipped","Output":"\tmain_test.go:47: skipped\n"}
+{"Time":"2018-09-19T14:16:15.349502432Z","Action":"skip","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestThatGetsSkipped","Elapsed":0}
+{"Time":"2018-09-19T14:16:15.349513194Z","Action":"run","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestParallelOneWithDataRaceWithoutFailures"}
+{"Time":"2018-09-19T14:16:15.34952379Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestParallelOneWithDataRaceWithoutFailures","Output":"=== RUN   TestParallelOneWithDataRaceWithoutFailures\n"}
+{"Time":"2018-09-19T14:16:15.349611282Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestParallelOneWithDataRaceWithoutFailures","Output":"output before calling t.Parallel()\n"}
+{"Time":"2018-09-19T14:16:15.349626951Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestParallelOneWithDataRaceWithoutFailures","Output":"=== PAUSE TestParallelOneWithDataRaceWithoutFailures\n"}
+{"Time":"2018-09-19T14:16:15.349637571Z","Action":"pause","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestParallelOneWithDataRaceWithoutFailures"}
+{"Time":"2018-09-19T14:16:15.349646586Z","Action":"run","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestParallelWithDataRaceAndFailures"}
+{"Time":"2018-09-19T14:16:15.349652985Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestParallelWithDataRaceAndFailures","Output":"=== RUN   TestParallelWithDataRaceAndFailures\n"}
+{"Time":"2018-09-19T14:16:15.349858675Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestParallelWithDataRaceAndFailures","Output":"output before calling t.Parallel()\n"}
+{"Time":"2018-09-19T14:16:15.349901331Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestParallelWithDataRaceAndFailures","Output":"=== PAUSE TestParallelWithDataRaceAndFailures\n"}
+{"Time":"2018-09-19T14:16:15.349914296Z","Action":"pause","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestParallelWithDataRaceAndFailures"}
+{"Time":"2018-09-19T14:16:15.350076722Z","Action":"cont","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestParallelOneWithDataRaceWithoutFailures"}
+{"Time":"2018-09-19T14:16:15.350088109Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestParallelOneWithDataRaceWithoutFailures","Output":"=== CONT  TestParallelOneWithDataRaceWithoutFailures\n"}
+{"Time":"2018-09-19T14:16:15.350134698Z","Action":"run","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestParallelOneWithDataRaceWithoutFailures/0"}
+{"Time":"2018-09-19T14:16:15.350146007Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestParallelOneWithDataRaceWithoutFailures/0","Output":"=== RUN   TestParallelOneWithDataRaceWithoutFailures/0\n"}
+{"Time":"2018-09-19T14:16:15.350238518Z","Action":"cont","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestParallelWithDataRaceAndFailures"}
+{"Time":"2018-09-19T14:16:15.350253096Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestParallelWithDataRaceAndFailures","Output":"=== CONT  TestParallelWithDataRaceAndFailures\n"}
+{"Time":"2018-09-19T14:16:15.351009294Z","Action":"run","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestParallelWithDataRaceAndFailures/0"}
+{"Time":"2018-09-19T14:16:15.351044657Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestParallelWithDataRaceAndFailures/0","Output":"=== RUN   TestParallelWithDataRaceAndFailures/0\n"}
+{"Time":"2018-09-19T14:16:15.351084743Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestParallelOneWithDataRaceWithoutFailures/0","Output":"=== PAUSE TestParallelOneWithDataRaceWithoutFailures/0\n"}
+{"Time":"2018-09-19T14:16:15.35110435Z","Action":"pause","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestParallelOneWithDataRaceWithoutFailures/0"}
+{"Time":"2018-09-19T14:16:15.351160089Z","Action":"run","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestParallelOneWithDataRaceWithoutFailures/1"}
+{"Time":"2018-09-19T14:16:15.351172567Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestParallelOneWithDataRaceWithoutFailures/1","Output":"=== RUN   TestParallelOneWithDataRaceWithoutFailures/1\n"}
+{"Time":"2018-09-19T14:16:15.351453807Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestParallelOneWithDataRaceWithoutFailures/1","Output":"=== PAUSE TestParallelOneWithDataRaceWithoutFailures/1\n"}
+{"Time":"2018-09-19T14:16:15.351481505Z","Action":"pause","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestParallelOneWithDataRaceWithoutFailures/1"}
+{"Time":"2018-09-19T14:16:15.351501585Z","Action":"run","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestParallelOneWithDataRaceWithoutFailures/2"}
+{"Time":"2018-09-19T14:16:15.351511737Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestParallelOneWithDataRaceWithoutFailures/2","Output":"=== RUN   TestParallelOneWithDataRaceWithoutFailures/2\n"}
+{"Time":"2018-09-19T14:16:15.35163377Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestParallelWithDataRaceAndFailures/0","Output":"=== PAUSE TestParallelWithDataRaceAndFailures/0\n"}
+{"Time":"2018-09-19T14:16:15.351655078Z","Action":"pause","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestParallelWithDataRaceAndFailures/0"}
+{"Time":"2018-09-19T14:16:15.351673523Z","Action":"run","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestParallelWithDataRaceAndFailures/1"}
+{"Time":"2018-09-19T14:16:15.35168373Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestParallelWithDataRaceAndFailures/1","Output":"=== RUN   TestParallelWithDataRaceAndFailures/1\n"}
+{"Time":"2018-09-19T14:16:15.351810186Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestParallelOneWithDataRaceWithoutFailures/2","Output":"=== PAUSE TestParallelOneWithDataRaceWithoutFailures/2\n"}
+{"Time":"2018-09-19T14:16:15.351842208Z","Action":"pause","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestParallelOneWithDataRaceWithoutFailures/2"}
+{"Time":"2018-09-19T14:16:15.351859702Z","Action":"run","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestParallelOneWithDataRaceWithoutFailures/3"}
+{"Time":"2018-09-19T14:16:15.351868465Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestParallelOneWithDataRaceWithoutFailures/3","Output":"=== RUN   TestParallelOneWithDataRaceWithoutFailures/3\n"}
+{"Time":"2018-09-19T14:16:15.351899587Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestParallelWithDataRaceAndFailures/1","Output":"=== PAUSE TestParallelWithDataRaceAndFailures/1\n"}
+{"Time":"2018-09-19T14:16:15.351915455Z","Action":"pause","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestParallelWithDataRaceAndFailures/1"}
+{"Time":"2018-09-19T14:16:15.351971301Z","Action":"run","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestParallelWithDataRaceAndFailures/2"}
+{"Time":"2018-09-19T14:16:15.351997963Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestParallelWithDataRaceAndFailures/2","Output":"=== RUN   TestParallelWithDataRaceAndFailures/2\n"}
+{"Time":"2018-09-19T14:16:15.35209551Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestParallelOneWithDataRaceWithoutFailures/3","Output":"=== PAUSE TestParallelOneWithDataRaceWithoutFailures/3\n"}
+{"Time":"2018-09-19T14:16:15.35211388Z","Action":"pause","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestParallelOneWithDataRaceWithoutFailures/3"}
+{"Time":"2018-09-19T14:16:15.352157061Z","Action":"run","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestParallelOneWithDataRaceWithoutFailures/4"}
+{"Time":"2018-09-19T14:16:15.352175963Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestParallelOneWithDataRaceWithoutFailures/4","Output":"=== RUN   TestParallelOneWithDataRaceWithoutFailures/4\n"}
+{"Time":"2018-09-19T14:16:15.3522484Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestParallelWithDataRaceAndFailures/2","Output":"=== PAUSE TestParallelWithDataRaceAndFailures/2\n"}
+{"Time":"2018-09-19T14:16:15.352261458Z","Action":"pause","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestParallelWithDataRaceAndFailures/2"}
+{"Time":"2018-09-19T14:16:15.352333204Z","Action":"run","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestParallelWithDataRaceAndFailures/3"}
+{"Time":"2018-09-19T14:16:15.352348646Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestParallelWithDataRaceAndFailures/3","Output":"=== RUN   TestParallelWithDataRaceAndFailures/3\n"}
+{"Time":"2018-09-19T14:16:15.352413128Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestParallelOneWithDataRaceWithoutFailures/4","Output":"=== PAUSE TestParallelOneWithDataRaceWithoutFailures/4\n"}
+{"Time":"2018-09-19T14:16:15.352424811Z","Action":"pause","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestParallelOneWithDataRaceWithoutFailures/4"}
+{"Time":"2018-09-19T14:16:15.352449484Z","Action":"run","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestParallelOneWithDataRaceWithoutFailures/5"}
+{"Time":"2018-09-19T14:16:15.352457523Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestParallelOneWithDataRaceWithoutFailures/5","Output":"=== RUN   TestParallelOneWithDataRaceWithoutFailures/5\n"}
+{"Time":"2018-09-19T14:16:15.352570998Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestParallelWithDataRaceAndFailures/3","Output":"=== PAUSE TestParallelWithDataRaceAndFailures/3\n"}
+{"Time":"2018-09-19T14:16:15.352583579Z","Action":"pause","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestParallelWithDataRaceAndFailures/3"}
+{"Time":"2018-09-19T14:16:15.352644417Z","Action":"run","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestParallelWithDataRaceAndFailures/4"}
+{"Time":"2018-09-19T14:16:15.352655504Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestParallelWithDataRaceAndFailures/4","Output":"=== RUN   TestParallelWithDataRaceAndFailures/4\n"}
+{"Time":"2018-09-19T14:16:15.352663952Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestParallelOneWithDataRaceWithoutFailures/5","Output":"=== PAUSE TestParallelOneWithDataRaceWithoutFailures/5\n"}
+{"Time":"2018-09-19T14:16:15.35267247Z","Action":"pause","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestParallelOneWithDataRaceWithoutFailures/5"}
+{"Time":"2018-09-19T14:16:15.352728028Z","Action":"run","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestParallelOneWithDataRaceWithoutFailures/6"}
+{"Time":"2018-09-19T14:16:15.352737172Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestParallelOneWithDataRaceWithoutFailures/6","Output":"=== RUN   TestParallelOneWithDataRaceWithoutFailures/6\n"}
+{"Time":"2018-09-19T14:16:15.352895717Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestParallelWithDataRaceAndFailures/4","Output":"=== PAUSE TestParallelWithDataRaceAndFailures/4\n"}
+{"Time":"2018-09-19T14:16:15.352907849Z","Action":"pause","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestParallelWithDataRaceAndFailures/4"}
+{"Time":"2018-09-19T14:16:15.352946434Z","Action":"run","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestParallelWithDataRaceAndFailures/5"}
+{"Time":"2018-09-19T14:16:15.352977523Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestParallelWithDataRaceAndFailures/5","Output":"=== RUN   TestParallelWithDataRaceAndFailures/5\n"}
+{"Time":"2018-09-19T14:16:15.353087146Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestParallelOneWithDataRaceWithoutFailures/6","Output":"=== PAUSE TestParallelOneWithDataRaceWithoutFailures/6\n"}
+{"Time":"2018-09-19T14:16:15.353140972Z","Action":"pause","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestParallelOneWithDataRaceWithoutFailures/6"}
+{"Time":"2018-09-19T14:16:15.353161872Z","Action":"run","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestParallelOneWithDataRaceWithoutFailures/7"}
+{"Time":"2018-09-19T14:16:15.353180183Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestParallelOneWithDataRaceWithoutFailures/7","Output":"=== RUN   TestParallelOneWithDataRaceWithoutFailures/7\n"}
+{"Time":"2018-09-19T14:16:15.353217495Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestParallelWithDataRaceAndFailures/5","Output":"=== PAUSE TestParallelWithDataRaceAndFailures/5\n"}
+{"Time":"2018-09-19T14:16:15.353228447Z","Action":"pause","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestParallelWithDataRaceAndFailures/5"}
+{"Time":"2018-09-19T14:16:15.353238969Z","Action":"run","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestParallelWithDataRaceAndFailures/6"}
+{"Time":"2018-09-19T14:16:15.353248063Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestParallelWithDataRaceAndFailures/6","Output":"=== RUN   TestParallelWithDataRaceAndFailures/6\n"}
+{"Time":"2018-09-19T14:16:15.353414991Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestParallelOneWithDataRaceWithoutFailures/7","Output":"=== PAUSE TestParallelOneWithDataRaceWithoutFailures/7\n"}
+{"Time":"2018-09-19T14:16:15.353427698Z","Action":"pause","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestParallelOneWithDataRaceWithoutFailures/7"}
+{"Time":"2018-09-19T14:16:15.353517072Z","Action":"run","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestParallelOneWithDataRaceWithoutFailures/8"}
+{"Time":"2018-09-19T14:16:15.353536389Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestParallelOneWithDataRaceWithoutFailures/8","Output":"=== RUN   TestParallelOneWithDataRaceWithoutFailures/8\n"}
+{"Time":"2018-09-19T14:16:15.353544041Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestParallelWithDataRaceAndFailures/6","Output":"=== PAUSE TestParallelWithDataRaceAndFailures/6\n"}
+{"Time":"2018-09-19T14:16:15.353549619Z","Action":"pause","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestParallelWithDataRaceAndFailures/6"}
+{"Time":"2018-09-19T14:16:15.353556808Z","Action":"run","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestParallelWithDataRaceAndFailures/7"}
+{"Time":"2018-09-19T14:16:15.353567727Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestParallelWithDataRaceAndFailures/7","Output":"=== RUN   TestParallelWithDataRaceAndFailures/7\n"}
+{"Time":"2018-09-19T14:16:15.353791677Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestParallelOneWithDataRaceWithoutFailures/8","Output":"=== PAUSE TestParallelOneWithDataRaceWithoutFailures/8\n"}
+{"Time":"2018-09-19T14:16:15.353806111Z","Action":"pause","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestParallelOneWithDataRaceWithoutFailures/8"}
+{"Time":"2018-09-19T14:16:15.353829127Z","Action":"run","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestParallelOneWithDataRaceWithoutFailures/9"}
+{"Time":"2018-09-19T14:16:15.353846077Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestParallelOneWithDataRaceWithoutFailures/9","Output":"=== RUN   TestParallelOneWithDataRaceWithoutFailures/9\n"}
+{"Time":"2018-09-19T14:16:15.353910416Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestParallelWithDataRaceAndFailures/7","Output":"=== PAUSE TestParallelWithDataRaceAndFailures/7\n"}
+{"Time":"2018-09-19T14:16:15.353921266Z","Action":"pause","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestParallelWithDataRaceAndFailures/7"}
+{"Time":"2018-09-19T14:16:15.353926984Z","Action":"run","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestParallelWithDataRaceAndFailures/8"}
+{"Time":"2018-09-19T14:16:15.353963444Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestParallelWithDataRaceAndFailures/8","Output":"=== RUN   TestParallelWithDataRaceAndFailures/8\n"}
+{"Time":"2018-09-19T14:16:15.354071934Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestParallelOneWithDataRaceWithoutFailures/9","Output":"=== PAUSE TestParallelOneWithDataRaceWithoutFailures/9\n"}
+{"Time":"2018-09-19T14:16:15.354102893Z","Action":"pause","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestParallelOneWithDataRaceWithoutFailures/9"}
+{"Time":"2018-09-19T14:16:15.354120774Z","Action":"cont","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestParallelOneWithDataRaceWithoutFailures/1"}
+{"Time":"2018-09-19T14:16:15.354133404Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestParallelOneWithDataRaceWithoutFailures/1","Output":"=== CONT  TestParallelOneWithDataRaceWithoutFailures/1\n"}
+{"Time":"2018-09-19T14:16:15.354149307Z","Action":"cont","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestParallelOneWithDataRaceWithoutFailures/8"}
+{"Time":"2018-09-19T14:16:15.354167961Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestParallelOneWithDataRaceWithoutFailures/8","Output":"=== CONT  TestParallelOneWithDataRaceWithoutFailures/8\n"}
+{"Time":"2018-09-19T14:16:15.354222457Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestParallelOneWithDataRaceWithoutFailures/8","Output":"==================\n"}
+{"Time":"2018-09-19T14:16:15.354236437Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestParallelOneWithDataRaceWithoutFailures/8","Output":"WARNING: DATA RACE\n"}
+{"Time":"2018-09-19T14:16:15.354247262Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestParallelOneWithDataRaceWithoutFailures/8","Output":"Write at 0x00c42009e3a5 by goroutine 28:\n"}
+{"Time":"2018-09-19T14:16:15.35425722Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestParallelOneWithDataRaceWithoutFailures/8","Output":"  github.com/cockroachdb/cockroach/pkg/util/failsuite.testParallelImpl.func2()\n"}
+{"Time":"2018-09-19T14:16:15.354274926Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestParallelOneWithDataRaceWithoutFailures/8","Output":"      /go/src/github.com/cockroachdb/cockroach/pkg/util/failsuite/main_test.go:73 +0x6e\n"}
+{"Time":"2018-09-19T14:16:15.354285567Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestParallelOneWithDataRaceWithoutFailures/8","Output":"  testing.tRunner()\n"}
+{"Time":"2018-09-19T14:16:15.354298881Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestParallelOneWithDataRaceWithoutFailures/8","Output":"      /usr/local/go/src/testing/testing.go:777 +0x16d\n"}
+{"Time":"2018-09-19T14:16:15.354309804Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestParallelOneWithDataRaceWithoutFailures/8","Output":"\n"}
+{"Time":"2018-09-19T14:16:15.354315997Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestParallelOneWithDataRaceWithoutFailures/8","Output":"Previous write at 0x00c42009e3a5 by goroutine 14:\n"}
+{"Time":"2018-09-19T14:16:15.354329029Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestParallelOneWithDataRaceWithoutFailures/8","Output":"  github.com/cockroachdb/cockroach/pkg/util/failsuite.testParallelImpl.func2()\n"}
+{"Time":"2018-09-19T14:16:15.354339915Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestParallelOneWithDataRaceWithoutFailures/8","Output":"      /go/src/github.com/cockroachdb/cockroach/pkg/util/failsuite/main_test.go:73 +0x6e\n"}
+{"Time":"2018-09-19T14:16:15.354351614Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestParallelOneWithDataRaceWithoutFailures/8","Output":"  testing.tRunner()\n"}
+{"Time":"2018-09-19T14:16:15.354364097Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestParallelOneWithDataRaceWithoutFailures/8","Output":"      /usr/local/go/src/testing/testing.go:777 +0x16d\n"}
+{"Time":"2018-09-19T14:16:15.354374415Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestParallelOneWithDataRaceWithoutFailures/8","Output":"\n"}
+{"Time":"2018-09-19T14:16:15.35439291Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestParallelOneWithDataRaceWithoutFailures/8","Output":"Goroutine 28 (running) created at:\n"}
+{"Time":"2018-09-19T14:16:15.354403663Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestParallelOneWithDataRaceWithoutFailures/8","Output":"  testing.(*T).Run()\n"}
+{"Time":"2018-09-19T14:16:15.35441001Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestParallelOneWithDataRaceWithoutFailures/8","Output":"      /usr/local/go/src/testing/testing.go:824 +0x564\n"}
+{"Time":"2018-09-19T14:16:15.354422223Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestParallelOneWithDataRaceWithoutFailures/8","Output":"  github.com/cockroachdb/cockroach/pkg/util/failsuite.testParallelImpl()\n"}
+{"Time":"2018-09-19T14:16:15.354440295Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestParallelOneWithDataRaceWithoutFailures/8","Output":"      /go/src/github.com/cockroachdb/cockroach/pkg/util/failsuite/main_test.go:70 +0x111\n"}
+{"Time":"2018-09-19T14:16:15.354452107Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestParallelOneWithDataRaceWithoutFailures/8","Output":"  github.com/cockroachdb/cockroach/pkg/util/failsuite.TestParallelOneWithDataRaceWithoutFailures()\n"}
+{"Time":"2018-09-19T14:16:15.354458415Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestParallelOneWithDataRaceWithoutFailures/8","Output":"      /go/src/github.com/cockroachdb/cockroach/pkg/util/failsuite/main_test.go:51 +0x3d\n"}
+{"Time":"2018-09-19T14:16:15.354464289Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestParallelOneWithDataRaceWithoutFailures/8","Output":"  testing.tRunner()\n"}
+{"Time":"2018-09-19T14:16:15.35447039Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestParallelOneWithDataRaceWithoutFailures/8","Output":"      /usr/local/go/src/testing/testing.go:777 +0x16d\n"}
+{"Time":"2018-09-19T14:16:15.354476352Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestParallelOneWithDataRaceWithoutFailures/8","Output":"\n"}
+{"Time":"2018-09-19T14:16:15.354486666Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestParallelOneWithDataRaceWithoutFailures/8","Output":"Goroutine 14 (running) created at:\n"}
+{"Time":"2018-09-19T14:16:15.354493188Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestParallelOneWithDataRaceWithoutFailures/8","Output":"  testing.(*T).Run()\n"}
+{"Time":"2018-09-19T14:16:15.354498832Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestParallelOneWithDataRaceWithoutFailures/8","Output":"      /usr/local/go/src/testing/testing.go:824 +0x564\n"}
+{"Time":"2018-09-19T14:16:15.354504765Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestParallelOneWithDataRaceWithoutFailures/8","Output":"  github.com/cockroachdb/cockroach/pkg/util/failsuite.testParallelImpl()\n"}
+{"Time":"2018-09-19T14:16:15.354526505Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestParallelOneWithDataRaceWithoutFailures/8","Output":"      /go/src/github.com/cockroachdb/cockroach/pkg/util/failsuite/main_test.go:70 +0x111\n"}
+{"Time":"2018-09-19T14:16:15.354550874Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestParallelOneWithDataRaceWithoutFailures/8","Output":"  github.com/cockroachdb/cockroach/pkg/util/failsuite.TestParallelOneWithDataRaceWithoutFailures()\n"}
+{"Time":"2018-09-19T14:16:15.354562533Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestParallelOneWithDataRaceWithoutFailures/8","Output":"      /go/src/github.com/cockroachdb/cockroach/pkg/util/failsuite/main_test.go:51 +0x3d\n"}
+{"Time":"2018-09-19T14:16:15.354575996Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestParallelOneWithDataRaceWithoutFailures/8","Output":"  testing.tRunner()\n"}
+{"Time":"2018-09-19T14:16:15.354586068Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestParallelOneWithDataRaceWithoutFailures/8","Output":"      /usr/local/go/src/testing/testing.go:777 +0x16d\n"}
+{"Time":"2018-09-19T14:16:15.354602047Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestParallelOneWithDataRaceWithoutFailures/8","Output":"==================\n"}
+{"Time":"2018-09-19T14:16:15.356900909Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestParallelOneWithDataRaceWithoutFailures/8","Output":"FAIL\tgithub.com/cockroachdb/cockroach/pkg/util/failsuite\t0.019s\n"}
+{"Time":"2018-09-19T14:16:15.356934437Z","Action":"fail","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite","Test":"TestParallelOneWithDataRaceWithoutFailures/8","Elapsed":0.02}
+{"Time":"2018-09-19T14:16:15.373223064Z","Action":"run","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite/failsuitepanic","Test":"TestZPanics"}
+{"Time":"2018-09-19T14:16:15.3732677Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite/failsuitepanic","Test":"TestZPanics","Output":"=== RUN   TestZPanics\n"}
+{"Time":"2018-09-19T14:16:15.373357947Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite/failsuitepanic","Test":"TestZPanics","Output":"first output something\n"}
+{"Time":"2018-09-19T14:16:15.373505202Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite/failsuitepanic","Test":"TestZPanics","Output":"--- FAIL: TestZPanics (0.00s)\n"}
+{"Time":"2018-09-19T14:16:15.373520564Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite/failsuitepanic","Test":"TestZPanics","Output":"\tmain_test.go:35: then log something\n"}
+{"Time":"2018-09-19T14:16:15.373527379Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite/failsuitepanic","Test":"TestZPanics","Output":"\tmain_test.go:36: an error, why not\n"}
+{"Time":"2018-09-19T14:16:15.376827464Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite/failsuitepanic","Test":"TestZPanics","Output":"panic: boom [recovered]\n"}
+{"Time":"2018-09-19T14:16:15.376874381Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite/failsuitepanic","Test":"TestZPanics","Output":"\tpanic: boom\n"}
+{"Time":"2018-09-19T14:16:15.376881646Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite/failsuitepanic","Test":"TestZPanics","Output":"\n"}
+{"Time":"2018-09-19T14:16:15.376897902Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite/failsuitepanic","Test":"TestZPanics","Output":"goroutine 20 [running]:\n"}
+{"Time":"2018-09-19T14:16:15.376903258Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite/failsuitepanic","Test":"TestZPanics","Output":"testing.tRunner.func1(0xc4200ea1e0)\n"}
+{"Time":"2018-09-19T14:16:15.376908407Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite/failsuitepanic","Test":"TestZPanics","Output":"\t/usr/local/go/src/testing/testing.go:742 +0x567\n"}
+{"Time":"2018-09-19T14:16:15.37691988Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite/failsuitepanic","Test":"TestZPanics","Output":"panic(0x5b7860, 0x609a90)\n"}
+{"Time":"2018-09-19T14:16:15.376931684Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite/failsuitepanic","Test":"TestZPanics","Output":"\t/usr/local/go/src/runtime/panic.go:502 +0x24a\n"}
+{"Time":"2018-09-19T14:16:15.376941922Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite/failsuitepanic","Test":"TestZPanics","Output":"github.com/cockroachdb/cockroach/pkg/util/failsuite/failsuitepanic.TestZPanics(0xc4200ea1e0)\n"}
+{"Time":"2018-09-19T14:16:15.376952234Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite/failsuitepanic","Test":"TestZPanics","Output":"\t/go/src/github.com/cockroachdb/cockroach/pkg/util/failsuite/failsuitepanic/main_test.go:37 +0x14b\n"}
+{"Time":"2018-09-19T14:16:15.376962636Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite/failsuitepanic","Test":"TestZPanics","Output":"testing.tRunner(0xc4200ea1e0, 0x5f8dd8)\n"}
+{"Time":"2018-09-19T14:16:15.376968815Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite/failsuitepanic","Test":"TestZPanics","Output":"\t/usr/local/go/src/testing/testing.go:777 +0x16e\n"}
+{"Time":"2018-09-19T14:16:15.376974007Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite/failsuitepanic","Test":"TestZPanics","Output":"created by testing.(*T).Run\n"}
+{"Time":"2018-09-19T14:16:15.376984573Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite/failsuitepanic","Test":"TestZPanics","Output":"\t/usr/local/go/src/testing/testing.go:824 +0x565\n"}
+{"Time":"2018-09-19T14:16:15.376994396Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite/failsuitepanic","Test":"TestZPanics","Output":"\n"}
+{"Time":"2018-09-19T14:16:15.377000617Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite/failsuitepanic","Test":"TestZPanics","Output":"goroutine 1 [chan receive]:\n"}
+{"Time":"2018-09-19T14:16:15.377019511Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite/failsuitepanic","Test":"TestZPanics","Output":"testing.(*T).Run(0xc4200ea0f0, 0x5f0e98, 0xb, 0x5f8dd8, 0xc420069c38)\n"}
+{"Time":"2018-09-19T14:16:15.377036583Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite/failsuitepanic","Test":"TestZPanics","Output":"\t/usr/local/go/src/testing/testing.go:825 +0x597\n"}
+{"Time":"2018-09-19T14:16:15.377042432Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite/failsuitepanic","Test":"TestZPanics","Output":"testing.runTests.func1(0xc4200ea0f0)\n"}
+{"Time":"2018-09-19T14:16:15.377051785Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite/failsuitepanic","Test":"TestZPanics","Output":"\t/usr/local/go/src/testing/testing.go:1063 +0xa5\n"}
+{"Time":"2018-09-19T14:16:15.377057358Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite/failsuitepanic","Test":"TestZPanics","Output":"testing.tRunner(0xc4200ea0f0, 0xc420069d80)\n"}
+{"Time":"2018-09-19T14:16:15.377066884Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite/failsuitepanic","Test":"TestZPanics","Output":"\t/usr/local/go/src/testing/testing.go:777 +0x16e\n"}
+{"Time":"2018-09-19T14:16:15.377076623Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite/failsuitepanic","Test":"TestZPanics","Output":"testing.runTests(0xc4200b0340, 0x6dda60, 0x1, 0x1, 0x0)\n"}
+{"Time":"2018-09-19T14:16:15.377085716Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite/failsuitepanic","Test":"TestZPanics","Output":"\t/usr/local/go/src/testing/testing.go:1061 +0x4e2\n"}
+{"Time":"2018-09-19T14:16:15.37709502Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite/failsuitepanic","Test":"TestZPanics","Output":"testing.(*M).Run(0xc4200ec000, 0x0)\n"}
+{"Time":"2018-09-19T14:16:15.377104526Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite/failsuitepanic","Test":"TestZPanics","Output":"\t/usr/local/go/src/testing/testing.go:978 +0x2ce\n"}
+{"Time":"2018-09-19T14:16:15.377114133Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite/failsuitepanic","Test":"TestZPanics","Output":"github.com/cockroachdb/cockroach/pkg/util/failsuite/failsuitepanic.TestMain(0xc4200ec000)\n"}
+{"Time":"2018-09-19T14:16:15.377120008Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite/failsuitepanic","Test":"TestZPanics","Output":"\t/go/src/github.com/cockroachdb/cockroach/pkg/util/failsuite/failsuitepanic/main_test.go:30 +0x60\n"}
+{"Time":"2018-09-19T14:16:15.377130302Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite/failsuitepanic","Test":"TestZPanics","Output":"main.main()\n"}
+{"Time":"2018-09-19T14:16:15.377136206Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite/failsuitepanic","Test":"TestZPanics","Output":"\t_testmain.go:40 +0x22b\n"}
+{"Time":"2018-09-19T14:16:15.377482595Z","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite/failsuitepanic","Test":"TestZPanics","Output":"FAIL\tgithub.com/cockroachdb/cockroach/pkg/util/failsuite/failsuitepanic\t0.014s\n"}
+{"Time":"2018-09-19T14:16:15.377514652Z","Action":"fail","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite/failsuitepanic","Test":"TestZPanics","Elapsed":0.014}
+make: *** [testrace] Error 1
+Makefile:830: recipe for target 'testrace' failed
+
