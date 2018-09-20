@@ -251,7 +251,10 @@ func processJSON(r *bufio.Reader, w io.Writer) {
 	}()
 
 	dec := json.NewDecoder(r)
-	dec.DisallowUnknownFields()
+	// This needs Go 1.10+, which we don't have on TeamCity at the
+	// time of writing.
+	//
+	// dec.DisallowUnknownFields()
 
 	for dec.More() {
 		var event TestEvent
