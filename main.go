@@ -2,11 +2,15 @@ package main
 
 import (
 	"bufio"
+	"encoding/json"
 	"flag"
 	"fmt"
 	"io"
+	"io/ioutil"
+	"log"
 	"os"
 	"regexp"
+	"sort"
 	"strings"
 	"time"
 )
@@ -24,6 +28,7 @@ type Test struct {
 	Status   string
 	Race     bool
 	Suite    bool
+	Package  string
 }
 
 var (
@@ -31,6 +36,7 @@ var (
 	output = os.Stdout
 
 	additionalTestName = ""
+	useJSON            = false
 
 	run  = regexp.MustCompile("^=== RUN\\s+([a-zA-Z_]\\S*)")
 	end  = regexp.MustCompile("^(\\s*)--- (PASS|SKIP|FAIL):\\s+([a-zA-Z_]\\S*) \\((-?[\\.\\ds]+)\\)")
@@ -39,6 +45,7 @@ var (
 )
 
 func init() {
+	flag.BoolVar(&useJSON, "json", false, "Parse input from JSON (as emitted from go tool test2json)")
 	flag.StringVar(&additionalTestName, "name", "", "Add prefix to test name")
 }
 
@@ -78,6 +85,14 @@ func outputTest(w io.Writer, test *Test) {
 					now, testName, escapeLines(test.Details))
 			case "PASS":
 				// ignore
+			case "UNKNOWN":
+				// This can happen when a data race is detected, in which case the test binary
+				// exits apruptly assuming GORACE="halt_on_error=1" is specified.
+				// CockroachDB CI does this at the time of writing:
+				// https://github.com/cockroachdb/cockroach/pull/14590
+				fmt.Fprintf(w, "##teamcity[testIgnored timestamp='%s' name='%s' message='"+
+					"Test framework exited prematurely. Likely another test panicked or encountered a data race']\n",
+					now, testName)
 			default:
 				fmt.Fprintf(w, "##teamcity[testFailed timestamp='%s' name='%s' message='Test ended in panic.' details='%s']\n",
 					now, testName, escapeLines(test.Details))
@@ -195,5 +210,107 @@ func main() {
 
 	reader := bufio.NewReader(input)
 
-	processReader(reader, output)
+	if useJSON {
+		processJSON(reader, output)
+	} else {
+		processReader(reader, output)
+	}
+}
+
+// TestEvent is a message as emitted by `go tool test2json`.
+type TestEvent struct {
+	Time    time.Time // encodes as an RFC3339-format string
+	Action  string
+	Package string
+	Test    string
+	Elapsed float64 // seconds
+	Output  string
+}
+
+func processJSON(r *bufio.Reader, w io.Writer) {
+	openTests := map[string]*Test{}
+	output := func(name string) {
+		test := openTests[name]
+		delete(openTests, name)
+		outputTest(w, test)
+	}
+
+	defer func() {
+		sorted := make([]*Test, 0, len(openTests))
+		for _, test := range openTests {
+			sorted = append(sorted, test)
+		}
+		sort.Slice(sorted, func(i, j int) bool {
+			return sorted[i].Name < sorted[j].Name
+		})
+		for _, test := range sorted {
+			test.Output += "(test not terminated explicitly)\n"
+			test.Status = "UNKNOWN"
+			outputTest(w, test)
+		}
+	}()
+
+	dec := json.NewDecoder(r)
+	dec.DisallowUnknownFields()
+
+	for dec.More() {
+		var event TestEvent
+		if err := dec.Decode(&event); err != nil {
+			buffered, err := ioutil.ReadAll(dec.Buffered())
+			if err != nil {
+				log.Fatal(err)
+			}
+			fmt.Fprint(w, string(buffered))
+			line, err := r.ReadString('\n')
+			dec = json.NewDecoder(r)
+			if err != nil {
+				if err == io.EOF {
+					continue
+				}
+				log.Fatal(err)
+			}
+			fmt.Fprint(w, string(line))
+			continue
+		}
+
+		if openTests[event.Test] == nil {
+			if event.Test == "" {
+				// We're about to start a new test, but this line doesn't correspond to one.
+				// It's probably a package-level info (coverage etc).
+				fmt.Fprint(w, event.Output)
+				continue
+			}
+			openTests[event.Test] = &Test{}
+		}
+
+		test := openTests[event.Test]
+		if test.Name == "" {
+			test.Name = event.Test
+		}
+		test.Output += event.Output
+		test.Race = test.Race || race.MatchString(event.Output)
+		test.Duration += time.Duration(event.Elapsed * 1E9)
+		if test.Package == "" {
+			test.Package = event.Package
+		}
+
+		switch event.Action {
+		case "run":
+		case "pause":
+		case "cont":
+		case "bench":
+		case "output":
+		case "skip":
+			test.Status = "SKIP"
+			output(event.Test)
+		case "pass":
+			test.Status = "PASS"
+			output(event.Test)
+		case "fail":
+			test.Status = "FAIL"
+			output(event.Test)
+		default:
+			log.Fatalf("unknown event type: %+v", event)
+		}
+	}
 }
