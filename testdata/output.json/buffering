@@ -1,3 +1,7 @@
 notjson
-{"Time":"2018-09-19T10:17:19.722250788-04:00","Action":"output","Package":"github.com/cockroachdb/cockroach/pkg/util/failsuite/failsuitepanic","Test":"TestZPanics","Output":"goroutine 1 [chan receive]:\n"}
 
+##teamcity[testStarted timestamp='2017-01-02T04:05:06.789' name='TestZPanics' captureStandardOutput='true']
+goroutine 1 [chan receive]:
+(test not terminated explicitly)
+##teamcity[testIgnored timestamp='2017-01-02T04:05:06.789' name='TestZPanics' message='Test framework exited prematurely. Likely another test panicked or encountered a data race']
+##teamcity[testFinished timestamp='2017-01-02T04:05:06.789' name='TestZPanics' duration='0']

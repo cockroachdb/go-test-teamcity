@@ -6,7 +6,6 @@ import (
 	"flag"
 	"fmt"
 	"io"
-	"io/ioutil"
 	"log"
 	"os"
 	"regexp"
@@ -250,29 +249,22 @@ func processJSON(r *bufio.Reader, w io.Writer) {
 		}
 	}()
 
-	dec := json.NewDecoder(r)
-	// This needs Go 1.10+, which we don't have on TeamCity at the
-	// time of writing.
-	//
-	// dec.DisallowUnknownFields()
-
-	for dec.More() {
+	scanner := bufio.NewScanner(r)
+	for scanner.Scan() {
+		line := scanner.Text()
+		if !strings.HasPrefix(strings.TrimSpace(line), "{") {
+			// Not the JSON we're looking for.
+			fmt.Fprintln(w, line)
+			continue
+		}
+		// Might be JSON, try to decode it.
+		// Would be nice to not allocate for every such line, but there is
+		// no API for that.
+		dec := json.NewDecoder(strings.NewReader(line))
 		var event TestEvent
 		if err := dec.Decode(&event); err != nil {
-			buffered, err := ioutil.ReadAll(dec.Buffered())
-			if err != nil {
-				log.Fatal(err)
-			}
-			fmt.Fprint(w, string(buffered))
-			line, err := r.ReadString('\n')
-			dec = json.NewDecoder(r)
-			if err != nil {
-				if err == io.EOF {
-					continue
-				}
-				log.Fatal(err)
-			}
-			fmt.Fprint(w, string(line))
+			// Wasn't JSON after all.
+			fmt.Fprintln(w, line)
 			continue
 		}
 
