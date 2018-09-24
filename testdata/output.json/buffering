@@ -1,0 +1,7 @@
+notjson
+
+##teamcity[testStarted timestamp='2017-01-02T04:05:06.789' name='TestZPanics' captureStandardOutput='true']
+goroutine 1 [chan receive]:
+(test not terminated explicitly)
+##teamcity[testIgnored timestamp='2017-01-02T04:05:06.789' name='TestZPanics' message='Test framework exited prematurely. Likely another test panicked or encountered a data race']
+##teamcity[testFinished timestamp='2017-01-02T04:05:06.789' name='TestZPanics' duration='0']
