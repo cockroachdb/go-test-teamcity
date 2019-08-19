@@ -455,7 +455,7 @@ optgen -out pkg/sql/opt/norm/factory.og.go factory pkg/sql/opt/ops/*.opt pkg/sql
 optgen -out pkg/sql/opt/rule_name.og.go rulenames pkg/sql/opt/ops/*.opt pkg/sql/opt/norm/rules/*.opt pkg/sql/opt/xform/rules/*.opt
 stringer -output=pkg/sql/opt/rule_name_string.go -type=RuleName pkg/sql/opt/rule_name.go pkg/sql/opt/rule_name.og.go
 go test -race -tags ' make x86_64_pc_linux_gnu' -ldflags '-X github.com/cockroachdb/cockroach/pkg/build.typ=development -extldflags "" -X "github.com/cockroachdb/cockroach/pkg/build.tag=v2.2.0-alpha.00000000-925-g3baa3d9" -X "github.com/cockroachdb/cockroach/pkg/build.rev=3baa3d9b299a392b7d9b737dbfb333d095e672a9" -X "github.com/cockroachdb/cockroach/pkg/build.cgoTargetTriple=x86_64-pc-linux-gnu"  ' -run "."  -timeout 45m ./pkg/util/failsuite/... -v -json
-##teamcity[testSuiteStarted name='github.com/cockroachdb/cockroach/pkg/util/failsuite']
+##teamcity[testSuiteStarted name='pkg/util/failsuite']
 ##teamcity[testStarted timestamp='2017-01-02T04:05:06.789' name='TestThatPasses' captureStandardOutput='true']
 === RUN   TestThatPasses
 output of TestThatPasses
@@ -515,8 +515,8 @@ Goroutine 14 (running) created at:
 FAIL	github.com/cockroachdb/cockroach/pkg/util/failsuite	0.019s
 ##teamcity[testFailed timestamp='2017-01-02T04:05:06.789' name='TestParallelOneWithDataRaceWithoutFailures/8' message='Race detected!' details='']
 ##teamcity[testFinished timestamp='2017-01-02T04:05:06.789' name='TestParallelOneWithDataRaceWithoutFailures/8' duration='20']
-##teamcity[testSuiteFinished name='github.com/cockroachdb/cockroach/pkg/util/failsuite']
-##teamcity[testSuiteStarted name='github.com/cockroachdb/cockroach/pkg/util/failsuite/failsuitepanic']
+##teamcity[testSuiteFinished name='pkg/util/failsuite']
+##teamcity[testSuiteStarted name='pkg/util/failsuite/failsuitepanic']
 ##teamcity[testStarted timestamp='2017-01-02T04:05:06.789' name='TestZPanics' captureStandardOutput='true']
 === RUN   TestZPanics
 first output something

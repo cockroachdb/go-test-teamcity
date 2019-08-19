@@ -24,6 +24,7 @@ func TestProcessReader(t *testing.T) {
 	for _, json := range []bool{false, true} {
 		for _, verbose = range []bool{false, true} {
 			t.Run(fmt.Sprintf("json=%t,v=%t", json, verbose), func(t *testing.T) {
+				trimSuitePrefix = "github.com/cockroachdb/cockroach/"
 				sep := ""
 				if json {
 					sep = ".json"

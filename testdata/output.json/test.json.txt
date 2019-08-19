@@ -179,7 +179,7 @@ optgen -out pkg/sql/opt/norm/factory.og.go factory pkg/sql/opt/ops/*.opt pkg/sql
 optgen -out pkg/sql/opt/rule_name.og.go rulenames pkg/sql/opt/ops/*.opt pkg/sql/opt/norm/rules/*.opt pkg/sql/opt/xform/rules/*.opt
 stringer -output=pkg/sql/opt/rule_name_string.go -type=RuleName pkg/sql/opt/rule_name.go pkg/sql/opt/rule_name.og.go
 go test  -tags ' make x86_64_pc_linux_gnu' -ldflags '-X github.com/cockroachdb/cockroach/pkg/build.typ=development -extldflags "" -X "github.com/cockroachdb/cockroach/pkg/build.tag=v2.2.0-alpha.00000000-925-g3baa3d9" -X "github.com/cockroachdb/cockroach/pkg/build.rev=3baa3d9b299a392b7d9b737dbfb333d095e672a9" -X "github.com/cockroachdb/cockroach/pkg/build.cgoTargetTriple=x86_64-pc-linux-gnu"  ' -run "."  -timeout 8m ./pkg/util/failsuite/... -v -json
-##teamcity[testSuiteStarted name='github.com/cockroachdb/cockroach/pkg/util/failsuite/failsuitepanic']
+##teamcity[testSuiteStarted name='pkg/util/failsuite/failsuitepanic']
 ##teamcity[testStarted timestamp='2017-01-02T04:05:06.789' name='TestZPanics' captureStandardOutput='true']
 === RUN   TestZPanics
 first output something
@@ -219,8 +219,8 @@ main.main()
 FAIL	github.com/cockroachdb/cockroach/pkg/util/failsuite/failsuitepanic	0.006s
 ##teamcity[testFailed timestamp='2017-01-02T04:05:06.789' name='TestZPanics' details='']
 ##teamcity[testFinished timestamp='2017-01-02T04:05:06.789' name='TestZPanics' duration='6']
-##teamcity[testSuiteFinished name='github.com/cockroachdb/cockroach/pkg/util/failsuite/failsuitepanic']
-##teamcity[testSuiteStarted name='github.com/cockroachdb/cockroach/pkg/util/failsuite']
+##teamcity[testSuiteFinished name='pkg/util/failsuite/failsuitepanic']
+##teamcity[testSuiteStarted name='pkg/util/failsuite']
 ##teamcity[testStarted timestamp='2017-01-02T04:05:06.789' name='TestThatPasses' captureStandardOutput='true']
 === RUN   TestThatPasses
 output of TestThatPasses
@@ -400,7 +400,7 @@ output before calling t.Parallel()
 ##teamcity[testFinished timestamp='2017-01-02T04:05:06.789' name='TestParallelWithDataRaceAndFailures' duration='0']
 FAIL
 FAIL	github.com/cockroachdb/cockroach/pkg/util/failsuite	1.409s
-##teamcity[testSuiteFinished name='github.com/cockroachdb/cockroach/pkg/util/failsuite' duration='1409']
+##teamcity[testSuiteFinished name='pkg/util/failsuite' duration='1409']
 make: *** [test] Error 1
 Makefile:830: recipe for target 'test' failed
 
