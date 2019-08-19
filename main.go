@@ -37,6 +37,7 @@ var (
 	additionalTestName = ""
 	useJSON            = false
 	verbose            = false
+	trimSuitePrefix    = ""
 
 	run  = regexp.MustCompile("^=== RUN\\s+([a-zA-Z_]\\S*)")
 	end  = regexp.MustCompile("^(\\s*)--- (PASS|SKIP|FAIL):\\s+([a-zA-Z_]\\S*) \\((-?[\\.\\ds]+)\\)")
@@ -48,6 +49,7 @@ func init() {
 	flag.BoolVar(&useJSON, "json", false, "Parse input from JSON (as emitted from go tool test2json)")
 	flag.StringVar(&additionalTestName, "name", "", "Add prefix to test name")
 	flag.BoolVar(&verbose, "v", false, "verbose (print output even for passing tests)")
+	flag.StringVar(&trimSuitePrefix, "prefix", "", "package prefix to trim from test-suite names")
 
 }
 
@@ -109,12 +111,20 @@ func outputTest(w io.Writer, test *Test) {
 	}
 }
 
+func suiteName(name string) string {
+	return escape(strings.TrimPrefix(name, trimSuitePrefix))
+}
+
 func startSuite(w io.Writer, name string) {
-	fmt.Fprintf(w, "##teamcity[testSuiteStarted name='%s']\n", escape(name))
+	fmt.Fprintf(w, "##teamcity[testSuiteStarted name='%s']\n", suiteName(name))
 }
 
 func finishSuite(w io.Writer, name string) {
-	fmt.Fprintf(w, "##teamcity[testSuiteFinished name='%s']\n", escape(name))
+	fmt.Fprintf(w, "##teamcity[testSuiteFinished name='%s']\n", suiteName(name))
+}
+
+func finishSuiteDuration(w io.Writer, name string, elapsed time.Duration) {
+	fmt.Fprintf(w, "##teamcity[testSuiteFinished name='%s' duration='%d']\n", suiteName(name), elapsed/time.Millisecond)
 }
 
 func suite(name string) string {
@@ -255,7 +265,7 @@ func processJSON(r *bufio.Reader, w io.Writer) {
 			outputTest(w, test)
 		}
 	}()
-
+	var currentPackage string
 	scanner := bufio.NewScanner(r)
 	for scanner.Scan() {
 		line := scanner.Text()
@@ -277,6 +287,10 @@ func processJSON(r *bufio.Reader, w io.Writer) {
 
 		if openTests[event.Test] == nil {
 			if event.Test == "" {
+				if event.Action == "pass" || event.Action == "fail" {
+					finishSuiteDuration(w, event.Package, time.Duration(event.Elapsed*1E9))
+					currentPackage = ""
+				}
 				// We're about to start a new test, but this line doesn't correspond to one.
 				// It's probably a package-level info (coverage etc).
 				fmt.Fprint(w, event.Output)
@@ -288,6 +302,13 @@ func processJSON(r *bufio.Reader, w io.Writer) {
 		test := openTests[event.Test]
 		if test.Name == "" {
 			test.Name = event.Test
+			if event.Action == "run" && currentPackage != event.Package {
+				if currentPackage != "" {
+					finishSuite(w, currentPackage)
+				}
+				currentPackage = event.Package
+				startSuite(w, currentPackage)
+			}
 		}
 		test.Output += event.Output
 		test.Race = test.Race || race.MatchString(event.Output)
