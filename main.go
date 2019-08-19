@@ -36,6 +36,7 @@ var (
 
 	additionalTestName = ""
 	useJSON            = false
+	verbose            = false
 
 	run  = regexp.MustCompile("^=== RUN\\s+([a-zA-Z_]\\S*)")
 	end  = regexp.MustCompile("^(\\s*)--- (PASS|SKIP|FAIL):\\s+([a-zA-Z_]\\S*) \\((-?[\\.\\ds]+)\\)")
@@ -46,6 +47,8 @@ var (
 func init() {
 	flag.BoolVar(&useJSON, "json", false, "Parse input from JSON (as emitted from go tool test2json)")
 	flag.StringVar(&additionalTestName, "name", "", "Add prefix to test name")
+	flag.BoolVar(&verbose, "v", false, "verbose (print output even for passing tests)")
+
 }
 
 func escapeLines(lines []string) string {
@@ -70,7 +73,11 @@ func outputTest(w io.Writer, test *Test) {
 	now := getNow()
 	testName := escape(additionalTestName + test.Name)
 	fmt.Fprintf(w, "##teamcity[testStarted timestamp='%s' name='%s' captureStandardOutput='true']\n", test.Start, testName)
-	fmt.Fprint(w, test.Output)
+
+	if verbose || test.Status != "PASS" {
+		fmt.Fprint(w, test.Output)
+	}
+
 	if test.Status == "SKIP" {
 		fmt.Fprintf(w, "##teamcity[testIgnored timestamp='%s' name='%s']\n", now, testName)
 	} else {
