@@ -1,0 +1,36 @@
+
+
+
+==================
+Write at 0x00c42007bdf0 by goroutine 9:
+  github.com/cockroachdb/apd.TestConstRace.func1()
+      /home/mjibson/src/github.com/cockroachdb/apd/const_test.go:58 +0x3b
+
+Previous write at 0x00c42007bdf0 by goroutine 8:
+  github.com/cockroachdb/apd.TestConstRace()
+      /home/mjibson/src/github.com/cockroachdb/apd/const_test.go:60 +0x8a
+  testing.tRunner()
+      /usr/local/go/src/testing/testing.go:610 +0xc9
+
+Goroutine 9 (running) created at:
+  github.com/cockroachdb/apd.TestConstRace()
+      /home/mjibson/src/github.com/cockroachdb/apd/const_test.go:59 +0x79
+  testing.tRunner()
+      /usr/local/go/src/testing/testing.go:610 +0xc9
+
+Goroutine 8 (finished) created at:
+  testing.(*T).Run()
+      /usr/local/go/src/testing/testing.go:646 +0x52f
+  testing.RunTests.func1()
+      /usr/local/go/src/testing/testing.go:793 +0xb9
+  testing.tRunner()
+      /usr/local/go/src/testing/testing.go:610 +0xc9
+  testing.RunTests()
+      /usr/local/go/src/testing/testing.go:799 +0x4ba
+  testing.(*M).Run()
+      /usr/local/go/src/testing/testing.go:743 +0x12f
+  main.main()
+      github.com/cockroachdb/apd/_test/_testmain.go:102 +0x1b8
+==================
+
+

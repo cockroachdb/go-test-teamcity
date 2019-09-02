@@ -8,6 +8,7 @@ import (
 	"io"
 	"log"
 	"os"
+	"path/filepath"
 	"regexp"
 	"sort"
 	"strings"
@@ -35,6 +36,7 @@ var (
 	output = os.Stdout
 
 	additionalTestName = ""
+	artifacts          = ""
 	useJSON            = false
 	verbose            = false
 
@@ -48,6 +50,7 @@ func init() {
 	flag.BoolVar(&useJSON, "json", false, "Parse input from JSON (as emitted from go tool test2json)")
 	flag.StringVar(&additionalTestName, "name", "", "Add prefix to test name")
 	flag.BoolVar(&verbose, "v", false, "verbose (print output even for passing tests)")
+	flag.StringVar(&artifacts, "artifacts", "", "if nonempty, file to write test outputs to (combines with verbose flag)")
 
 }
 
@@ -76,6 +79,14 @@ func outputTest(w io.Writer, test *Test) {
 
 	if verbose || test.Status != "PASS" || test.Race {
 		fmt.Fprint(w, test.Output)
+		if artifacts != "" {
+			_ = os.MkdirAll(filepath.Dir(artifacts), 0755)
+			f, err := os.OpenFile(artifacts, os.O_APPEND|os.O_CREATE|os.O_RDWR, 0644)
+			if err == nil {
+				fmt.Fprintln(f, test.Output)
+				_ = f.Close()
+			}
+		}
 	}
 
 	if test.Status == "SKIP" {

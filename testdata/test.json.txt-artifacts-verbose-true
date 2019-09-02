@@ -1,0 +1,183 @@
+=== RUN   TestZPanics
+first output something
+--- FAIL: TestZPanics (0.00s)
+	main_test.go:35: then log something
+	main_test.go:36: an error, why not
+panic: boom [recovered]
+	panic: boom
+
+goroutine 6 [running]:
+testing.tRunner.func1(0xc4200d41e0)
+	/usr/local/go/src/testing/testing.go:742 +0x29d
+panic(0x51c5e0, 0x56c2b0)
+	/usr/local/go/src/runtime/panic.go:502 +0x229
+github.com/cockroachdb/cockroach/pkg/util/failsuite/failsuitepanic.TestZPanics(0xc4200d41e0)
+	/go/src/github.com/cockroachdb/cockroach/pkg/util/failsuite/failsuitepanic/main_test.go:37 +0x113
+testing.tRunner(0xc4200d41e0, 0x55c110)
+	/usr/local/go/src/testing/testing.go:777 +0xd0
+created by testing.(*T).Run
+	/usr/local/go/src/testing/testing.go:824 +0x2e0
+
+goroutine 1 [chan receive]:
+testing.(*T).Run(0xc4200d41e0, 0x554258, 0xb, 0x55c110, 0x473276)
+	/usr/local/go/src/testing/testing.go:825 +0x301
+testing.runTests.func1(0xc4200d40f0)
+	/usr/local/go/src/testing/testing.go:1063 +0x64
+testing.tRunner(0xc4200d40f0, 0xc420067dc8)
+	/usr/local/go/src/testing/testing.go:777 +0xd0
+testing.runTests(0xc42000c380, 0x609720, 0x1, 0x1, 0x0)
+	/usr/local/go/src/testing/testing.go:1061 +0x2c4
+testing.(*M).Run(0xc4200d6000, 0x0)
+	/usr/local/go/src/testing/testing.go:978 +0x171
+github.com/cockroachdb/cockroach/pkg/util/failsuite/failsuitepanic.TestMain(0xc4200d6000)
+	/go/src/github.com/cockroachdb/cockroach/pkg/util/failsuite/failsuitepanic/main_test.go:30 +0x52
+main.main()
+	_testmain.go:40 +0x151
+FAIL	github.com/cockroachdb/cockroach/pkg/util/failsuite/failsuitepanic	0.006s
+
+=== RUN   TestThatPasses
+output of TestThatPasses
+--- PASS: TestThatPasses (0.00s)
+
+=== RUN   TestThatFails
+--- FAIL: TestThatFails (0.00s)
+	main_test.go:41: an error occurs
+	main_test.go:42: then the test fatals
+
+=== RUN   TestThatGetsSkipped
+--- SKIP: TestThatGetsSkipped (0.00s)
+	main_test.go:46: logging something
+	main_test.go:47: skipped
+
+=== RUN   TestParallelOneWithDataRaceWithoutFailures/5
+=== PAUSE TestParallelOneWithDataRaceWithoutFailures/5
+=== CONT  TestParallelOneWithDataRaceWithoutFailures/5
+    --- PASS: TestParallelOneWithDataRaceWithoutFailures/5 (0.14s)
+    	main_test.go:83: something gets logged
+
+=== RUN   TestParallelOneWithDataRaceWithoutFailures/3
+=== PAUSE TestParallelOneWithDataRaceWithoutFailures/3
+=== CONT  TestParallelOneWithDataRaceWithoutFailures/3
+    --- PASS: TestParallelOneWithDataRaceWithoutFailures/3 (0.21s)
+    	main_test.go:83: something gets logged
+
+=== RUN   TestParallelOneWithDataRaceWithoutFailures/0
+=== PAUSE TestParallelOneWithDataRaceWithoutFailures/0
+=== CONT  TestParallelOneWithDataRaceWithoutFailures/0
+    --- PASS: TestParallelOneWithDataRaceWithoutFailures/0 (0.30s)
+    	main_test.go:83: something gets logged
+
+=== RUN   TestParallelOneWithDataRaceWithoutFailures/1
+=== PAUSE TestParallelOneWithDataRaceWithoutFailures/1
+=== CONT  TestParallelOneWithDataRaceWithoutFailures/1
+    --- PASS: TestParallelOneWithDataRaceWithoutFailures/1 (0.11s)
+    	main_test.go:83: something gets logged
+
+=== RUN   TestParallelOneWithDataRaceWithoutFailures/4
+=== PAUSE TestParallelOneWithDataRaceWithoutFailures/4
+=== CONT  TestParallelOneWithDataRaceWithoutFailures/4
+    --- PASS: TestParallelOneWithDataRaceWithoutFailures/4 (0.34s)
+    	main_test.go:83: something gets logged
+
+=== RUN   TestParallelOneWithDataRaceWithoutFailures/9
+=== PAUSE TestParallelOneWithDataRaceWithoutFailures/9
+=== CONT  TestParallelOneWithDataRaceWithoutFailures/9
+    --- PASS: TestParallelOneWithDataRaceWithoutFailures/9 (0.43s)
+    	main_test.go:83: something gets logged
+
+=== RUN   TestParallelOneWithDataRaceWithoutFailures/6
+=== PAUSE TestParallelOneWithDataRaceWithoutFailures/6
+=== CONT  TestParallelOneWithDataRaceWithoutFailures/6
+    --- PASS: TestParallelOneWithDataRaceWithoutFailures/6 (0.48s)
+    	main_test.go:83: something gets logged
+
+=== RUN   TestParallelOneWithDataRaceWithoutFailures/2
+=== PAUSE TestParallelOneWithDataRaceWithoutFailures/2
+=== CONT  TestParallelOneWithDataRaceWithoutFailures/2
+    --- PASS: TestParallelOneWithDataRaceWithoutFailures/2 (0.65s)
+    	main_test.go:83: something gets logged
+
+=== RUN   TestParallelOneWithDataRaceWithoutFailures/7
+=== PAUSE TestParallelOneWithDataRaceWithoutFailures/7
+=== CONT  TestParallelOneWithDataRaceWithoutFailures/7
+    --- PASS: TestParallelOneWithDataRaceWithoutFailures/7 (0.91s)
+    	main_test.go:83: something gets logged
+
+=== RUN   TestParallelOneWithDataRaceWithoutFailures/8
+=== PAUSE TestParallelOneWithDataRaceWithoutFailures/8
+=== CONT  TestParallelOneWithDataRaceWithoutFailures/8
+    --- PASS: TestParallelOneWithDataRaceWithoutFailures/8 (0.94s)
+    	main_test.go:83: something gets logged
+
+=== RUN   TestParallelOneWithDataRaceWithoutFailures
+output before calling t.Parallel()
+=== PAUSE TestParallelOneWithDataRaceWithoutFailures
+=== CONT  TestParallelOneWithDataRaceWithoutFailures
+--- PASS: TestParallelOneWithDataRaceWithoutFailures (0.00s)
+
+=== RUN   TestParallelWithDataRaceAndFailures/6
+=== PAUSE TestParallelWithDataRaceAndFailures/6
+=== CONT  TestParallelWithDataRaceAndFailures/6
+    --- FAIL: TestParallelWithDataRaceAndFailures/6 (0.01s)
+    	main_test.go:81: subtest failed
+
+=== RUN   TestParallelWithDataRaceAndFailures/9
+=== PAUSE TestParallelWithDataRaceAndFailures/9
+=== CONT  TestParallelWithDataRaceAndFailures/9
+    --- FAIL: TestParallelWithDataRaceAndFailures/9 (0.46s)
+    	main_test.go:81: subtest failed
+
+=== RUN   TestParallelWithDataRaceAndFailures/0
+=== PAUSE TestParallelWithDataRaceAndFailures/0
+=== CONT  TestParallelWithDataRaceAndFailures/0
+    --- FAIL: TestParallelWithDataRaceAndFailures/0 (0.75s)
+    	main_test.go:81: subtest failed
+
+=== RUN   TestParallelWithDataRaceAndFailures/5
+=== PAUSE TestParallelWithDataRaceAndFailures/5
+=== CONT  TestParallelWithDataRaceAndFailures/5
+    --- PASS: TestParallelWithDataRaceAndFailures/5 (0.61s)
+    	main_test.go:83: something gets logged
+
+=== RUN   TestParallelWithDataRaceAndFailures/7
+=== PAUSE TestParallelWithDataRaceAndFailures/7
+=== CONT  TestParallelWithDataRaceAndFailures/7
+    --- PASS: TestParallelWithDataRaceAndFailures/7 (0.68s)
+    	main_test.go:83: something gets logged
+
+=== RUN   TestParallelWithDataRaceAndFailures/8
+=== PAUSE TestParallelWithDataRaceAndFailures/8
+=== CONT  TestParallelWithDataRaceAndFailures/8
+    --- PASS: TestParallelWithDataRaceAndFailures/8 (0.82s)
+    	main_test.go:83: something gets logged
+
+=== RUN   TestParallelWithDataRaceAndFailures/3
+=== PAUSE TestParallelWithDataRaceAndFailures/3
+=== CONT  TestParallelWithDataRaceAndFailures/3
+    --- FAIL: TestParallelWithDataRaceAndFailures/3 (0.46s)
+    	main_test.go:81: subtest failed
+
+=== RUN   TestParallelWithDataRaceAndFailures/1
+=== PAUSE TestParallelWithDataRaceAndFailures/1
+=== CONT  TestParallelWithDataRaceAndFailures/1
+    --- PASS: TestParallelWithDataRaceAndFailures/1 (0.44s)
+    	main_test.go:83: something gets logged
+
+=== RUN   TestParallelWithDataRaceAndFailures/2
+=== PAUSE TestParallelWithDataRaceAndFailures/2
+=== CONT  TestParallelWithDataRaceAndFailures/2
+    --- PASS: TestParallelWithDataRaceAndFailures/2 (0.47s)
+    	main_test.go:83: something gets logged
+
+=== RUN   TestParallelWithDataRaceAndFailures/4
+=== PAUSE TestParallelWithDataRaceAndFailures/4
+=== CONT  TestParallelWithDataRaceAndFailures/4
+    --- PASS: TestParallelWithDataRaceAndFailures/4 (0.63s)
+    	main_test.go:83: something gets logged
+
+=== RUN   TestParallelWithDataRaceAndFailures
+output before calling t.Parallel()
+=== PAUSE TestParallelWithDataRaceAndFailures
+=== CONT  TestParallelWithDataRaceAndFailures
+--- FAIL: TestParallelWithDataRaceAndFailures (0.00s)
+
