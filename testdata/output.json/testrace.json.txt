@@ -456,9 +456,6 @@ optgen -out pkg/sql/opt/rule_name.og.go rulenames pkg/sql/opt/ops/*.opt pkg/sql/
 stringer -output=pkg/sql/opt/rule_name_string.go -type=RuleName pkg/sql/opt/rule_name.go pkg/sql/opt/rule_name.og.go
 go test -race -tags ' make x86_64_pc_linux_gnu' -ldflags '-X github.com/cockroachdb/cockroach/pkg/build.typ=development -extldflags "" -X "github.com/cockroachdb/cockroach/pkg/build.tag=v2.2.0-alpha.00000000-925-g3baa3d9" -X "github.com/cockroachdb/cockroach/pkg/build.rev=3baa3d9b299a392b7d9b737dbfb333d095e672a9" -X "github.com/cockroachdb/cockroach/pkg/build.cgoTargetTriple=x86_64-pc-linux-gnu"  ' -run "."  -timeout 45m ./pkg/util/failsuite/... -v -json
 ##teamcity[testStarted timestamp='2017-01-02T04:05:06.789' name='TestThatPasses' captureStandardOutput='true']
-=== RUN   TestThatPasses
-output of TestThatPasses
---- PASS: TestThatPasses (0.00s)
 ##teamcity[testFinished timestamp='2017-01-02T04:05:06.789' name='TestThatPasses' duration='0']
 ##teamcity[testStarted timestamp='2017-01-02T04:05:06.789' name='TestThatFails' captureStandardOutput='true']
 === RUN   TestThatFails
