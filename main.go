@@ -74,7 +74,7 @@ func outputTest(w io.Writer, test *Test) {
 	testName := escape(additionalTestName + test.Name)
 	fmt.Fprintf(w, "##teamcity[testStarted timestamp='%s' name='%s' captureStandardOutput='true']\n", test.Start, testName)
 
-	if verbose || test.Status != "PASS" {
+	if verbose || test.Status != "PASS" || test.Race {
 		fmt.Fprint(w, test.Output)
 	}
 
