@@ -1,0 +1,19 @@
+
+panic: hi [recovered]
+	panic: hi
+
+goroutine 9 [running]:
+panic(0x5a7ea0, 0xc42000fc10)
+	/usr/local/go/src/runtime/panic.go:500 +0x1a1
+testing.tRunner.func1(0xc420242a80)
+	/usr/local/go/src/testing/testing.go:579 +0x25d
+panic(0x5a7ea0, 0xc42000fc10)
+	/usr/local/go/src/runtime/panic.go:458 +0x243
+github.com/cockroachdb/apd.TestConstSub.func1(0xc420242a80)
+	/home/mjibson/src/github.com/cockroachdb/apd/const_test.go:62 +0xfb
+testing.tRunner(0xc420242a80, 0x605568)
+	/usr/local/go/src/testing/testing.go:610 +0x81
+created by testing.(*T).Run
+	/usr/local/go/src/testing/testing.go:646 +0x2ec
+
+

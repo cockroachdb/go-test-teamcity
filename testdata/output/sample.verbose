@@ -1,4 +1,5 @@
 ##teamcity[testStarted timestamp='2017-01-02T04:05:06.789' name='TestSomething' captureStandardOutput='true']
+log output
 ##teamcity[testFinished timestamp='2017-01-02T04:05:06.789' name='TestSomething' duration='40']
 ##teamcity[testStarted timestamp='2017-01-02T04:05:06.789' name='TestNegativeDuration' captureStandardOutput='true']
 ##teamcity[testFinished timestamp='2017-01-02T04:05:06.789' name='TestNegativeDuration' duration='-40']

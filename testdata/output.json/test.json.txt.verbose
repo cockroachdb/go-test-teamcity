@@ -219,6 +219,9 @@ FAIL	github.com/cockroachdb/cockroach/pkg/util/failsuite/failsuitepanic	0.006s
 ##teamcity[testFailed timestamp='2017-01-02T04:05:06.789' name='TestZPanics' details='']
 ##teamcity[testFinished timestamp='2017-01-02T04:05:06.789' name='TestZPanics' duration='6']
 ##teamcity[testStarted timestamp='2017-01-02T04:05:06.789' name='TestThatPasses' captureStandardOutput='true']
+=== RUN   TestThatPasses
+output of TestThatPasses
+--- PASS: TestThatPasses (0.00s)
 ##teamcity[testFinished timestamp='2017-01-02T04:05:06.789' name='TestThatPasses' duration='0']
 ##teamcity[testStarted timestamp='2017-01-02T04:05:06.789' name='TestThatFails' captureStandardOutput='true']
 === RUN   TestThatFails
@@ -234,26 +237,81 @@ FAIL	github.com/cockroachdb/cockroach/pkg/util/failsuite/failsuitepanic	0.006s
 	main_test.go:47: skipped
 ##teamcity[testIgnored timestamp='2017-01-02T04:05:06.789' name='TestThatGetsSkipped']
 ##teamcity[testStarted timestamp='2017-01-02T04:05:06.789' name='TestParallelOneWithDataRaceWithoutFailures/5' captureStandardOutput='true']
+=== RUN   TestParallelOneWithDataRaceWithoutFailures/5
+=== PAUSE TestParallelOneWithDataRaceWithoutFailures/5
+=== CONT  TestParallelOneWithDataRaceWithoutFailures/5
+    --- PASS: TestParallelOneWithDataRaceWithoutFailures/5 (0.14s)
+    	main_test.go:83: something gets logged
 ##teamcity[testFinished timestamp='2017-01-02T04:05:06.789' name='TestParallelOneWithDataRaceWithoutFailures/5' duration='140']
 ##teamcity[testStarted timestamp='2017-01-02T04:05:06.789' name='TestParallelOneWithDataRaceWithoutFailures/3' captureStandardOutput='true']
+=== RUN   TestParallelOneWithDataRaceWithoutFailures/3
+=== PAUSE TestParallelOneWithDataRaceWithoutFailures/3
+=== CONT  TestParallelOneWithDataRaceWithoutFailures/3
+    --- PASS: TestParallelOneWithDataRaceWithoutFailures/3 (0.21s)
+    	main_test.go:83: something gets logged
 ##teamcity[testFinished timestamp='2017-01-02T04:05:06.789' name='TestParallelOneWithDataRaceWithoutFailures/3' duration='210']
 ##teamcity[testStarted timestamp='2017-01-02T04:05:06.789' name='TestParallelOneWithDataRaceWithoutFailures/0' captureStandardOutput='true']
+=== RUN   TestParallelOneWithDataRaceWithoutFailures/0
+=== PAUSE TestParallelOneWithDataRaceWithoutFailures/0
+=== CONT  TestParallelOneWithDataRaceWithoutFailures/0
+    --- PASS: TestParallelOneWithDataRaceWithoutFailures/0 (0.30s)
+    	main_test.go:83: something gets logged
 ##teamcity[testFinished timestamp='2017-01-02T04:05:06.789' name='TestParallelOneWithDataRaceWithoutFailures/0' duration='300']
 ##teamcity[testStarted timestamp='2017-01-02T04:05:06.789' name='TestParallelOneWithDataRaceWithoutFailures/1' captureStandardOutput='true']
+=== RUN   TestParallelOneWithDataRaceWithoutFailures/1
+=== PAUSE TestParallelOneWithDataRaceWithoutFailures/1
+=== CONT  TestParallelOneWithDataRaceWithoutFailures/1
+    --- PASS: TestParallelOneWithDataRaceWithoutFailures/1 (0.11s)
+    	main_test.go:83: something gets logged
 ##teamcity[testFinished timestamp='2017-01-02T04:05:06.789' name='TestParallelOneWithDataRaceWithoutFailures/1' duration='110']
 ##teamcity[testStarted timestamp='2017-01-02T04:05:06.789' name='TestParallelOneWithDataRaceWithoutFailures/4' captureStandardOutput='true']
+=== RUN   TestParallelOneWithDataRaceWithoutFailures/4
+=== PAUSE TestParallelOneWithDataRaceWithoutFailures/4
+=== CONT  TestParallelOneWithDataRaceWithoutFailures/4
+    --- PASS: TestParallelOneWithDataRaceWithoutFailures/4 (0.34s)
+    	main_test.go:83: something gets logged
 ##teamcity[testFinished timestamp='2017-01-02T04:05:06.789' name='TestParallelOneWithDataRaceWithoutFailures/4' duration='340']
 ##teamcity[testStarted timestamp='2017-01-02T04:05:06.789' name='TestParallelOneWithDataRaceWithoutFailures/9' captureStandardOutput='true']
+=== RUN   TestParallelOneWithDataRaceWithoutFailures/9
+=== PAUSE TestParallelOneWithDataRaceWithoutFailures/9
+=== CONT  TestParallelOneWithDataRaceWithoutFailures/9
+    --- PASS: TestParallelOneWithDataRaceWithoutFailures/9 (0.43s)
+    	main_test.go:83: something gets logged
 ##teamcity[testFinished timestamp='2017-01-02T04:05:06.789' name='TestParallelOneWithDataRaceWithoutFailures/9' duration='430']
 ##teamcity[testStarted timestamp='2017-01-02T04:05:06.789' name='TestParallelOneWithDataRaceWithoutFailures/6' captureStandardOutput='true']
+=== RUN   TestParallelOneWithDataRaceWithoutFailures/6
+=== PAUSE TestParallelOneWithDataRaceWithoutFailures/6
+=== CONT  TestParallelOneWithDataRaceWithoutFailures/6
+    --- PASS: TestParallelOneWithDataRaceWithoutFailures/6 (0.48s)
+    	main_test.go:83: something gets logged
 ##teamcity[testFinished timestamp='2017-01-02T04:05:06.789' name='TestParallelOneWithDataRaceWithoutFailures/6' duration='480']
 ##teamcity[testStarted timestamp='2017-01-02T04:05:06.789' name='TestParallelOneWithDataRaceWithoutFailures/2' captureStandardOutput='true']
+=== RUN   TestParallelOneWithDataRaceWithoutFailures/2
+=== PAUSE TestParallelOneWithDataRaceWithoutFailures/2
+=== CONT  TestParallelOneWithDataRaceWithoutFailures/2
+    --- PASS: TestParallelOneWithDataRaceWithoutFailures/2 (0.65s)
+    	main_test.go:83: something gets logged
 ##teamcity[testFinished timestamp='2017-01-02T04:05:06.789' name='TestParallelOneWithDataRaceWithoutFailures/2' duration='650']
 ##teamcity[testStarted timestamp='2017-01-02T04:05:06.789' name='TestParallelOneWithDataRaceWithoutFailures/7' captureStandardOutput='true']
+=== RUN   TestParallelOneWithDataRaceWithoutFailures/7
+=== PAUSE TestParallelOneWithDataRaceWithoutFailures/7
+=== CONT  TestParallelOneWithDataRaceWithoutFailures/7
+    --- PASS: TestParallelOneWithDataRaceWithoutFailures/7 (0.91s)
+    	main_test.go:83: something gets logged
 ##teamcity[testFinished timestamp='2017-01-02T04:05:06.789' name='TestParallelOneWithDataRaceWithoutFailures/7' duration='910']
 ##teamcity[testStarted timestamp='2017-01-02T04:05:06.789' name='TestParallelOneWithDataRaceWithoutFailures/8' captureStandardOutput='true']
+=== RUN   TestParallelOneWithDataRaceWithoutFailures/8
+=== PAUSE TestParallelOneWithDataRaceWithoutFailures/8
+=== CONT  TestParallelOneWithDataRaceWithoutFailures/8
+    --- PASS: TestParallelOneWithDataRaceWithoutFailures/8 (0.94s)
+    	main_test.go:83: something gets logged
 ##teamcity[testFinished timestamp='2017-01-02T04:05:06.789' name='TestParallelOneWithDataRaceWithoutFailures/8' duration='940']
 ##teamcity[testStarted timestamp='2017-01-02T04:05:06.789' name='TestParallelOneWithDataRaceWithoutFailures' captureStandardOutput='true']
+=== RUN   TestParallelOneWithDataRaceWithoutFailures
+output before calling t.Parallel()
+=== PAUSE TestParallelOneWithDataRaceWithoutFailures
+=== CONT  TestParallelOneWithDataRaceWithoutFailures
+--- PASS: TestParallelOneWithDataRaceWithoutFailures (0.00s)
 ##teamcity[testFinished timestamp='2017-01-02T04:05:06.789' name='TestParallelOneWithDataRaceWithoutFailures' duration='0']
 ##teamcity[testStarted timestamp='2017-01-02T04:05:06.789' name='TestParallelWithDataRaceAndFailures/6' captureStandardOutput='true']
 === RUN   TestParallelWithDataRaceAndFailures/6
@@ -280,10 +338,25 @@ FAIL	github.com/cockroachdb/cockroach/pkg/util/failsuite/failsuitepanic	0.006s
 ##teamcity[testFailed timestamp='2017-01-02T04:05:06.789' name='TestParallelWithDataRaceAndFailures/0' details='']
 ##teamcity[testFinished timestamp='2017-01-02T04:05:06.789' name='TestParallelWithDataRaceAndFailures/0' duration='750']
 ##teamcity[testStarted timestamp='2017-01-02T04:05:06.789' name='TestParallelWithDataRaceAndFailures/5' captureStandardOutput='true']
+=== RUN   TestParallelWithDataRaceAndFailures/5
+=== PAUSE TestParallelWithDataRaceAndFailures/5
+=== CONT  TestParallelWithDataRaceAndFailures/5
+    --- PASS: TestParallelWithDataRaceAndFailures/5 (0.61s)
+    	main_test.go:83: something gets logged
 ##teamcity[testFinished timestamp='2017-01-02T04:05:06.789' name='TestParallelWithDataRaceAndFailures/5' duration='610']
 ##teamcity[testStarted timestamp='2017-01-02T04:05:06.789' name='TestParallelWithDataRaceAndFailures/7' captureStandardOutput='true']
+=== RUN   TestParallelWithDataRaceAndFailures/7
+=== PAUSE TestParallelWithDataRaceAndFailures/7
+=== CONT  TestParallelWithDataRaceAndFailures/7
+    --- PASS: TestParallelWithDataRaceAndFailures/7 (0.68s)
+    	main_test.go:83: something gets logged
 ##teamcity[testFinished timestamp='2017-01-02T04:05:06.789' name='TestParallelWithDataRaceAndFailures/7' duration='680']
 ##teamcity[testStarted timestamp='2017-01-02T04:05:06.789' name='TestParallelWithDataRaceAndFailures/8' captureStandardOutput='true']
+=== RUN   TestParallelWithDataRaceAndFailures/8
+=== PAUSE TestParallelWithDataRaceAndFailures/8
+=== CONT  TestParallelWithDataRaceAndFailures/8
+    --- PASS: TestParallelWithDataRaceAndFailures/8 (0.82s)
+    	main_test.go:83: something gets logged
 ##teamcity[testFinished timestamp='2017-01-02T04:05:06.789' name='TestParallelWithDataRaceAndFailures/8' duration='820']
 ##teamcity[testStarted timestamp='2017-01-02T04:05:06.789' name='TestParallelWithDataRaceAndFailures/3' captureStandardOutput='true']
 === RUN   TestParallelWithDataRaceAndFailures/3
@@ -294,10 +367,25 @@ FAIL	github.com/cockroachdb/cockroach/pkg/util/failsuite/failsuitepanic	0.006s
 ##teamcity[testFailed timestamp='2017-01-02T04:05:06.789' name='TestParallelWithDataRaceAndFailures/3' details='']
 ##teamcity[testFinished timestamp='2017-01-02T04:05:06.789' name='TestParallelWithDataRaceAndFailures/3' duration='460']
 ##teamcity[testStarted timestamp='2017-01-02T04:05:06.789' name='TestParallelWithDataRaceAndFailures/1' captureStandardOutput='true']
+=== RUN   TestParallelWithDataRaceAndFailures/1
+=== PAUSE TestParallelWithDataRaceAndFailures/1
+=== CONT  TestParallelWithDataRaceAndFailures/1
+    --- PASS: TestParallelWithDataRaceAndFailures/1 (0.44s)
+    	main_test.go:83: something gets logged
 ##teamcity[testFinished timestamp='2017-01-02T04:05:06.789' name='TestParallelWithDataRaceAndFailures/1' duration='440']
 ##teamcity[testStarted timestamp='2017-01-02T04:05:06.789' name='TestParallelWithDataRaceAndFailures/2' captureStandardOutput='true']
+=== RUN   TestParallelWithDataRaceAndFailures/2
+=== PAUSE TestParallelWithDataRaceAndFailures/2
+=== CONT  TestParallelWithDataRaceAndFailures/2
+    --- PASS: TestParallelWithDataRaceAndFailures/2 (0.47s)
+    	main_test.go:83: something gets logged
 ##teamcity[testFinished timestamp='2017-01-02T04:05:06.789' name='TestParallelWithDataRaceAndFailures/2' duration='470']
 ##teamcity[testStarted timestamp='2017-01-02T04:05:06.789' name='TestParallelWithDataRaceAndFailures/4' captureStandardOutput='true']
+=== RUN   TestParallelWithDataRaceAndFailures/4
+=== PAUSE TestParallelWithDataRaceAndFailures/4
+=== CONT  TestParallelWithDataRaceAndFailures/4
+    --- PASS: TestParallelWithDataRaceAndFailures/4 (0.63s)
+    	main_test.go:83: something gets logged
 ##teamcity[testFinished timestamp='2017-01-02T04:05:06.789' name='TestParallelWithDataRaceAndFailures/4' duration='630']
 ##teamcity[testStarted timestamp='2017-01-02T04:05:06.789' name='TestParallelWithDataRaceAndFailures' captureStandardOutput='true']
 === RUN   TestParallelWithDataRaceAndFailures
